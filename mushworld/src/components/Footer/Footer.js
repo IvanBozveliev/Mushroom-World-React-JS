@@ -27,10 +27,10 @@ const Footer = () => {
                                     <div className="address">
                                         <h3>Social Link</h3>
                                         <ul className="Menu_footer">
-                                            <li className="active"> <a href="#">Twitter</a> </li>
-                                            <li><a href="#">Facebook</a> </li>
-                                            <li><a href="#">Instagram</a> </li>
-                                            <li><a href="#">Linkdin</a> </li>
+                                            <li> <a href="https://www.twitter.com/">Twitter</a> </li>
+                                            <li><a href="https://www.facebook.com/">Facebook</a> </li>
+                                            <li><a href="https://www.instagram.com/">Instagram</a> </li>
+                                            <li><a href="https://www.linkedin.com">Linkdin</a> </li>
                                         </ul>
                                     </div>
                                 </div>
