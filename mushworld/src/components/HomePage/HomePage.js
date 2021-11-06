@@ -1,3 +1,5 @@
+import './HomePage.css';
+
 const HomePage = () => {
     return (
         <section className="slider_section">

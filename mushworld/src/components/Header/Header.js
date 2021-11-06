@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import './Header.css';
+
 const Header = () => {
     return (
         <header>
@@ -11,7 +13,7 @@ const Header = () => {
                                 <div className="full">
                                     <div className="center-desk">
                                         <div className="logo">
-                                            <a href="index.html"><img src="/images/mush-logo2.png" alt="#" />MushWorld</a>
+                                            <p><img src="/images/mush-logo2.png" alt="#" />MushWorld</p>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +37,7 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                </div>             
+                </div>
             </div>
         </header>
     )

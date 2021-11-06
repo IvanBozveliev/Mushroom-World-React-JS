@@ -1,3 +1,5 @@
+import './ContactUs.css'
+
 const ContactUs = () => {
     return (
         <div id="contact" className="contact">
@@ -16,7 +18,7 @@ const ContactUs = () => {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <form className="contact_bg">
                                 <div className="row">
-                                  {/* <div className ="col-md-12"> */}
+                                  <div className ="col-md-12">
 
                                   <div className ="col-md-12">
                                       <input className ="contactus" placeholder="Your Name" type ="text" name="Your Name" />
@@ -33,15 +35,17 @@ const ContactUs = () => {
                                   <div className ="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                       <button className ="send">Send</button>
                                   </div>
+                                  </div>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <div id="map">
+                            <p>World</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
