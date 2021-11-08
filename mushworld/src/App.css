@@ -52,10 +52,12 @@
     line-height: 48px;
     font-size: 16px;
 }
+
 .scrollup.b-show_scrollBut {
     opacity: 1;
     visibility: visible;
 }
+
 .top_awro {
     background: #ee4a79 none repeat scroll 0 0;
     cursor: pointer;
@@ -71,15 +73,19 @@
     line-height: 30px;
     transition: all 0.5s ease;
 }
+
 .sale_pro {
     background: #f25252 !important;
 }
+
 .margin_top_50 {
     margin-top: 50px;
 }
+
 .margin_bottom_30_all {
     margin-bottom: 30px;
 }
+
 .text_align_center {
     text-align: center;
 }

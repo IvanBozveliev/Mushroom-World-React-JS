@@ -26,7 +26,7 @@ const Header = () => {
                                             <ul className="menu-area-main">
                                                 <li> <Link to="/">Home</Link> </li>
                                                 <li> <Link to="/about">About</Link> </li>
-                                                <li> <Link to="#vegetable">Vegetable</Link> </li>
+                                                <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
                                                 <li> <Link to="#testimonial">Testomonial</Link> </li>
                                                 <li> <Link to="/contacts">Contact Us</Link> </li>
                                             </ul>
