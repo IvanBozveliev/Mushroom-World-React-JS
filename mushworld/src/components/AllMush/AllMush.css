@@ -1,4 +1,4 @@
-#all-listings {
+/* #all-listings {
     display: flex;
     flex-wrap: wrap;
 }
@@ -16,10 +16,10 @@
     text-align: center;
     font-family: 'Raleway', sans-serif;
     color: #3b3b3b;
-}
+} */
 
 .card {
-    background-color: #fff;
+    background-color: #3b3b3b;
     bottom: 0;
     box-shadow: 0px 0px 40px 4px rgba(77, 77, 240, 0.315);
     height: 440px;
@@ -29,40 +29,49 @@
     position: relative;
     right: 0;
     top: 0;
-    width: 500px;
+    width: 400px;
     margin-left: -1em;
     text-align: center;
-    height: 460px;
+    height: 327px;
 }
 
-.card:hover {
+/* .card:hover {
     height: 460px;
     width: 500px;
-}
+} */
 
-.card:hover .cta-container {
+/* .card:hover .cta-container {
     display: inline;
     margin-top: 410px;
-}
+} */
 
-.card:hover .card_circle {
+/* .card:hover .card_circle {
     background-size: cover;
     border-radius: 0;
     margin-top: -130px;
-}
+} */
 
-.card:hover h3 {
-    background: #3b3b3b;
+.card .poison {
+    background: #d00808bd;
     color: rgb(255, 255, 255);
-    margin-top: 120px;
+    margin-top: 140px;
     padding: 5px;
+
 }
 
-.card:hover p {
+.card .edible {
+    background: #12f209bd;
+    color: rgb(255, 255, 255);
+    margin-top: 140px;
+    padding: 5px;
+
+}
+
+/* .card:hover p {
     margin-top: 325px;
-}
+} */
 
-.card>h4 {
+/* .card>h4 {
     color: rgba(0, 0, 0, .6);
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
@@ -72,11 +81,11 @@
     padding-left: 5px;
     text-align: center;
     z-index: 9999;
-}
+} */
 
-.card:hover h4 {
+/* .card:hover h4 {
     margin-top: 350px;
-}
+} */
 
 .card_circle {
     background-color: #eef2f7;
@@ -94,26 +103,29 @@
     height: 100%;
 }
 
-h3 {
-    color: #0c0c41;
+.card h3 {
+    color: #f40707;
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     font-weight: 200;
     /* margin-top: 280px; */
-    margin-top: 356px;
+    margin-top: 355px;
     position: absolute;
     text-align: center;
     width: 100%;
     z-index: 9999;
 }
+.card h3 img {
+    margin-left: 20px;
+};
 
 .card>p {
-    color: rgba(0, 0, 0, .6);
+    color: rgb(243, 243, 243);
     font-family: 'Raleway', sans-serif;
-    font-size: 100%;
+    font-size: 70%;
     font-weight: normal;
     /* margin-top: 315px; */
-    margin-top: 400px;
+    margin-top: 346px;
     position: absolute;
     padding-left: 5px;
     padding-right: 5px;
@@ -121,16 +133,16 @@ h3 {
     z-index: 9999;
 }
 
-.cta-container {
+/* .cta-container {
     display: none;
     margin-top: 334px;
     position: absolute;
     text-align: center;
     z-index: 9999;
     margin-left: 40%;
-}
+} */
 
-.det-link {
+/* .det-link {
     background-clip: padding-box;
     border: 2px solid #888383;
     border-radius: 8px;
@@ -156,4 +168,48 @@ h3 {
     font-family: 'Raleway', sans-serif;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #fff;
+} */
+
+/* section {
+    padding: 20px 10px;
+    margin-left: 20px;
+   
+} */
+
+/* section::after {
+    clear: both;
+} */
+
+.spacer {
+    padding: 20px;
+    float: left;
+}
+
+.spacer li {
+    font-size: 24px;
+}
+
+.wrapper {
+    overflow: auto;
+}
+
+.right-element {
+    float: right;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li a {
+    display: block;
+}
+
+ul li a:hover, ul li a:focus {
+    color: #990606;
+}
+
+section h2 {
+    margin-left: 20px;
+    margin-top: 10px
 }
