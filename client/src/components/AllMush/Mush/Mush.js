@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Mush = ({
     productname,
@@ -6,8 +6,10 @@ const Mush = ({
     mushType
 }) => {
     return (
-        <li>
-            <Link to="article.html">{productname} </Link>
+        <>
+            <li>
+                <Link to="article.html">{productname} </Link>
+            </li>
             <div className="card">
 
                 {/* <h3 className='poison'>Poison<img src='/images/skull2.png' /></h3>  */}
@@ -16,7 +18,7 @@ const Mush = ({
                 <div className="card_circle"><img src={imageUrl} /></div>
 
             </div>
-        </li>
+        </>
     )
 }
 

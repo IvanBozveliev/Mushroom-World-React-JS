@@ -1,4 +1,7 @@
 import './HomePage.css';
+import mushroom3 from '../images/mushroom3.png';
+import mushroom2 from '../images/mushroom2.png';
+import mushroom1 from '../images/mushroom1.png';
 
 const HomePage = () => {
     return (
@@ -29,7 +32,7 @@ const HomePage = () => {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src="/images/mushroom1.png" /></figure>
+                                            <figure><img src={mushroom3} /></figure>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +60,7 @@ const HomePage = () => {
 
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src="/images/mushroom3.png" /></figure>
+                                            <figure><img src={mushroom2} /></figure>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +89,7 @@ const HomePage = () => {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src="/images/mushroom2.png" /></figure>
+                                            <figure><img src={mushroom1} /></figure>
                                         </div>
                                     </div>
                                 </div>
