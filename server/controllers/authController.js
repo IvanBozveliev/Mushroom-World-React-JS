@@ -1,90 +1,51 @@
-const { Router } = require('express');
-const { COOKIE_NAME } = require('../config/config')
-const router = Router();
-
+const router = require('express').Router();
 const authService = require('../services/authService');
 
-let isGuest = require('../middlewares/isGuest');
-let isAuthenticated = require('../middlewares/isAuthenticated');
-const processError = require('../middlewares/errorHandler');
-
-
-router.get('/login', isGuest, (req, res) => {
-    res.render('login', { title: "Login Page" })
-});
-
-router.post('/login', isGuest, async (req, res) => {
-    const { username, password } = req.body;
+router.post('/register', async (req, res, next) => {
+    let { email, password } = req.body;
 
     try {
+        let user = await authService.register({ email, password });
+        let { accessToken, refreshToken } = await authService.login({ email, password });
 
-        // if (password == '' || username == '') {
-        //     throw new Error('Invalid inputs!')
-        // }
-
-        // if (!/^[a-zA-Z0-9]{5,}/g.test(username)) {
-        //     throw new Error('Username should be at least 5 characters long and should consist only english letters and digits!')
-        // }
-        
-        // if (!/^[a-zA-Z0-9]{5,}/g.test(password)) {
-        //     throw new Error('Password should be at least 5 characters long and should consist only english letters and digits!')
-        // }
-
-        let token = await authService.login({ username, password })
-        res.cookie(COOKIE_NAME, token)
-        res.redirect('/products')
+        res.json({
+            _id: user._id,
+            email: user.email,
+            accessToken,
+            refreshToken,
+        });
     } catch (error) {
-        if (error.name == 'ValidationError') {
-            let err = processError(error);
-
-            res.render('login', { error: err })
-        } else {
-            res.render('login', { error: error.message })
-        }
-
+        next(error)
     }
 });
 
-router.get('/register', isGuest, (req, res) => {
-    res.render('register', { title: "Register Page" })
+router.post('/login', async (req, res) => {
+    let { email, password } = req.body;
+
+    let { user, accessToken, refreshToken } = await authService.login({ email, password });
+
+    res.json({
+        _id: user._id,
+        email: user.email,
+        accessToken,
+        refreshToken,
+    });
 });
 
-router.post('/register', isGuest, async (req, res) => {
-
-    const { username, password, repeatPassword } = req.body;
-
-    try {
-
-        // if (!/[a-zA-Z0-9]{3,}/.test(password)) {
-        //     throw new Error('Password must be at least 3 characters long and consist only latin letters and digits')
-        // }
-
-        // if (password == '' || username == '' || repeatPassword == '') {
-        //     throw new Error('Invalid inputs!')
-        // }
-
-        // if (password !== repeatPassword) {
-        //     throw new Error('Password missmatch!')
-        // }
-
-        await authService.register({ username, password })
-        res.redirect('/auth/login');
-
-    } catch (error) {
-        if (error.name == 'ValidationError') {
-            let err = processError(error);
-
-            res.render('register', { error: err })
-        } else {
-            res.render('register', { error: error.message })
-        }
-
-    }
+router.get('/logout', (req, res) => {
+    res.json({ ok: true });
 });
 
-router.get('/logout', isAuthenticated, (req, res) => {
-    res.clearCookie(COOKIE_NAME)
-    res.redirect('/products')
+router.post('/refresh', async (req, res) => {
+    console.log(req.body);
+    let refreshToken = req.body.refreshToken;
+
+    let { accessToken, refreshToken: newRefreshToken } = await authService.refresh(refreshToken);
+
+    res.json({
+        accessToken,
+        refreshToken: newRefreshToken,
+    });
 });
 
 module.exports = router;

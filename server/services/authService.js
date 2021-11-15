@@ -1,32 +1,36 @@
-const jwt = require('jsonwebtoken');
-const {SALT_ROUNDS, SECRET} = require('../config/config')
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const {SECRET, SECRET2} = require('../config/config');
 
-const register = async({username, password}) =>{
+exports.register = ({ email, password }) => User.create({ email, password });
 
-     let salt = await bcrypt.genSalt(SALT_ROUNDS);
-     let hash = await bcrypt.hash(password, salt);
+exports.login = async ({ email, password }) => {
+    let user = await User.findOne({ email, password })
+    if (user) {
+        let accessToken = jwt.sign({ _id: user._id, email: user.email }, SECRET, { expiresIn: '1m' });
+        let refreshToken = jwt.sign({ _id: user._id }, SECRET2, { expiresIn: '7d' });
 
-     let user = new User({username, password: hash});
-     return user.save();
-}
+        user.refreshToken = refreshToken;
 
-const login = async({username, password}) => {
+        await user.save();
 
-     let user = await User.findOne({username});
-     
-     if(!user) throw {message: 'User not found'};
+        return { user, accessToken, refreshToken };
+    } else {
+        throw new Error('No such user');
+    }
+};
 
-     let isMatch = await bcrypt.compare(password, user.password);
+exports.refresh = async (refreshToken) => {
+    let { _id } = jwt.verify(refreshToken, SECRET2);
 
-     if(!isMatch) throw {message: 'Password does not match'};
+    let user = await User.find({ _id, refreshToken });
 
-     let token = jwt.sign({_id: user._id, username: user.username }, SECRET);
-     return token;
-}
+    if (user) {
+        let accessToken = jwt.sign({ _id: user._id, email: user.email }, SECRET, { expiresIn: '1m' });
+        let refreshToken = jwt.sign({ _id: user._id }, SECRET2, { expiresIn: '7d' });
 
-module.exports = {
-    login,
-    register
+        return { accessToken, refreshToken };
+    } else {
+        return null;
+    }
 }

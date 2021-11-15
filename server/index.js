@@ -4,8 +4,8 @@ const router = require('./routes');
 const cors = require('cors');
 const app = express();
 
+require('./config/mongoose')();
 require('./config/express')(app);
-require('./config/mongoose')(app);
 
 app.use(router);
 app.use(cors());

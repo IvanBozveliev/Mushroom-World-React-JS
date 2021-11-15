@@ -1,4 +1,4 @@
-const Product = require('../models/Product');
+const Recipe = require('../models/Recipe');
 
 function create(data, userId) {
 
@@ -18,20 +18,20 @@ function create(data, userId) {
    //     throw new Error('The image should be starts with http or https')
    // }
 
-   let product = new Product({ ...data, creator: userId });
-   return product.save();
+   let recipe = new Recipe({ ...data, creator: userId });
+   return recipe.save();
 }
 
 function getOne(id) {
-   return Product.findById(id).exec().lean();
+   return Recipe.findById(id).exec().lean();
 }
 
 async function getAll(query) {
 
-   let products = await Product.find().exec();
+   let recipes = await Recipe.find().exec();
 
    if (query?.search) {
-      products = products.filter(x => x.name.toLowerCase().includes(query.search));
+      recipes = recipes.filter(x => x.name.toLowerCase().includes(query.search));
    }
    // if (query.from) {
    //    products = products.filter(x => Number(x.difficultyLevel) <= query.from);
@@ -40,7 +40,7 @@ async function getAll(query) {
    //    products = products.filter(x => Number(x.difficultyLevel) >= query.to);
    // }
 
-   return products
+   return recipes
 }
 
 
@@ -58,11 +58,11 @@ async function getAll(query) {
 // }
 
 function updateOne(productId, productData) {
-   return Product.updateOne({ _id: productId }, productData)
+   return Recipe.updateOne({ _id: productId }, productData)
 }
 
 function deleteOne(productId) {
-   return Product.deleteOne({ _id: productId })
+   return Recipe.deleteOne({ _id: productId })
 }
 
 module.exports = {

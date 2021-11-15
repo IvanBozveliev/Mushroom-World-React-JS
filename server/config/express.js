@@ -4,6 +4,7 @@ const auth = require('../middlewares/auth');
 const cors = require("cors");
 
 function setUpExpress (app){
+
     app.use(express.urlencoded({extended: true}));
     app.use(express.json());
     app.use(cookieParser());
@@ -12,4 +13,4 @@ function setUpExpress (app){
 
 }
 
-module.exports = setUpExpress
+module.exports = setUpExpress;
