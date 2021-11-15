@@ -9,6 +9,9 @@
             "type": "pwa-node",
             "request": "launch",
             "name": "Launch Program",
+            // "env": {
+            //   "DB_CONNECTION": "mongodb+srv://MERN:ivan1991@my-db.b2vfi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+            // },
             "skipFiles": [
                 "<node_internals>/**"
             ],
