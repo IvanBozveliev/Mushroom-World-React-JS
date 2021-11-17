@@ -1,0 +1,83 @@
+
+.card-recipe h3 {
+    color: #f40707;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    /* margin-top: 280px; */
+    margin-top: 355px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+
+.card-recipe h3 img {
+    margin-left: 20px;
+}
+
+;
+.card-recipe>p {
+    color: rgb(243, 243, 243);
+    font-family: 'Raleway', sans-serif;
+    font-size: 70%;
+    font-weight: normal;
+    /* margin-top: 315px; */
+    margin-top: 346px;
+    position: absolute;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.card-recipe .poison {
+    background: #d00808bd;
+    color: rgb(255, 255, 255);
+    margin-top: 140px;
+    padding: 5px;
+}
+
+.card-recipe .edable {
+    background: #12f209bd;
+    color: rgb(255, 255, 255);
+    margin-top: 140px;
+    padding: 5px;
+}
+
+.card-recipe {
+    background-color: #3b3b3b;
+    bottom: 0;
+    box-shadow: 0px 0px 40px 4px rgba(77, 77, 240, 0.315);
+    /* height: 440px; */
+    /* margin-top: 20px; */
+    left: 0;
+    overflow: hidden;
+    /* position: relative; */
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    margin-top: 245px;
+    margin-left: 80px;
+    /* margin-left: -1em; */
+    text-align: center;
+    height: 327px;
+}
+
+.card-recipe_circle {
+    background-color: #eef2f7;
+    background-size: cover;
+    height: 440px;
+    margin-left: -55px;
+    /* margin-top: -170px; */
+    margin-top: -15px;
+    position: absolute;
+    width: 560px;
+    z-index: 1;
+}
+
+.card-recipe_circle>img {
+    width: 81%;
+    height: 96%;
+}

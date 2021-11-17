@@ -28,7 +28,8 @@ const Header = () => {
                                                 <li> <Link to="/">Home</Link> </li>
                                                 <li> <Link to="/about">About</Link> </li>
                                                 <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
-                                                <li> <Link to="#">Contact Us</Link> </li>
+                                                <li> <Link to="/all-recipes">All Recipes</Link> </li>
+                                                <li> <Link to="/contacts">Contact Us</Link> </li>
                                                 <li> <Link to="#">Add Recipe</Link> </li>
                                                 <li> <Link to="#">Add Mushroom</Link> </li>
                                                 <li> <Link to="#">Register</Link> </li>

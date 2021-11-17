@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
+import AllRecipes from './components/AllRecipes';
 import AllMush from './components/AllMush';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/contacts" component={ContactUs} />
           <Route path="/all-mushrooms" component={AllMush} />
+          <Route path="/all-recipes" component={AllRecipes} />
         </Switch>
 
         <Footer />
