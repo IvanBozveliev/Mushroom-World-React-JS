@@ -1,27 +1,23 @@
 const jwt = require('jsonwebtoken');
-const {SECRET} = require('../config/config');
+const {COOKIE_NAME, SECRET} = require('../config/config');
 
-exports.auth = function (req, res, next) {
-    let token = req.headers['x-authorization']
+module.exports = function (){
+    return (req, res, next) =>{
 
-    if (token) {
-        let decodedToken = jwt.verify(token, SECRET)
-        if (decodedToken) {
-            req.user = decodedToken;
-            
-            next();
-        } else {
-            res.status(401).json('You are not authorized');
+        let token = req.cookies[COOKIE_NAME];
+
+        if(token){
+            jwt.verify(token, SECRET, function(err, decoded) {
+                if(err){
+                    res.clearCookie(COOKIE_NAME)
+                }else{
+                   req.user = decoded;
+                   res.locals.user = decoded;
+                   res.locals.isAuthenticated = true;
+                //    res.locals.isEnroll = false;
+                }
+            })
         }
-    } else {
         next();
     }
-};
-
-exports.isAuth = function (req, res, next) {
-    if (req.user) {
-        next()
-    } else {
-        res.status(401).json({message: 'You are not authorized'});
-    }
-};
+}

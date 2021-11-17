@@ -1,36 +1,32 @@
-const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const {SECRET, SECRET2} = require('../config/config');
+const {SALT_ROUNDS, SECRET} = require('../config/config')
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
-exports.register = ({ email, password }) => User.create({ email, password });
+const register = async({username, password}) =>{
 
-exports.login = async ({ email, password }) => {
-    let user = await User.findOne({ email, password })
-    if (user) {
-        let accessToken = jwt.sign({ _id: user._id, email: user.email }, SECRET, { expiresIn: '1m' });
-        let refreshToken = jwt.sign({ _id: user._id }, SECRET2, { expiresIn: '7d' });
+     let salt = await bcrypt.genSalt(SALT_ROUNDS);
+     let hash = await bcrypt.hash(password, salt);
 
-        user.refreshToken = refreshToken;
+     let user = new User({username, password: hash});
+     return user.save();
+}
 
-        await user.save();
+const login = async({username, password}) => {
 
-        return { user, accessToken, refreshToken };
-    } else {
-        throw new Error('No such user');
-    }
-};
+     let user = await User.findOne({username: username}).exec();
+     
+     if(!user) throw {message: 'User not found'};
 
-exports.refresh = async (refreshToken) => {
-    let { _id } = jwt.verify(refreshToken, SECRET2);
+     let isMatch = await bcrypt.compare(password, user.password);
 
-    let user = await User.find({ _id, refreshToken });
+     if(!isMatch) throw {message: 'Password does not match'};
 
-    if (user) {
-        let accessToken = jwt.sign({ _id: user._id, email: user.email }, SECRET, { expiresIn: '1m' });
-        let refreshToken = jwt.sign({ _id: user._id }, SECRET2, { expiresIn: '7d' });
+     let token = jwt.sign({_id: user._id, username: user.username}, SECRET, {expiresIn: '1d'});
+     return token;
+}
 
-        return { accessToken, refreshToken };
-    } else {
-        return null;
-    }
+module.exports = {
+    login,
+    register
 }

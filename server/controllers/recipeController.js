@@ -16,19 +16,20 @@ router.get('/:recipeId', async (req, res) => {
 });
 
 router.post("/" , async (req, res) =>{
+    
     await recipeService.create({...req.body, creator: req.user._id});
-    res.json({ok: true})
+    res.json({ok: true});
            
 });
 
 router.put("/:recipeId", async (req, res) => {
     await recipeService.updateOne(req.params.productId, req.body);
-    res.json({ok: true})
+    res.json({ok: true});
 });
 
 router.delete("/:recipeId", async (req, res) => {
     await recipeService.deleteOne(req.params.productId);
-    res.json({ok: true})
+    res.json({ok: true});
 });
 
 

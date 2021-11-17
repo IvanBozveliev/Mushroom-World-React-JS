@@ -6,7 +6,7 @@ const recipeController = require('./controllers/recipeController');
 const authController = require('./controllers/authController');
 
 router.use('/products', productController);
-router.use('/recipe', recipeController);
+router.use('/recipes', recipeController);
 router.use('/auth', authController);
 
 // router.get("*" ,(req, res) =>{
