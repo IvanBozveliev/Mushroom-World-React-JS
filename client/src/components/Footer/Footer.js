@@ -1,10 +1,11 @@
 import './Footer.css'
+import { ExternalLink } from 'react-external-link';
 
 const Footer = () => {
     return (
         <footer>
             <div className="footer ">
-                <div className="container">
+                <div className="container-footer">
                     <div className="row">
                         {/* <div className="col-md-12">
                             <a href="#" className="logo_footer"> <img src="images/logo2.png" alt="#" /></a>
@@ -29,10 +30,10 @@ const Footer = () => {
                                     <div className="address">
                                         <h3>Social Link</h3>
                                         <ul className="Menu_footer">
-                                            <li> <a href="https://www.twitter.com/">Twitter</a> </li>
-                                            <li><a href="https://www.facebook.com/">Facebook</a> </li>
-                                            <li><a href="https://www.instagram.com/">Instagram</a> </li>
-                                            <li><a href="https://www.linkedin.com">Linkdin</a> </li>
+                                            <li> <ExternalLink href="https://www.twitter.com/">Twitter</ExternalLink> </li>
+                                            <li><ExternalLink href="https://www.facebook.com/">Facebook</ExternalLink> </li>
+                                            <li><ExternalLink href="https://www.instagram.com/">Instagram</ExternalLink> </li>
+                                            <li><ExternalLink href="https://www.linkedin.com">Linkdin</ExternalLink> </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -54,8 +55,8 @@ const Footer = () => {
 
                 </div>
                 <div className="copyright">
-                    <div className="container">
-                        <p>Copyright © 2019 Design by <a href="https://html.design/">Free Html Templates </a></p>
+                    <div className="container-footer">
+                        <p>Copyright © 2019 Design by <ExternalLink href="https://html.design/">Free Html Templates </ExternalLink></p>
                     </div>
                 </div>
             </div>
