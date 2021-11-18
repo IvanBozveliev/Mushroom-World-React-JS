@@ -30,10 +30,10 @@ const Header = () => {
                                                 <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
                                                 <li> <Link to="/all-recipes">All Recipes</Link> </li>
                                                 <li> <Link to="/contacts">Contact Us</Link> </li>
-                                                <li> <Link to="#">Add Recipe</Link> </li>
-                                                <li> <Link to="#">Add Mushroom</Link> </li>
-                                                <li> <Link to="#">Register</Link> </li>
-                                                <li> <Link to="#">Login</Link> </li>
+                                                <li> <Link to="/add-recipe">Add Recipe</Link> </li>
+                                                <li> <Link to="add-mushroom">Add Mushroom</Link> </li>
+                                                <li> <Link to="/register">Register</Link> </li>
+                                                <li> <Link to="/login">Login</Link> </li>
                                                 <li> <Link to="#">Logout</Link> </li>
                                             </ul>
                                         </nav>

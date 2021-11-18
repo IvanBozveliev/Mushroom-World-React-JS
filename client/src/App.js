@@ -11,6 +11,8 @@ import HomePage from './components/HomePage';
 import ContactUs from './components/ContatUs';
 import Login from './components/Login';
 import Register from './components/Register';
+import AddMush from './components/AddMush';
+import AddRecipe from './components/AddRecipe';
 
 import './App.css';
 
@@ -27,7 +29,9 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/contacts" component={ContactUs} />
           <Route path="/all-mushrooms" component={AllMush} />
+          <Route path="/add-mushroom" component={AddMush} />
           <Route path="/all-recipes" component={AllRecipes} />
+          <Route path="/add-recipe" component={AddRecipe} />
           <Route path="/recipes/:recipeId" component={DetailsRecipes} /> 
           <Route path="/mush/:mushId" component={DetailsMush} />
           <Route path="/login" component={Login} />

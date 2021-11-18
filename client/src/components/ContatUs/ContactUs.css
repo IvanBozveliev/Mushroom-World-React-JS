@@ -84,7 +84,7 @@
     background-color: #428713;
     color: #fff;
     padding: 11px 67px;
-    float: right;
+    float: left;
     transition: all 0.3s ease-in;
 }
 
@@ -94,3 +94,4 @@
     color: #fff;
     transition: all 0.3s ease-in;
 }
+
