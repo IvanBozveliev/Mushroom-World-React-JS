@@ -1,24 +1,23 @@
 import { Link } from 'react-router-dom';
 import "./Recipe.css";
-const Recipe = ({
+
+function Recipe({
     title,
-    imageUrl,
-    mushType
-}) => {
+    imageUrl
+}) {
+
     return (
-        <>
+        <div>
             <li>
-                <Link to="article.html">{title} </Link>
+                <Link to="article.html">{title}</Link>
+                <div className="card-recipe" >
+                    <div className="card-recipe_circle"><img src={imageUrl} /></div>
+                </div>
+                
             </li>
-            <div className="card-recipe">
-
-                {/* <h3 className='poison'>Poison<img src='/images/skull2.png' /></h3>  */}
-                {/* <div className="cta-container"><Link to="#" className="det-link">Details</Link></div> */}
-                <div className="card-recipe_circle"><img src={imageUrl} /></div>
-
-            </div>
-        </>
+        </div>
     )
+
 }
 
 export default Recipe;

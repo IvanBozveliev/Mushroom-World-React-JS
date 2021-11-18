@@ -1,6 +1,8 @@
 import './AllRecipes.css';
 import Recipe from './Recipe';
-import * as recipeServices from '../../services/recipeServices'
+import * as recipeServices from '../../services/recipeServices';
+import soup from '../images/soup1.png';
+
 import {Component} from 'react';
 
 class AllRecipes extends Component{
@@ -30,7 +32,7 @@ class AllRecipes extends Component{
                 </div>
                 <div className="right-element">
                     <div className="images_box">
-                        <figure><img src="/images/mushroom5.jpg" /></figure>
+                        <figure><img src={soup} /></figure>
                     </div>
                 </div>
             </div>

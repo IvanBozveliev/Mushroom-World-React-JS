@@ -109,9 +109,15 @@
     float: left;
 }
 
-.spacer li {
+/* .spacer li {
     font-size: 24px;
 }
+
+
+.spacer li:hover > .card-recipe {
+    font-size: 24px;
+    display: block;
+} */
 
 .wrapper {
     overflow: auto;
@@ -125,6 +131,7 @@ ul {
     margin-left: 20px;
 }
 
+
 ul li a {
     display: block;
 }
@@ -136,4 +143,12 @@ ul li a:hover, ul li a:focus {
 section h2 {
     margin-left: 20px;
     margin-top: 10px
+}
+
+.images_box figure {
+    margin-right: 20px;
+ 
+}
+.images_box figure img {
+    width: 100%;
 }

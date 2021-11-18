@@ -47,37 +47,65 @@
 
 .card-recipe {
     background-color: #3b3b3b;
+    border: 1px solid black;
     bottom: 0;
     box-shadow: 0px 0px 40px 4px rgba(77, 77, 240, 0.315);
     /* height: 440px; */
     /* margin-top: 20px; */
     left: 0;
     overflow: hidden;
-    /* position: relative; */
-    position: absolute;
     right: 0;
     top: 0;
-    width: 400px;
-    margin-top: 245px;
-    margin-left: 80px;
-    /* margin-left: -1em; */
+    /* width: 400px; */
+    /* width: 219px; */
+    width: 206px;
+    margin-top: 22px;
+    margin-left: 200px;
+    margin-left: 180px;
     text-align: center;
-    height: 327px;
+    /* height: 327px; */
+    /* height: 244px; */
+    /* height: 219px; */
+    height: 206px;
+    display: none;
+
 }
 
 .card-recipe_circle {
     background-color: #eef2f7;
     background-size: cover;
-    height: 440px;
+    /* height: 440px; */
     margin-left: -55px;
     /* margin-top: -170px; */
     margin-top: -15px;
-    position: absolute;
-    width: 560px;
+    /* position: absolute; */
+    /* width: 560px; */
+    /* width: 320px; */
+    width: 305px;
+    /* height: 267px; */
+    height: 251px;
     z-index: 1;
 }
 
 .card-recipe_circle>img {
-    width: 81%;
-    height: 96%;
+    /* width: 81%;
+    height: 96%; */
+    width: 70%;
+    /* height: 96%; */
+    height: 87%;
+}
+
+.spacer li {
+    font-size: 24px;
+}
+
+.spacer li:hover > .card-recipe{
+    font-size: 24px;
+    display: block;
+    position: absolute;
+}
+
+.spacer li:hover {
+    font-size: 24px;
+    position: relative;
 }

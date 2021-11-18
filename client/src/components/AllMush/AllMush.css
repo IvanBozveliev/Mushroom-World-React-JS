@@ -104,15 +104,6 @@
     clear: both;
 } */
 
-.spacer {
-    padding: 20px;
-    float: left;
-}
-
-.spacer li {
-    font-size: 24px;
-}
-
 .wrapper {
     overflow: auto;
 }
