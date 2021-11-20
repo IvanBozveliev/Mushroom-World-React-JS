@@ -14,7 +14,12 @@ const productSchema = new mongoose.Schema({
         // minlength: [1, 'Description should consist minimum 5 characters']
 
     },
-    imageUrl: {
+    imageUrlOne: {
+        type: String,
+        required: true,
+        // validate: [/^https?/, 'The imageUrl should be starts with http or https']
+    },
+    imageUrlTwo: {
         type: String,
         required: true,
         // validate: [/^https?/, 'The imageUrl should be starts with http or https']

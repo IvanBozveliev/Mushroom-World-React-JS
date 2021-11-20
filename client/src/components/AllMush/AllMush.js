@@ -3,6 +3,7 @@ import Mush from './Mush';
 import * as mushServices from '../../services/mushServices';
 import mushroom5 from '../images/mushroom5.jpg';
 import {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class AllMush extends Component{
     constructor(props){
@@ -23,6 +24,9 @@ class AllMush extends Component{
     return (
         <section>
             <h2>All Mushrooms</h2>
+            <Link className="sortBtn">Poison</Link>
+            <Link className='sortBtn'>All</Link>
+            <Link className="sortBtn">Edable</Link>
             <div className="wrapper">
                 <div className="spacer-mush">
                     <ul>

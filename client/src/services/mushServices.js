@@ -8,6 +8,14 @@ export const getAll = () => {
               .catch(error => console.log(error))
 }
 
+export const getOne = (mushId) => {
+    console.log(mushId)
+    return fetch(`${url}/${mushId}`)
+              .then(res => res.json())
+            //   .then(data => data)
+              .catch(error => console.log(error))
+}
+
 export const create = () => {
     return fetch(`${url}/create`)
              .then(res => res.json())

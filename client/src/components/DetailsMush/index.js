@@ -1,1 +1,1 @@
-export {default} from './DetailsMush'
+export {default} from './DetailsMush';

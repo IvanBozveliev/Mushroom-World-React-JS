@@ -1,0 +1,77 @@
+.vegetable {
+    background-color: #fff;
+    margin-top: 70px;
+}
+
+.vegetable_shop h3 {
+font-size: 31px;
+line-height: 35px;
+color: #000;
+font-weight: 500;
+padding-bottom: 17px;
+display: block;
+}
+
+
+.vegetable_shop p {
+
+    font-size: 17px;
+    line-height: 28px;
+    color: #000;
+    
+}
+
+
+.vegetable_img span {
+   z-index: 999;
+   display: flex;
+   align-content: center;
+   align-items: center;
+   right: 0;
+   top: 44%;
+   background: #428713;
+   padding: 19px 27px;
+   border-radius: 88px;
+   margin-right: -20px;
+   position: absolute;
+   color: #fff;
+   font-size: 19px;
+}
+
+.margin_top span {
+   z-index: 999;
+   display: flex;
+   align-content: center;
+   align-items: center;
+   right: 0;
+   top: 27%;
+   background: #428713;
+   padding: 19px 25px;
+   border-radius: 88px;
+   margin-right: -20px;
+   position: absolute;
+   color: #fff;
+   font-size: 19px;
+}
+.vegetable_img figure {margin: 0;}
+.vegetable_img figure img {width: 100%}
+.margin_top {
+   margin-top: -90px;
+}
+
+
+
+.titlepage {
+   text-align: center;
+    padding-bottom: 60px;
+}
+.titlepage span {padding-top: 30px; display: inline-block; font-size: 17px; color: #000;}
+.llow {color: #488d1c; font-weight: bold;}
+.titlepage h2 {
+    text-transform: uppercase;
+    padding: 0;
+    font-weight: bold;
+    color: #000;
+    line-height: 55px;
+    font-size: 50px;
+}
