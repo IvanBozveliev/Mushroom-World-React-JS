@@ -8,6 +8,12 @@ export const getAll = () => {
               .catch(error => console.log(error))
 }
 
+export const getOne = (recipeId) => {
+    return fetch(`${url}/${recipeId}`)
+              .then(res => res.json())
+              .catch(error => console.log(error))
+}
+
 export const create = () => {
     return fetch(`${url}/create`)
              .then(res => res.json())

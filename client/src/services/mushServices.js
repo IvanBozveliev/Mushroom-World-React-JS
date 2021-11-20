@@ -9,10 +9,8 @@ export const getAll = () => {
 }
 
 export const getOne = (mushId) => {
-    console.log(mushId)
     return fetch(`${url}/${mushId}`)
               .then(res => res.json())
-            //   .then(data => data)
               .catch(error => console.log(error))
 }
 

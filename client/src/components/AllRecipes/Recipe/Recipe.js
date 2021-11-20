@@ -3,13 +3,14 @@ import "./Recipe.css";
 
 function Recipe({
     title,
-    imageUrl
+    imageUrl,
+    _id
 }) {
 
     return (
         <div>
             <li>
-                <Link to="article.html">{title}</Link>
+                <Link to={`/recipes/details/${_id}`}>{title}</Link>
                 <div className="card-recipe" >
                     <div className="card-recipe_circle"><img src={imageUrl} /></div>
                 </div>

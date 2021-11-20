@@ -23,7 +23,9 @@ class AllRecipes extends Component{
     render(){
     return (
         <section>
-            <h2>All Recipes</h2>
+             <div className="titlepage">
+                <h2>All <strong className="llow">Recipes</strong></h2>
+            </div>
             <div className="wrapper">
                 <div className="spacer">
                     <ul>

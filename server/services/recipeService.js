@@ -23,7 +23,7 @@ function create(data, userId) {
 }
 
 function getOne(id) {
-   return Recipe.findById(id).exec().lean();
+   return Recipe.findById(id).lean();
 }
 
 async function getAll(query) {

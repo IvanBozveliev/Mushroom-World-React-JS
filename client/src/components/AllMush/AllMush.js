@@ -23,10 +23,14 @@ class AllMush extends Component{
     render(){
     return (
         <section>
-            <h2>All Mushrooms</h2>
+            <div className="titlepage">
+                <h2>All <strong className="llow">Mushrooms</strong></h2>
+            </div>
+            <div className="btns">
             <Link className="sortBtn">Poison</Link>
             <Link className='sortBtn'>All</Link>
             <Link className="sortBtn">Edable</Link>
+            </div>
             <div className="wrapper">
                 <div className="spacer-mush">
                     <ul>
