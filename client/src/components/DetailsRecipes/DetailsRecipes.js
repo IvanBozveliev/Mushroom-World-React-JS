@@ -25,18 +25,16 @@ const DetailsRecipes = ({
                     <div className="product-info">
                         <div className="product-text">
                             <div className="product-text">
-                                <h1>Dish: {recipe.title}</h1>
-                                <h4><b>Time:</b> 20 min</h4>
-                                <h4><b>Year:</b> 2021</h4>
-                                <h4><b>INGREDIENTS:</b> 2021</h4>
+                                <h1>{recipe.title}</h1>
+                                <h4><b>Serves:</b> 5</h4>
+                                <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
+                                <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
+                                <h4><b>Ingredients:</b><br/>&emsp;{recipe.ingredients}</h4>
                                 <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
-                                <p>Description: {recipe.description}</p>
+                                <p>Directions: {recipe.directions}</p>
 
                                 {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}
-                                <p>People rented this housing: Alex Petkov, Ivan Dobrev</p>
-
-                                {/* <!-- If not display: --> */}
-                                <p>People rented this housing: There are no tenants yet.</p>
+                                <p>Author: {recipe.creator}</p>
                             </div>
                         </div>
 

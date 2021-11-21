@@ -60,7 +60,8 @@ const AddMush = ({
                                      <input id="secondImage" className="contactus" placeholder="Type Image URL" type="text" name="imageUrlTwo" />
                                  </div>
                                  <div className="col-md-12">
-                                     <textarea className="textarea" placeholder="Distribution" type="text" name="description"></textarea>
+                                     <label htmlFor="distribution">Distribution</label>
+                                     <textarea id="distribution" className="textarea" placeholder="Distribution Summary" type="text" name="description"></textarea>
                                  </div>
                                  <div className="col-md-12">
                                      <label htmlFor="mush">Type:  </label>

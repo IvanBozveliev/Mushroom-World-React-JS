@@ -1,3 +1,5 @@
+import './AddRecipe.css';
+
 const AddRecipe = () => {
    return(
     <div id="contact" className="contact">
@@ -19,19 +21,32 @@ const AddRecipe = () => {
                             <div className="col-md-12">
 
                                 <div className="col-md-12">
-                                    <input className="contactus" placeholder="Your Name" type="text" name="Your Name" />
+                                    <label htmlFor="title">Title</label>
+                                    <input id="title" className="contactus" placeholder="Title" type="text" name="title" />
                                 </div>
                                 <div className="col-md-12">
-                                    <input className="contactus" placeholder="Email" type="text" name="Email" />
+                                    <label htmlFor="serves">Serves</label>                                    
+                                    <input id="serves" className="contactus" placeholder="Num of serves" type="number" name="serves" />
                                 </div>
                                 <div className="col-md-12">
-                                    <input className="contactus" placeholder="Phone Number" type="text" name="Phone Number" />
+                                    <label htmlFor="preparation">Preparation Time</label>
+                                    <input id="preparation" className="contactus" placeholder="Preparation time" type="number" name="preparationTime" />
                                 </div>
                                 <div className="col-md-12">
-                                    <textarea className="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    <label htmlFor="cooking">Cooking Time</label>
+                                    <input id="cooking" className="contactus" placeholder="Cooking time" type="number" name="cookingTime" />
                                 </div>
+                                <div className="col-md-12">
+                                    <label htmlFor="ingredients">Ingredients</label>
+                                    <textarea id="ingredients" className="textarea" placeholder="1 tomato, 8 arugula etc." type="text" name="ingredients"></textarea>
+                                </div>
+                                <div className="col-md-12">
+                                    <label htmlFor="directions">Directions</label>
+                                    <textarea id="directions" className="textarea" placeholder="Directions Summary" type="text" name="directions"></textarea>
+                                </div>
+                                
                                 <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <button className="send">Send</button>
+                                    <button className="send">Create</button>
                                 </div>
                             </div>
                         </div>
