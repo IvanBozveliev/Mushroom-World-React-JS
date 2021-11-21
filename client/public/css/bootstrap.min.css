@@ -219,8 +219,14 @@ th {
 }
 
 label {
+    /* display: inline-block;
+    margin-bottom: .5rem */
     display: inline-block;
-    margin-bottom: .5rem
+    margin-bottom: 0.5rem;
+    background-color: green;
+    color: white;
+    padding: 4px;
+    border-top-right-radius: 20px;
 }
 
 button {

@@ -1,7 +1,7 @@
 const Product = require('../models/Product');
 
 function create(data, userId) {
-
+   
    if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
       throw new Error('You can not have empty fields!')
    }

@@ -26,6 +26,7 @@ const DetailsMush = ({
                     <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
                         <div className="vegetable_shop">
                             <h3>{mush.productname}</h3>
+                            <h4 className={mush.mushType == "edable" ? "edable" : "poison"}>{mush.mushType}</h4>
                             <p><b> Distribution: </b>{mush.description}</p>
                         </div>
                     </div>
