@@ -29,8 +29,12 @@ const DetailsRecipes = ({
                                 <h4><b>Serves:</b> 5</h4>
                                 <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
                                 <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
-                                <h4><b>Ingredients:</b><br/>&emsp;{recipe.ingredients}</h4>
-                                <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
+                                <h4><b>Ingredients:</b><br/><br/>{recipe.ingredients}</h4>
+                                <div className='likes'>
+                                  <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
+                                  <button>Like</button>
+                                  <p>You liked this recipe!</p>
+                                </div>
                                 <p>Directions: {recipe.directions}</p>
 
                                 {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}

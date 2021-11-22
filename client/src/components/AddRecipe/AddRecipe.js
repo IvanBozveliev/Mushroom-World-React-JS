@@ -1,6 +1,39 @@
 import './AddRecipe.css';
 
-const AddRecipe = () => {
+import * as recipeServices from '../../services/recipeServices';
+
+const AddRecipe = ({
+    history
+}) => {
+
+   const onRecipeCreate = (e) =>{
+       e.preventDefault();
+
+       let formData = new FormData(e.currentTarget);
+
+       let title = formData.get('title');
+       let serves = formData.get('serves');
+       let directions = formData.get('directions');
+       let preparationTime = formData.get('preparationTime');
+       let cookingTime = formData.get('cookingTime');
+       let ingredients = formData.get('ingredients');
+       let imageUrl = formData.get('imageUrl');
+       let likes = formData.get('likes');     
+
+       recipeServices.create({
+           title,
+           serves,
+           directions,
+           preparationTime,
+           cookingTime,
+           ingredients,
+           imageUrl,
+           likes
+      
+       })
+        .then(res => history.push('/all-recipes'))
+
+   }
    return(
     <div id="contact" className="contact">
     <div className="container">
@@ -16,7 +49,7 @@ const AddRecipe = () => {
             <div className="row">
 
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <form className="contact_bg">
+                    <form className="contact_bg" onSubmit={onRecipeCreate} method="POST">
                         <div className="row">
                             <div className="col-md-12">
 
@@ -44,7 +77,10 @@ const AddRecipe = () => {
                                     <label htmlFor="directions">Directions</label>
                                     <textarea id="directions" className="textarea" placeholder="Directions Summary" type="text" name="directions"></textarea>
                                 </div>
-                                
+                                <div className="col-md-12">
+                                    <label htmlFor="image">Image</label>
+                                    <input id="image" className="contactus" placeholder="Add image URL..." type="text" name="imageUrl" />
+                                </div>
                                 <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <button className="send">Create</button>
                                 </div>
