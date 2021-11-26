@@ -3,7 +3,7 @@ const {SALT_ROUNDS, SECRET} = require('../config/config')
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-const register = async({username, password}) =>{
+const register = async(username, password) =>{
 
      let salt = await bcrypt.genSalt(SALT_ROUNDS);
      let hash = await bcrypt.hash(password, salt);
@@ -12,9 +12,9 @@ const register = async({username, password}) =>{
      return user.save();
 }
 
-const login = async({username, password}) => {
+const login = async(username, password) => {
 
-     let user = await User.findOne({username: username}).exec();
+     let user = await User.findOne({username: username})//.exec();
      
      if(!user) throw {message: 'User not found'};
 

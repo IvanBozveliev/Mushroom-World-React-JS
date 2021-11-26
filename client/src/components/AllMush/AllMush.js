@@ -27,9 +27,9 @@ class AllMush extends Component{
                 <h2>All <strong className="llow">Mushrooms</strong></h2>
             </div>
             <div className="btns">
-            <Link className="sortBtn">Poison</Link>
-            <Link className='sortBtn'>All</Link>
-            <Link className="sortBtn">Edable</Link>
+            {/* <Link className="sortBtn" to={''}>Poison</Link>
+            <Link className='sortBtn' to={}>All</Link>
+            <Link className="sortBtn" to={}>Edable</Link> */}
             </div>
             <div className="wrapper">
                 <div className="spacer-mush">

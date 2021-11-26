@@ -27,8 +27,14 @@ export const create = (recipedata) => {
              .catch(error => console.log(error))
 }
 
-export const edit = () => {
-    return fetch(`${url}/edit`)
+export const edit = (id, recipedata) => {
+    return fetch(`${url}/${id}`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(recipedata)
+    })
              .then(res => res.json())
              .then(data => data)
              .catch(error => console.log(error))

@@ -1,4 +1,48 @@
-const Login = () => {
+import * as authService from '../../services/authService';
+import {useHistory} from 'react-router-dom';
+
+import { useState } from "react";
+
+const Login = ({
+    onLogin
+}) => {
+     const [error, setError] = useState('');
+
+    const history = useHistory();
+    
+    const onLoginHandler = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.currentTarget);
+
+        let username = formData.get('username');
+        let password = formData.get('password');
+
+
+        authService.login({username, password})
+           
+            .then(res => { 
+                
+                if (res.username) {
+
+                    sessionStorage.setItem('username', res.username)
+                    sessionStorage.setItem('token', res.token)
+                    
+                    onLogin(res.username)
+                    history.push('/');
+                    return;
+                }
+                
+                else {
+                    setError(res.message)
+                    return
+                }
+
+            })
+            .catch(error => console.log(error))
+
+    }
+    
     return (
         <div id="contact" className="contact">
             <div className="container">
@@ -10,26 +54,22 @@ const Login = () => {
                     </div>
 
                 </div>
+                {error && <div className="error">{error}</div>}
                 <div className="white_color">
                     <div className="row">
 
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <form className="contact_bg">
+                            <form className="contact_bg" onSubmit={onLoginHandler} method="POST">
                                 <div className="row">
                                     <div className="col-md-12">
 
                                         <div className="col-md-12">
-                                            <input className="contactus" placeholder="Your Name" type="text" name="Your Name" />
+                                            <input className="contactus" placeholder="Your Name" type="text" name="username" />
                                         </div>
                                         <div className="col-md-12">
-                                            <input className="contactus" placeholder="Email" type="text" name="Email" />
+                                            <input className="contactus" placeholder="Your Password" type="password" name="password" />
                                         </div>
-                                        <div className="col-md-12">
-                                            <input className="contactus" placeholder="Phone Number" type="text" name="Phone Number" />
-                                        </div>
-                                        <div className="col-md-12">
-                                            <textarea className="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                                        </div>
+
                                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                             <button className="send">Send</button>
                                         </div>

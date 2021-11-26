@@ -34,7 +34,7 @@ const Header = () => {
                                                 <li> <Link to="add-mushroom">Add Mushroom</Link> </li>
                                                 <li> <Link to="/register">Register</Link> </li>
                                                 <li> <Link to="/login">Login</Link> </li>
-                                                <li> <Link to="#">Logout</Link> </li>
+                                                <li> <Link to="/logout">Logout</Link> </li>
                                             </ul>
                                         </nav>
 
