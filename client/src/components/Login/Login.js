@@ -27,6 +27,7 @@ const Login = ({
 
                     sessionStorage.setItem('username', res.username)
                     sessionStorage.setItem('token', res.token)
+                    sessionStorage.setItem('id', res.id)
                     
                     onLogin(res.username)
                     history.push('/');

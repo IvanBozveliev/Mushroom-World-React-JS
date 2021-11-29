@@ -28,7 +28,7 @@ const AddRecipe = ({
            cookingTime,
            ingredients,
            imageUrl,
-           creator: sessionStorage.username,
+           author: sessionStorage.username,
            likes
       
        })

@@ -2,6 +2,21 @@
     text-align: center;
 }
 
+.txt {
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 11px;
+    text-decoration: none;
+}
+
+.user {
+    color: rgb(8, 167, 2);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 11px;
+}
+
 .logo {
     float: left;
     padding-bottom: 6px;
@@ -640,13 +655,13 @@ nav.main-menu {
     border-bottom: solid #eee 1px;
 }
 
-.main-menu ul>li .sub-down li a::before {}
+/* .main-menu ul>li .sub-down li a::before {} */
 
 .main-menu ul>li .sub-down li a:hover {
     color: #111111;
 }
 
-.main-menu ul>li .sub-down li a:hover::before {}
+/* .main-menu ul>li .sub-down li a:hover::before {} */
 
 .main-menu ul li:first-child {
     margin-left: 0;

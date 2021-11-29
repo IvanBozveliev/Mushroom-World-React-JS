@@ -24,6 +24,7 @@ export const create = (recipedata) => {
     return fetch(url, {
         method: "POST",
         headers: {
+            'Authorization': 'Bearer ' + sessionStorage.token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(recipedata)

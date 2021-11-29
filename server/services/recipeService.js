@@ -18,7 +18,7 @@ function create(data, userId) {
    //     throw new Error('The image should be starts with http or https')
    // }
 
-   let recipe = new Recipe({ ...data})//, creator: userId });
+   let recipe = new Recipe({ ...data});
    return recipe.save();
 }
 

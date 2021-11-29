@@ -3,8 +3,36 @@ import mushlogo2 from '../images/mushlogo2.png';
 
 import './Header.css';
 
-const Header = () => {
+const Header = ({
+    isAuthenticated
+}) => {
+    const username = sessionStorage.getItem('username');
+
+    let guestNav = (
+        <>
+            <li> <Link to="/">Home</Link> </li>
+            <li> <Link to="/about">About</Link> </li>
+            <li> <Link to="/register">Register</Link> </li>
+            <li> <Link to="/login">Login</Link> </li>
+        </>
+    );
+
+    let userNav = (
+        <>
+        
+        <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
+        <li> <Link to="/add-mushroom">Add Mushroom</Link> </li>
+        <li> <Link to="/all-recipes">All Recipes</Link> </li>
+        <li> <Link to="/add-recipe">Add Recipe</Link> </li>
+        <li><p className='txt'>[ Welcome, <strong className='llow'>{username} </strong> ] </p></li>
+        <li> <Link to="/logout">Logout</Link> </li>
+        </>
+    )
+
+    
     return (
+
+
         <header>
             <div className="header-top">
                 <div className="header">
@@ -25,16 +53,16 @@ const Header = () => {
                                     <div className="limit-box">
                                         <nav className="main-menu ">
                                             <ul className="menu-area-main">
-                                                <li> <Link to="/">Home</Link> </li>
+                                                {isAuthenticated ? userNav : guestNav}
+                                                {/* <li> <Link to="/">Home</Link> </li>
                                                 <li> <Link to="/about">About</Link> </li>
                                                 <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
                                                 <li> <Link to="/all-recipes">All Recipes</Link> </li>
-                                                <li> <Link to="/contacts">Contact Us</Link> </li>
                                                 <li> <Link to="/add-recipe">Add Recipe</Link> </li>
                                                 <li> <Link to="add-mushroom">Add Mushroom</Link> </li>
                                                 <li> <Link to="/register">Register</Link> </li>
                                                 <li> <Link to="/login">Login</Link> </li>
-                                                <li> <Link to="/logout">Logout</Link> </li>
+                                                <li> <Link to="/logout">Logout</Link> </li> */}
                                             </ul>
                                         </nav>
 

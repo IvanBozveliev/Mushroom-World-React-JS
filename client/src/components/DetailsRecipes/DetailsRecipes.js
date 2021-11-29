@@ -26,6 +26,7 @@ const DetailsRecipes = ({
                         <div className="product-text">
                             <div className="product-text">
                                 <h1>{recipe.title}</h1>
+                                <h4><b className='author'>Author: {recipe.author}</b></h4>
                                 <h4><b>Serves:</b> 5</h4>
                                 <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
                                 <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
@@ -36,9 +37,8 @@ const DetailsRecipes = ({
                                   <p>You liked this recipe!</p>
                                 </div>
                                 <p>Directions: {recipe.directions}</p>
-
                                 {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}
-                                <p>Author: {recipe.creator}</p>
+                                
                             </div>
                         </div>
 

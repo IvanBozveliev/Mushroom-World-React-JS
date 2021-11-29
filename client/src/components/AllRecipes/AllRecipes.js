@@ -29,7 +29,7 @@ class AllRecipes extends Component {
                 <div className="wrapper">
                     <div className="spacer">
                         <ul>
-                    
+                          
                             {this.state.products.length != 0 ? this.state.products.map(x => <Recipe key={x._id} {...x} />) : <h1>Still haven`t recipes...</h1>}
                             
                         </ul>

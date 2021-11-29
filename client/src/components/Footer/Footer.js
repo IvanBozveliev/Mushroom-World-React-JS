@@ -40,12 +40,14 @@ const Footer = () => {
 
 
                                 <div className="col-lg-4 col-md-6 col-sm-6 ">
-                                    <div className="address">
-                                        <h3>Newsletter</h3>
-                                        <form className="news">
-                                            <input className="newslatter" placeholder="Enter your email" type="text" name=" Enter your email" />
-                                            <button className ="submit">Subscribe</button>
-                                        </form>
+                                <div className="address">
+                                        <h3>Mushroom sites</h3>
+                                        <ul className="Menu_footer">
+                                            <li><ExternalLink href="https://www.first-nature.com/">First-Nature</ExternalLink> </li>
+                                            <li><ExternalLink href="https://www.mushroomfestival.org/">Mushroomfestival</ExternalLink> </li>
+                                            <li> <ExternalLink href="https://www.mykoweb.com/">Mykoweb</ExternalLink> </li>
+                                            <li><ExternalLink href="http://www.somamushrooms.org/">Somamushrooms</ExternalLink> </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

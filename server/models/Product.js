@@ -30,8 +30,13 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     creator: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    },
+    author: {
         type: String
     }
+    
     
 })
 

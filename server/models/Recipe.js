@@ -31,7 +31,11 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     creator: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    },
+    author: {
+        type: String
     },
     likes: [{
         type: mongoose.Types.ObjectId,

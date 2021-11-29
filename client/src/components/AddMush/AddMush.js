@@ -23,7 +23,7 @@ const AddMush = ({
             imageUrlOne,
             imageUrlTwo,
             mushType,
-            creator: sessionStorage.usename
+            author: sessionStorage.username
         })
 
         .then((res) => {

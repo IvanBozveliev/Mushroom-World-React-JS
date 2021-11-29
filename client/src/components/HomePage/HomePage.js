@@ -27,7 +27,7 @@ const HomePage = () => {
                                                 <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
-                                            <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                                           
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -54,7 +54,7 @@ const HomePage = () => {
                                                 <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
-                                            <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                                            
                                         </div>
                                     </div>
 
@@ -84,7 +84,7 @@ const HomePage = () => {
                                                 <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
-                                            <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                                           
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">

@@ -23,7 +23,8 @@ const login = async(username, password) => {
      if(!isMatch) throw {message: 'Password does not match'};
 
      let token = jwt.sign({_id: user._id, username: user.username}, SECRET, {expiresIn: '1d'});
-     return token;
+    
+     return {token, user};
 }
 
 module.exports = {

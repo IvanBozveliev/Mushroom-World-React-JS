@@ -17,7 +17,7 @@ router.get('/:recipeId', async (req, res) => {
 
 router.post("/" , async (req, res) =>{
     
-    await recipeService.create({...req.body})//, creator: req.user._id});
+    await recipeService.create({...req.body, creator: req.user._id});
     res.json({ok: true});
            
 });

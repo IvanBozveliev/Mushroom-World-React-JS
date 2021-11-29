@@ -34,7 +34,7 @@ class AllMush extends Component{
             <div className="wrapper">
                 <div className="spacer-mush">
                     <ul>
-                        {this.state.products.map(x => <Mush key = {x._id} {...x}/>)}
+                    {this.state.products.length != 0 ? this.state.products.map(x => <Mush key={x._id} {...x} />) : <h1>Still haven`t mushrooms...</h1>}
                     </ul>
                 </div>
                 <div className="right-element">

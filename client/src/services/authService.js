@@ -33,7 +33,7 @@ export const logout = () => {
         },
         body: JSON.stringify()
     })
-        .then(res => console.log(res) )//res.json())
+        .then(res => res.json())
 }
 
 export const getUser = () => {

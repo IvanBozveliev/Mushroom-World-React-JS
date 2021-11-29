@@ -23,9 +23,9 @@ router.post('/login', isGuest, async (req, res) => {
         //     throw ({message: 'Password should be at least 5 characters long and should consist only english letters and digits!'})
         // }
 
-        let token = await authService.login(username, password)
+        let {token, user} = await authService.login(username, password)
         res.cookie(COOKIE_NAME, token)
-        res.status(200).json({username, token}) 
+        res.status(200).json({username, token, id: user._id}) 
     } catch (error) {
         res.status(400).send(error)
 

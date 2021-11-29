@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './components/About';
 import HomePage from './components/HomePage';
-import ContactUs from './components/ContatUs';
 import Login from './components/Login';
 import Register from './components/Register';
 import AddMush from './components/AddMush';
@@ -55,15 +54,12 @@ function App() {
 
           <Route path='/' component={HomePage} exact />
           <Route path="/about" component={About} />
-          <Route path="/contacts" component={ContactUs} />
           <Route path="/all-mushrooms" component={AllMush} />
           <Route path="/add-mushroom" component={AddMush} />
           <Route path="/all-recipes" component={AllRecipes} />
           <Route path="/add-recipe" component={AddRecipe} />
           <Route path="/recipes/details/:recipeId" component={DetailsRecipes} /> 
           <Route path="/mush/details/:mushId" component={DetailsMush} />
-          {/* <Route path="/login" component={Login} /> */}
-          {/* <Route path="/register" component={Register} /> */}
           <Route path="/register" render={() => <Register onLogin={onLogin} />} />
           <Route path="/login" render={() => <Login onLogin={onLogin} />} /> 
           <Route path="/logout" render={() => <Logout onLogin={onLogout} />} />
