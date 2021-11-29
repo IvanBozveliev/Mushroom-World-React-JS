@@ -5,6 +5,7 @@ const AddMush = ({
     history
 }) => {
 
+
     const onMushCreate = (e) => {
         e.preventDefault();
 
@@ -21,7 +22,8 @@ const AddMush = ({
             description,
             imageUrlOne,
             imageUrlTwo,
-            mushType
+            mushType,
+            creator: sessionStorage.usename
         })
 
         .then((res) => {

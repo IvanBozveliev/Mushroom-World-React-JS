@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 function create(data, userId) {
    
    if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
-      throw new Error('You can not have empty fields!')
+      throw new Error('Empty fields!')
    }
 
    // if(data.title.length < 4){
@@ -18,7 +18,7 @@ function create(data, userId) {
    //     throw new Error('The image should be starts with http or https')
    // }
 
-   let product = new Product({ ...data, creator: userId });
+   let product = new Product({ ...data});
    return product.save();
 }
 

@@ -4,11 +4,7 @@ export const login = async (data) => {
     
     let res = await fetch(`${url}/login`, {
         method: 'POST',
-       // mode: 'cors',
-        // cache:'no-cache',
-        // credentials: 'same-origin',
         headers: {
-            //'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
@@ -43,6 +39,11 @@ export const logout = () => {
 export const getUser = () => {
     let username = sessionStorage.getItem('username')
     return username;
+}
+
+export const getToken = () => {
+    let token = sessionStorage.getItem('token')
+    return token;
 }
 
 export const logoutUser = () => {

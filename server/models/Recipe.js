@@ -31,8 +31,7 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     creator: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
+        type: String,
     },
     likes: [{
         type: mongoose.Types.ObjectId,
