@@ -9,6 +9,13 @@
     margin-top: 11px;
     text-decoration: none;
 }
+.divName{
+    display: inline-block;
+    margin-left: 120px;
+}
+.logoutClass {
+    margin-top: -4px
+}
 
 .user {
     color: rgb(8, 167, 2);
