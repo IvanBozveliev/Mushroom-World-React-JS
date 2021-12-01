@@ -176,3 +176,12 @@ span {
     background-color: rgba(135, 167, 98, 0.911);
     text-align: center;
 }
+
+.btnsRecipes {
+    /* margin-left: 450px;
+    margin-top:-44px; */
+    margin: 0 auto;
+    margin-bottom: 42px;
+    margin-left: 50px;
+
+}
