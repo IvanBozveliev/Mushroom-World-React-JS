@@ -34,7 +34,7 @@ import {useHistory} from 'react-router-dom';
 import { useEffect } from 'react';
 
 const Logout = ({
-    onLogout
+   onLogout
 }) => {
 
    const history = useHistory();
@@ -43,7 +43,10 @@ const Logout = ({
      
      authService.logout()
       .then(() => {
+          sessionStorage.removeItem('username');
+          sessionStorage.removeItem('token');
           onLogout();
+          
           history.push('/login')
       })
 

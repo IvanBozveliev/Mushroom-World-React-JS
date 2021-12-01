@@ -1,16 +1,19 @@
 import './AllMush.css';
 import Mush from './Mush';
+import NavMush from './NavMush';
+
 import * as mushServices from '../../services/mushServices';
 import mushroom5 from '../images/mushroom5.jpg';
 import {Component} from 'react';
-import {Link} from 'react-router-dom';
+
 
 class AllMush extends Component{
     constructor(props){
         super(props)
 
         this.state ={
-            products: []
+            products: [],
+            currentCategory: 'all'
         }
     }
 
@@ -20,6 +23,18 @@ class AllMush extends Component{
      
     }
 
+    componentDidUpdate(prevProps) {
+
+        const mushType = this.props.match.params.mushType;
+        
+        if(prevProps.match.params.mushType === mushType){
+            return;
+        }
+
+        mushServices.getAll(mushType)
+          .then(res => this.setState({products: res, currentCategory: mushType}))
+    }
+
     render(){
     return (
         <section>
@@ -27,9 +42,7 @@ class AllMush extends Component{
                 <h2>All <strong className="llow">Mushrooms</strong></h2>
             </div>
             <div className="btns">
-            {/* <Link className="sortBtn" to={''}>Poison</Link>
-            <Link className='sortBtn' to={}>All</Link>
-            <Link className="sortBtn" to={}>Edable</Link> */}
+             <NavMush />
             </div>
             <div className="wrapper">
                 <div className="spacer-mush">

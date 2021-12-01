@@ -4,13 +4,15 @@ import * as recipeServices from '../../services/recipeServices';
 import soup from '../images/soup1.png';
 
 import { Component } from 'react';
+import NavRecipe from './NavRecipe';
 
 class AllRecipes extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            products: []
+            products: [],
+            currentCategory: ''
         }
     }
 
@@ -20,18 +22,34 @@ class AllRecipes extends Component {
 
     }
 
+    componentDidUpdate(prevProps){
+        
+        
+        const cookingTime = this.props.match.params.cookingTime;
+        console.log(cookingTime)
+        if(prevProps.match.params.cookingTime == cookingTime){
+            return
+        }
+
+        recipeServices.getAll(cookingTime)
+            .then(data => this.setState({ products: data, currentCategory: cookingTime }))
+    }
+
     render() {
         return (
             <section>
                 <div className="titlepage">
                     <h2>All <strong className="llow">Recipes</strong></h2>
                 </div>
+                <div className="btnsRecipe">
+                    <NavRecipe />
+                </div>
                 <div className="wrapper">
                     <div className="spacer">
                         <ul>
-                          
+
                             {this.state.products.length != 0 ? this.state.products.map(x => <Recipe key={x._id} {...x} />) : <h1>Still haven`t recipes...</h1>}
-                            
+
                         </ul>
                     </div>
                     <div className="right-element">

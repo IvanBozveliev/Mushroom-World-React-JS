@@ -1,39 +1,12 @@
-.sortBtn {
-    font-size: 16px;
-    border: #1a1b19 solid 1px;
-    background-color: #43960f;
-    color: #fff;
-    padding: 9px 0px;
-    max-width: 100px;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 6px;
-}
-
-.sortBtn:hover{
-    font-size: 16px;
-    text-decoration: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 9px 0px;
-    max-width: 100px;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 6px;
-    background-color: #ff7e1d;
-    border: #ff7e1d solid 1px;
-    transition: all 0.3s ease-in;
-}
-.btns{
+.btns {
     /* margin-left: 450px;
     margin-top:-44px; */
     margin: 0 auto;
     margin-bottom: 42px;
+    margin-left: 50px;
+
 }
+
 .wrapper {
     overflow: auto;
 }

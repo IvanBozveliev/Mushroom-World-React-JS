@@ -1,8 +1,14 @@
 const url = 'http://localhost:5000/recipes';
 
-export const getAll = () => {
+export const getAll = (cookingTime = '') => {
 
-    return fetch(url,{
+    let newUrl = url;
+    
+    if(cookingTime && cookingTime !== ''){
+        newUrl = url + `?cookingTime=${cookingTime}`
+    }
+
+    return fetch(newUrl,{
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,

@@ -1,8 +1,13 @@
 const url = 'http://localhost:5000/products';
 
-export const getAll = () => {
+export const getAll = (mushType = '') => {
 
-    return fetch(url, {
+    let newUrl = url;
+
+    if(mushType && mushType !== 'all'){
+        newUrl = url + `?mushType=${mushType}`
+    }
+    return fetch(newUrl, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,

@@ -3,9 +3,7 @@ import mushlogo2 from '../images/mushlogo2.png';
 
 import './Header.css';
 
-const Header = ({
-    isAuthenticated
-}) => {
+const Header = () => {
     const username = sessionStorage.getItem('username');
 
     let guestNav = (
@@ -53,16 +51,9 @@ const Header = ({
                                     <div className="limit-box">
                                         <nav className="main-menu ">
                                             <ul className="menu-area-main">
-                                                {isAuthenticated ? userNav : guestNav}
-                                                {/* <li> <Link to="/">Home</Link> </li>
-                                                <li> <Link to="/about">About</Link> </li>
-                                                <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
-                                                <li> <Link to="/all-recipes">All Recipes</Link> </li>
-                                                <li> <Link to="/add-recipe">Add Recipe</Link> </li>
-                                                <li> <Link to="add-mushroom">Add Mushroom</Link> </li>
-                                                <li> <Link to="/register">Register</Link> </li>
-                                                <li> <Link to="/login">Login</Link> </li>
-                                                <li> <Link to="/logout">Logout</Link> </li> */}
+
+                                                {username ? userNav : guestNav}
+                                                
                                             </ul>
                                         </nav>
 

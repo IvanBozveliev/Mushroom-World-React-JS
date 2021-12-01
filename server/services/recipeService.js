@@ -27,11 +27,15 @@ function getOne(id) {
 }
 
 async function getAll(query) {
-
+   
    let recipes = await Recipe.find().exec();
 
-   if (query?.search) {
-      recipes = recipes.filter(x => x.name.toLowerCase().includes(query.search));
+   if (query.cookingTime == "min") {
+      recipes = recipes.sort((a, b) => a.cookingTime - b.cookingTime);
+   }
+
+   if (query.cookingTime == "max"){
+      recipes = recipes.sort((a,b) => b.cookingTime - a.cookingTime)
    }
    // if (query.from) {
    //    products = products.filter(x => Number(x.difficultyLevel) <= query.from);

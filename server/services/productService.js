@@ -27,19 +27,17 @@ function getOne(id) {
 }
 
 async function getAll(query) {
-
-   let products = await Product.find().exec();
-
-   if (query?.search) {
-      products = products.filter(x => x.name.toLowerCase().includes(query.search));
+   
+   let products = await Product.find();
+  
+   if(query.mushType == 'edable'){
+      products = products.filter(x => x.mushType == 'edable')
    }
-   // if (query.from) {
-   //    products = products.filter(x => Number(x.difficultyLevel) <= query.from);
-   // }
-   // if (query.to) {
-   //    products = products.filter(x => Number(x.difficultyLevel) >= query.to);
-   // }
 
+   if(query.mushType == 'poison'){
+      products = products.filter(x => x.mushType == 'poison')
+   }
+   
    return products
 }
 

@@ -4,7 +4,7 @@ const router = Router();
 const recipeService = require('../services/recipeService');
 
 router.get("/" ,(req, res) =>{
-   recipeService.getAll()
+   recipeService.getAll(req.query)
     .then(products => res.json(products))
 
 });

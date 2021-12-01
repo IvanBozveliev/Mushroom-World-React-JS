@@ -54,9 +54,11 @@ function App() {
 
           <Route path='/' component={HomePage} exact />
           <Route path="/about" component={About} />
-          <Route path="/all-mushrooms" component={AllMush} />
+          <Route path="/all-mushrooms" component={AllMush} exact/>
+          <Route path="/all-mushrooms/categories/:mushType" component={AllMush} exact/>
           <Route path="/add-mushroom" component={AddMush} />
-          <Route path="/all-recipes" component={AllRecipes} />
+          <Route path="/all-recipes" component={AllRecipes} exact/>
+          <Route path="/all-recipes/categories/:cookingTime" component={AllRecipes} exact/>
           <Route path="/add-recipe" component={AddRecipe} />
           <Route path="/recipes/details/:recipeId" component={DetailsRecipes} /> 
           <Route path="/mush/details/:mushId" component={DetailsMush} />
