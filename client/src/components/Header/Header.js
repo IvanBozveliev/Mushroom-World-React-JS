@@ -40,7 +40,7 @@ const Header = () => {
                                 <div className="full">
                                     <div className="center-desk">
                                         <div className="logo">
-                                            <p><img src={mushlogo2} alt="#" />MushWorld</p>
+                                            <p><img src={mushlogo2} alt="#" /><Link to="/">MushWorld</Link></p>
                                         </div>
                                     </div>
                                 </div>

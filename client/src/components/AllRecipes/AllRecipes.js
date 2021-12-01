@@ -26,7 +26,7 @@ class AllRecipes extends Component {
         
         
         const cookingTime = this.props.match.params.cookingTime;
-        console.log(cookingTime)
+       
         if(prevProps.match.params.cookingTime == cookingTime){
             return
         }
