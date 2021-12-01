@@ -24,7 +24,7 @@ const HomePage = () => {
                                             <h1>World of Mushrooms</h1>
                                             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
                                             <form className="Vegetable">
-                                                <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
+                                                <input className="Vegetable_fom" placeholder="Find Mushroom..." type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
                                            
