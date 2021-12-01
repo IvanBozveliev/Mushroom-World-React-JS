@@ -36,34 +36,15 @@
     /* padding-top: 52px; */
     padding-top: 17px;
     font-size: 28px;
+    font-weight: bold;
     color: #000000;
     text-decoration: underline;
 }
 
 .product-text h1,
 .product-btn p {
-    font-family: 'Bentham', serif;
-}
-
-.likes {
-  display: inline-block;
-}
-
-.likes button {
-    position: absolute;
-    margin-left: 100px;
-    margin-top: -32px;
-    width: 53px;
-    height: 30px;
-    border-radius: 10px;
-    background: #43960f;
-    color: white;
-    font-weight: bold;
-    border-color: #424141;
-}
-
-.likes:hover{
-    cursor: pointer;
+    /* font-family: 'Bentham', serif; */
+    font-family: 'Playfair Display', serif;
 }
 
 .product-text h2 {
@@ -98,17 +79,23 @@
     font-family: 'Bentham', serif;
 }
 
-.product-text>p {
+.product-text p {
     height: auto;
-    margin: 40px 0 0 58px;
+    margin: 10px 0 0 18px;
     width: 100%;
     font-family: 'Playfair Display', serif;
     color: #000000;
-    line-height: 1.6em;
+    font-weight: bold;
+    font-size: 18px;
+    /* line-height: 1.6em;
     margin-top: 6px;
     font-size: 21px;
     font-weight: lighter;
-    overflow: hidden;
+    overflow: hidden; */
+}
+
+.title{
+    margin-bottom: 35px;
 }
 
 .product-btn {
@@ -177,11 +164,18 @@ span {
     text-align: center;
 }
 
-.btnsRecipes {
+.btnsRecipe {
     /* margin-left: 450px;
     margin-top:-44px; */
-    margin: 0 auto;
+    /* margin: 0 auto;
     margin-bottom: 42px;
-    margin-left: 50px;
+    margin-left: 50px; */
+    /* ================ */
+    /* position: absolute;
+    width: 380px;
+    height: auto; */
 
+    margin-left: 5px;
+    /* display: inline; */
+    margin-top: 22px;
 }

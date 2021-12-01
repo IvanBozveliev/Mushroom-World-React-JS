@@ -26,21 +26,26 @@ const DetailsRecipes = ({
                 <div className="product-info">
                     <div className="product-text">
                         <div className="product-text">
-                            <h1>{recipe.title}</h1>
-                            <h4><b className='author'>Author: {recipe.author}</b></h4>
+                            <div className='title'>
+                                <h1>{recipe.title}</h1>
+                                <h4><b className='author'>Author: {recipe.author}</b></h4>
+                            </div>
                             <h4><b>Serves:</b> 5</h4>
                             <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
                             <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
                             <h4><b>Ingredients:</b><br /><br />{recipe.ingredients}</h4>
-                            <div className='likes'>
-                                <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
-                                <button>Like</button>
-                                <div className="btnsRecipe">
-                                    <NavDetailsRecipes />
-                                </div>
-                                <p>You liked this recipe!</p>
+                            <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
+                            <button className="likes">Like</button>
+                            <div className="btnsRecipe">
+
+                                <NavDetailsRecipes />
                             </div>
-                            <p>Directions: {recipe.directions}</p>
+
+                            <h5 className='likedText'>You liked this recipe!</h5>
+
+                            <div className="contentText">
+                                <p>Directions: {recipe.directions}</p>
+                            </div>
                             {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}
 
                         </div>

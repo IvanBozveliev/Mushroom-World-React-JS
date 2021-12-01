@@ -1,6 +1,7 @@
 import './DetailsMush.css';
 import { useEffect, useState } from 'react';
 import * as mushServices from '../../services/mushServices';
+import NavDetailsMush from './NavDetailsMush';
 
 const DetailsMush = ({
     match
@@ -27,6 +28,11 @@ const DetailsMush = ({
                         <div className="vegetable_shop">
                             <h3>{mush.productname}</h3>
                             <h4 className={mush.mushType == "edable" ? "edable" : "poison"}>{mush.mushType}</h4>
+                           
+                            <div className="btnsMush">
+                                    <NavDetailsMush />
+                                </div>
+                            
                             <p><b> Distribution: </b>{mush.description}</p>
                             <p>Author: {mush.author}</p>
 
