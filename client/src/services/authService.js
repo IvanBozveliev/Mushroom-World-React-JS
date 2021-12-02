@@ -36,19 +36,19 @@ export const logout = () => {
         .then(res => res.json())
 }
 
-export const getUser = () => {
-    let username = sessionStorage.getItem('username')
-    return username;
-}
+// export const getUser = () => {
+//     let username = sessionStorage.getItem('username')
+//     return username;
+// }
 
-export const getToken = () => {
-    let token = sessionStorage.getItem('token')
-    return token;
-}
+// export const getToken = () => {
+//     let token = sessionStorage.getItem('token')
+//     return token;
+// }
 
-export const logoutUser = () => {
-    let userLogout =  sessionStorage.removeItem('token');
-    let tokenLogout = sessionStorage.removeItem('username');
+// export const logoutUser = () => {
+//     let userLogout =  sessionStorage.removeItem('token');
+//     let tokenLogout = sessionStorage.removeItem('username');
 
-    return userLogout, tokenLogout
-}
+//     return userLogout, tokenLogout
+// }

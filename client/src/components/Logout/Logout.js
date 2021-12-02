@@ -30,22 +30,26 @@
 
 
 import * as authService from '../../services/authService';
-import {useHistory} from 'react-router-dom';
-import { useEffect } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
-const Logout = ({
-   onLogout
-}) => {
+import {useHistory} from 'react-router-dom';
+import { useEffect, useContext } from 'react';
+
+const Logout = () => {
 
    const history = useHistory();
+   const {user, logout} = useContext(AuthContext);
 
    useEffect(() => {
      
      authService.logout()
       .then(() => {
+         
           sessionStorage.removeItem('username');
           sessionStorage.removeItem('token');
-          onLogout();
+          sessionStorage.removeItem('id');
+
+          logout();
           
           history.push('/login')
       })

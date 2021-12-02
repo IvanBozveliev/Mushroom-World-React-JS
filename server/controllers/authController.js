@@ -9,6 +9,7 @@ let isAuthenticated = require('../middlewares/isAuthenticated');
 
 router.post('/login', isGuest, async (req, res) => {
     const { username, password } = req.body;
+
     try {
 
         // if (password == '' || username == '') {
@@ -52,10 +53,10 @@ router.post('/register', isGuest, async (req, res) => {
 
         await authService.register( username, password )
 
-        let token = await authService.login( username, password )
+        let {token, user} = await authService.login( username, password )
 
         res.cookie(COOKIE_NAME, token)
-        res.status(200).json({username, token})
+        res.status(200).json({username, token, id: user._id})
 
     } catch (error) {
         res.status(400).send(error);

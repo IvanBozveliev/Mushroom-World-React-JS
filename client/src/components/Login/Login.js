@@ -1,12 +1,14 @@
 import * as authService from '../../services/authService';
 import {useHistory} from 'react-router-dom';
+import { useState, useContext} from "react";
 
-import { useState } from "react";
+import { AuthContext } from '../../contexts/AuthContext';
 
-const Login = ({
-    onLogin
-}) => {
-     const [error, setError] = useState('');
+const Login = () => {
+
+    const { login } = useContext(AuthContext);
+
+    const [error, setError] = useState('');
 
     const history = useHistory();
     
@@ -29,7 +31,7 @@ const Login = ({
                     sessionStorage.setItem('token', res.token)
                     sessionStorage.setItem('id', res.id)
                     
-                    onLogin(res.username)
+                    login(res)
                     history.push('/');
                     return;
                 }

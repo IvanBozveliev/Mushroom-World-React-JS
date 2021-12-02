@@ -22,7 +22,7 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
+                                            <p>Within the ecological community, there is a growing understanding of the utterly vital roles fungi play in healthy ecosystems. And yet within our society at large, there remains more fear than knowledge about these amazing organisms. </p>
                                             <form className="Vegetable">
                                                 <input className="Vegetable_fom" placeholder="Find Mushroom..." type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
@@ -49,9 +49,9 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
+                                            <p>The goal of this website is to give wild mushroom novices a safe and immersive introduction to fungi that can serve as a solid base for future exploration, whether that be learning to forage or grow mushrooms, or incorporating fungal knowledge into other practices like gardening, herbalism, or art. </p>
                                             <form className="Vegetable">
-                                                <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
+                                                <input className="Vegetable_fom" placeholder="Find Mushroom..." type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
                                             
@@ -79,9 +79,9 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
+                                            <p>On our site you can also choose different recipes for cooking mushrooms. Which can enrich you culinary and contribute to a unique taste experience. </p>
                                             <form className="Vegetable">
-                                                <input className="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable" />
+                                                <input className="Vegetable_fom" placeholder="Find Mushroom..." type="text" name=" Vegetable" />
                                                 <button className="Search_btn">Search</button>
                                             </form>
                                            

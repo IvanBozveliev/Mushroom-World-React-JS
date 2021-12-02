@@ -1,7 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import * as authService from './services/authService';
 
+
+import { AuthContext } from './contexts/AuthContext'
 import AllRecipes from './components/AllRecipes';
 import DetailsRecipes from './components/DetailsRecipes';
 import AllMush from './components/AllMush';
@@ -18,60 +19,54 @@ import Logout from './components/Logout';
 
 import './App.css';
 
+const initialAuthState = {
+  id: '',
+  username: '',
+  token: ''
+}
 function App() {
+  
+  const [user, setUser] = useState(initialAuthState)
 
- const [useInfo, setUserInfo] = useState({isAuthenticated: false, username: ''})
+  const login = (authData) => {
+     setUser(authData)
+  }
 
-    useEffect(() => {
-      let user = authService.getUser();
-     
-      setUserInfo({
-        isAuthenticated: Boolean(user),
-        user,
-      })
-    }, []);
+  const logout = () => {
+     setUser(initialAuthState)
+  }
 
-    const onLogin = (username) => {
-       setUserInfo({
-         isAuthenticated: true,
-         user: username,
-       })
-    }
+  return (
 
-    const onLogout = () => {
-      setUserInfo({
-        isAuthenticated: false,
-        user: null,
-      })
-    }
-
-    return (
+    <AuthContext.Provider value={{user, login, logout}}>
       <div className="App">
-       
-        <Header {...useInfo}/>
+
+        <Header user={user.username}/>
 
         <Switch>
 
           <Route path='/' component={HomePage} exact />
           <Route path="/about" component={About} />
-          <Route path="/all-mushrooms" component={AllMush} exact/>
-          <Route path="/all-mushrooms/categories/:mushType" component={AllMush} exact/>
+          <Route path="/all-mushrooms" component={AllMush} exact />
+          <Route path="/all-mushrooms/categories/:mushType" component={AllMush} exact />
           <Route path="/add-mushroom" component={AddMush} />
-          <Route path="/all-recipes" component={AllRecipes} exact/>
-          <Route path="/all-recipes/categories/:cookingTime" component={AllRecipes} exact/>
+          <Route path="/all-recipes" component={AllRecipes} exact />
+          <Route path="/all-recipes/categories/:cookingTime" component={AllRecipes} exact />
           <Route path="/add-recipe" component={AddRecipe} />
-          <Route path="/recipes/details/:recipeId" component={DetailsRecipes} /> 
+          <Route path="/recipes/details/:recipeId" component={DetailsRecipes} />
           <Route path="/mush/details/:mushId" component={DetailsMush} />
-          <Route path="/register" render={() => <Register onLogin={onLogin} />} />
-          <Route path="/login" render={() => <Login onLogin={onLogin} />} /> 
-          <Route path="/logout" render={() => <Logout onLogin={onLogout} />} />
+          <Route path="/register" render={() => <Register />} />
+          <Route path="/login" render={() => <Login  />} />
+          <Route path="/logout" render={() => <Logout  />} />
 
         </Switch>
 
         <Footer />
       </div>
-    );
-  
+    </AuthContext.Provider>
+
+  );
+
 
 
 }

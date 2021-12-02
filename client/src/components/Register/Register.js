@@ -1,10 +1,12 @@
 import * as authService from '../../services/authService';
-import { useState } from "react";
+import { AuthContext } from '../../contexts/AuthContext';
+
+import { useState, useContext } from "react";
 import { useHistory } from 'react-router-dom';
 
-const Register = ({
-    onLogin
-}) => {
+const Register = () => {
+
+    const { login } = useContext(AuthContext)
     const [error, setError] = useState('');
     const history = useHistory();
 
@@ -19,13 +21,14 @@ const Register = ({
 
         authService.register({ username, password, repeatPassword })
             .then(res => {
-
+            
                 if (res.username) {
 
                     sessionStorage.setItem('username', res.username)
                     sessionStorage.setItem('token', res.token)
-                    
-                    onLogin(res.username)
+                    sessionStorage.setItem('id', res.id)
+
+                    login(res)
                     history.push('/');
                     return;
                 } else {
