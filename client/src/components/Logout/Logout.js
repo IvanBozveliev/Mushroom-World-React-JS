@@ -38,7 +38,7 @@ import { useEffect, useContext } from 'react';
 const Logout = () => {
 
    const history = useHistory();
-   const {user, logout} = useContext(AuthContext);
+   const {logout} = useContext(AuthContext);
 
    useEffect(() => {
      

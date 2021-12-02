@@ -1,19 +1,41 @@
 import './DetailsRecipes.css';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
-import NavDetailsRecipes from './NavDetailsRecipes/NavDetailsRecipes';
+
 
 const DetailsRecipes = ({
     match
 }) => {
-
+  
     const [recipe, setRecipe] = useState({});
-
+    //const [like, setLike] = useState([]);
+    const history = useHistory();
     useEffect(() => {
         recipeServices.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
-    })
+    }, [])
 
+    const deleteRecipe = (e) => {
+          e.preventDefault();
+          recipeServices.deleteOne(recipe._id)
+            .then(() => history.push('/all-recipes'))
+    }
+    const ownerButtons = (
+        <div className="btnsRecipe">
+            <Link className="sortBtnEditRecipe" to={"/all-mushrooms/categories/poison"}>Edit</Link>
+            <Link className='sortBtnDeleteRecipe' onClick={deleteRecipe}>Delete</Link>
+        </div>
+    )
+
+    const userButtons = (
+        <>
+            <button className="likes">Like</button>
+            {/* {recipe.likes} */}
+            <h5 className='likedText'>You liked this recipe!</h5>
+        </>
+    )
     return (
         <section id="deatils-page">
             <div className="titlepage">
@@ -35,18 +57,13 @@ const DetailsRecipes = ({
                             <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
                             <h4><b>Ingredients:</b><br /><br />{recipe.ingredients}</h4>
                             <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
-                            <button className="likes">Like</button>
-                            <div className="btnsRecipe">
 
-                                <NavDetailsRecipes />
-                            </div>
 
-                            <h5 className='likedText'>You liked this recipe!</h5>
+                            {sessionStorage.id && (recipe.creator == sessionStorage.id ? ownerButtons : userButtons)}
 
                             <div className="contentText">
                                 <p>Directions: {recipe.directions}</p>
                             </div>
-                            {/* <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  --> */}
 
                         </div>
                     </div>

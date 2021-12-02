@@ -4,7 +4,7 @@ export const getAll = (mushType = '') => {
 
     let newUrl = url;
 
-    if(mushType && mushType !== 'all'){
+    if (mushType && mushType !== 'all') {
         newUrl = url + `?mushType=${mushType}`
     }
     return fetch(newUrl, {
@@ -14,19 +14,19 @@ export const getAll = (mushType = '') => {
             'Content-Type': 'application/json'
         }
     })
-              .then(res => res.json())
-              .then(data => data)
-              .catch(error => console.log(error))
+        .then(res => res.json())
+        // .then(data => data)
+        .catch(error => console.log(error))
 }
 
 export const getOne = (mushId) => {
     return fetch(`${url}/${mushId}`)
-              .then(res => res.json())
-              .catch(error => console.log(error))
+        .then(res => res.json())
+        .catch(error => console.log(error))
 }
 
 export const create = (mushData) => {
- 
+
     return fetch(url, {
         method: 'POST',
         headers: {
@@ -35,21 +35,37 @@ export const create = (mushData) => {
         },
         body: JSON.stringify(mushData)
     })
-             .then(res => res.json())
-             .then(data => data)
-             .catch(error => console.log(error))
+        .then(res => res.json())
+        // .then(data => data)
+        .catch(error => console.log(error))
 }
 
 export const edit = (id, mushdata) => {
     return fetch(`${url}/${id}`, {
-        method: "POST",
+        method: "PUT",
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(mushdata)
     })
-             .then(res => res.json())
-             .then(data => data)
-             .catch(error => console.log(error))
+        .then(res => res.json())
+        // .then(data => data)
+        .catch(error => console.log(error))
+}
+
+export const deleteOne = (id) => {
+
+    return fetch(`${url}/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+    })
+        .then(res => res.json())
+        // .then(data => data)
+        .catch(error => console.log(error))
+        
 }

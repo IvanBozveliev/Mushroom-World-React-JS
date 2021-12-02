@@ -1,18 +1,37 @@
-import './DetailsMush.css';
 import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router';
+
+import './DetailsMush.css';
 import * as mushServices from '../../services/mushServices';
-import NavDetailsMush from './NavDetailsMush';
 
 const DetailsMush = ({
     match
 }) => {
     const [mush, setMush] = useState({});
+    const history = useHistory();
 
     useEffect(() => {
         mushServices.getOne(match.params.mushId)
             .then(res => setMush(res))
     }, []);
+    
+    const deleteMush = (e) => {
+         e.preventDefault()
 
+         mushServices.deleteOne(mush._id)
+         .then(() => history.push('/all-mushrooms'))
+    }
+    const ownerButtons = (
+        <div className="btnsMush">
+            <Link className="sortBtnEditMush" to={"/all-mushrooms/categories/poison"}>Edit</Link>
+            <Link className='sortBtnDeleteMush' to={"/all-mushrooms/categories/all"} onClick={deleteMush}>Delete</Link>
+        </div>
+    )
+
+    // const userButtons = (
+
+    // )
     return (
         <div id="vegetable" className="vegetable">
             <div className="container-footer">
@@ -28,11 +47,9 @@ const DetailsMush = ({
                         <div className="vegetable_shop">
                             <h3>{mush.productname}</h3>
                             <h4 className={mush.mushType == "edable" ? "edable" : "poison"}>{mush.mushType}</h4>
-                           
-                            <div className="btnsMush">
-                                    <NavDetailsMush />
-                                </div>
-                            
+
+                            {sessionStorage.id && (mush.creator == sessionStorage.id ? ownerButtons : "")}
+
                             <p><b> Distribution: </b>{mush.description}</p>
                             <p>Author: {mush.author}</p>
 

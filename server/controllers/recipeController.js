@@ -28,7 +28,7 @@ router.put("/:recipeId", async (req, res) => {
 });
 
 router.delete("/:recipeId", async (req, res) => {
-    await recipeService.deleteOne(req.params.productId);
+    await recipeService.deleteOne(req.params.recipeId);
     res.json({ok: true});
 });
 
