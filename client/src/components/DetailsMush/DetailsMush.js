@@ -24,14 +24,11 @@ const DetailsMush = ({
     }
     const ownerButtons = (
         <div className="btnsMush">
-            <Link className="sortBtnEditMush" to={"/all-mushrooms/categories/poison"}>Edit</Link>
-            <Link className='sortBtnDeleteMush' to={"/all-mushrooms/categories/all"} onClick={deleteMush}>Delete</Link>
+            <Link className="sortBtnEditMush" to={`/mush/details/edit/${mush._id}`}>Edit</Link>
+            <button className='sortBtnDeleteMush' onClick={deleteMush}>Delete</button>
         </div>
     )
 
-    // const userButtons = (
-
-    // )
     return (
         <div id="vegetable" className="vegetable">
             <div className="container-footer">

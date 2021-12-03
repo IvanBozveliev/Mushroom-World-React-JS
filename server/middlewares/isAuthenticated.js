@@ -1,9 +1,11 @@
 function isAuthenticated(req, res, next){
     
     if(!req.user){
-        return res.status(401).send("User is not authenticated");
+        return res.status(400).json("You are not authenticated");
+    }else{
+        next();
     }
-    next();
+    
 }
 
 module.exports = isAuthenticated;

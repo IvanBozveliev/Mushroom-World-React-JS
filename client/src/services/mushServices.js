@@ -40,8 +40,8 @@ export const create = (mushData) => {
         .catch(error => console.log(error))
 }
 
-export const edit = (id, mushdata) => {
-    return fetch(`${url}/${id}`, {
+export const editOne = (mushId, mushdata) => {
+    return fetch(`${url}/${mushId}`, {
         method: "PUT",
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,

@@ -7,11 +7,16 @@ module.exports = function (){
         // let token = req.cookies[COOKIE_NAME];
         
         let token = req.headers['authorization']?.split(' ')[1] || null; 
-       
+        
+        if(token == 'undefined'){
+            token = false;
+        }
+        
         if(token){
             jwt.verify(token, SECRET, function(err, decoded) {
                 if(err){
                     res.clearCookie(COOKIE_NAME)
+                    return res.status(400).json('Your token is not valid')
                 }else{
                     
                    req.user = decoded;

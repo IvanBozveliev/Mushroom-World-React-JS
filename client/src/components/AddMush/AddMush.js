@@ -1,10 +1,12 @@
 import './AddMush.css';
 import * as mushServices from '../../services/mushServices';
+import { useState } from 'react';
 
 const AddMush = ({
     history
 }) => {
 
+    const [error, setError] = useState('');
 
     const onMushCreate = (e) => {
         e.preventDefault();
@@ -27,8 +29,16 @@ const AddMush = ({
         })
 
         .then((res) => {
-            history.push('/all-mushrooms')
+            if(res.ok){
+                history.push('/all-mushrooms')
+            }else{
+                console.log(res)
+                setError(res)
+                return
+            }
+            
         })
+        
     }
     return(
      <div id="contact" className="contact">
@@ -41,6 +51,7 @@ const AddMush = ({
              </div>
  
          </div>
+         {error && <div className="error">{error}</div>}
          <div className="white_color">
              <div className="row">
  

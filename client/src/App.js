@@ -2,7 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-import { AuthContext } from './contexts/AuthContext'
+import { AuthContext } from './contexts/AuthContext';
+import EditMush from './components/EditMush';
 import AllRecipes from './components/AllRecipes';
 import DetailsRecipes from './components/DetailsRecipes';
 import AllMush from './components/AllMush';
@@ -53,8 +54,9 @@ function App() {
           <Route path="/all-recipes" component={AllRecipes} exact />
           <Route path="/all-recipes/categories/:cookingTime" component={AllRecipes} exact />
           <Route path="/add-recipe" component={AddRecipe} />
-          <Route path="/recipes/details/:recipeId" component={DetailsRecipes} />
-          <Route path="/mush/details/:mushId" component={DetailsMush} />
+          <Route path="/recipes/details/:recipeId" component={DetailsRecipes} exact/>
+          <Route path="/mush/details/:mushId" component={DetailsMush} exact/>
+          <Route path="/mush/details/edit/:mushId" component={EditMush} />
           <Route path="/register" render={() => <Register />} />
           <Route path="/login" render={() => <Login  />} />
           <Route path="/logout" render={() => <Logout  />} />

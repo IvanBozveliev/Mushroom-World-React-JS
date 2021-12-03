@@ -1,10 +1,12 @@
 import './AddRecipe.css';
 
 import * as recipeServices from '../../services/recipeServices';
+import { useState } from 'react';
 
 const AddRecipe = ({
     history
 }) => {
+   const [error, setError] = useState('');
 
    const onRecipeCreate = (e) =>{
        e.preventDefault();
@@ -32,7 +34,15 @@ const AddRecipe = ({
            likes
       
        })
-        .then(res => history.push('/all-recipes'))
+        .then(res =>{
+            if(res.ok){
+                history.push('/all-recipes')
+            }else{
+                setError(res)
+                return 
+            }
+             
+        })
 
    }
    return(
@@ -46,6 +56,7 @@ const AddRecipe = ({
             </div>
 
         </div>
+        {error && <div className="error">{error}</div>}
         <div className="white_color">
             <div className="row">
 

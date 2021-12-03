@@ -5,12 +5,11 @@ async function isMine(req, res, next){
     if(req.user){
 
      let product = await Product.findById(req.params.productId);
-     let isTrue = product.creator.toString() == req.user._id;
 
-     if(isTrue){
+     if(product.creator.toString() == req.user._id){
          next()
      }else{
-        return res.redirect('/')
+        return res.status(401).send('You are not authorizated')
      }
     }
 
