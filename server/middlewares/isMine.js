@@ -9,7 +9,7 @@ async function isMine(req, res, next){
      if(product.creator.toString() == req.user._id){
          next()
      }else{
-        return res.status(401).send('You are not authorizated')
+        return res.status(401).send({message: 'You are not authorizated'})
      }
     }
 

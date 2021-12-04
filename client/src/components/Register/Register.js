@@ -57,7 +57,7 @@ const Register = () => {
                     </div>
 
                 </div>
-                {error && <div className="error"><p className="errTxt">{error}</p></div>}
+                {error && <div className="errorRegister"><p className="errTxtRegister">{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 

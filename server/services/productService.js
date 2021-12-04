@@ -1,23 +1,27 @@
 const Product = require('../models/Product');
 
-function create(data, userId) {
+function create(data) {
    
    if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
-      throw new Error('Empty fields!')
+      throw ({message: 'You can not have empty fields!'})
    }
 
-   // if(data.title.length < 4){
-   //     throw new Error('The title should be at least 4 characters')
-   // }
+   if(data.productname.length < 4){
+       throw ({message:'The title should be at least 4 characters'})
+   }
 
-   // if(data.description.length < 20){
-   //     throw new Error('The description should be at least 20 characters')
-   // }
+   if(data.description.length < 20){
+       throw ('The description should be at least 20 characters')
+   }
 
-   // if(!/^https?:\/\//g.test(data.imageUrl)){
-   //     throw new Error('The image should be starts with http or https')
-   // }
+   if(!/^https?:\/\//g.test(data.imageUrlOne)){
+       throw ({message:'The image should be start with http or https'})
+   }
 
+   if(!/^https?:\/\//g.test(data.imageUrlTwo)){
+       throw ({message:'The image should be start with http or https'})
+   }
+   
    let product = new Product({ ...data});
    return product.save();
 }
@@ -42,21 +46,12 @@ async function getAll(query) {
 }
 
 
-// async function getAllGuests(){
-   
-//    let products = await Product.find({}).lean();
-//    products = products.sort((a,b) => b.usersEnrolled.length - a.usersEnrolled.length);
-//    products = products.slice(0,3)
 
-//  return products
-// }
-
-// function getOneWithAccessory(id){
-//    return Product.findById(id).populate('accessories').lean()
-// }
-
-function updateOne(productId, productData) {
-   return Product.updateOne({ _id: productId }, productData)
+function updateOne(productId, data) {
+   if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
+      throw ({message: 'You can not have empty fields!'})
+   }
+   return Product.updateOne({ _id: productId }, data)
 }
 
 function deleteOne(productId) {
@@ -67,8 +62,6 @@ module.exports = {
    create,
    getOne,
    getAll,
-   // getOneWithAccessory,
    updateOne,
    deleteOne,
-   // getAllGuests
 }

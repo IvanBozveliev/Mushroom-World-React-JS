@@ -36,7 +36,7 @@ export const create = (mushData) => {
         body: JSON.stringify(mushData)
     })
         .then(res => res.json())
-        // .then(data => data)
+        
         .catch(error => console.log(error))
 }
 
@@ -50,7 +50,6 @@ export const editOne = (mushId, mushdata) => {
         body: JSON.stringify(mushdata)
     })
         .then(res => res.json())
-        // .then(data => data)
         .catch(error => console.log(error))
 }
 
@@ -65,7 +64,6 @@ export const deleteOne = (id) => {
         body: JSON.stringify()
     })
         .then(res => res.json())
-        // .then(data => data)
         .catch(error => console.log(error))
         
 }

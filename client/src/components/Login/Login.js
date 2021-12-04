@@ -18,6 +18,7 @@ const Login = () => {
         setTimeout(() => {
             setError('')
         }, 5000)
+
     }, [error])
 
     const onLoginHandler = (e) => {
@@ -65,7 +66,7 @@ const Login = () => {
                     </div>
 
                 </div>
-                {error && <div className="error"><p className='errTxt'>{error}</p></div>}
+                {error && <div className="errorLogin"><p className='errTxtLogin'>{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 

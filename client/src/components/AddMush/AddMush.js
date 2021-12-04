@@ -35,11 +35,11 @@ const AddMush = ({
         })
 
             .then((res) => {
+                
                 if (res.ok) {
                     history.push('/all-mushrooms')
                 } else {
-                    console.log(res)
-                    setError(res)
+                    setError(res.message)
                     return
                 }
 
@@ -57,7 +57,7 @@ const AddMush = ({
                     </div>
 
                 </div>
-                {error && <div className="error"><p className="errTxt">{error}</p></div>}
+                {error && <div className="errorMush"><p className="errTxtMush">{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 

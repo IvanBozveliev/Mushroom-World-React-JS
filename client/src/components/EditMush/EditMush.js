@@ -47,7 +47,7 @@ const EditMush = ({
                 if(res.ok){
                     history.push(`/mush/details/${mush._id}`)
                 }else{
-                    setError(res)
+                    setError(res.message)
                     return;
                 }
                 
@@ -66,7 +66,7 @@ const EditMush = ({
                     </div>
 
                 </div>
-                {error && <div className="error"><p className='errTxt'>{error}</p></div>}
+                {error && <div className="errorEdit"><p className='errTxtEdit'>{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 
@@ -91,7 +91,7 @@ const EditMush = ({
                                             <label htmlFor="distribution">Distribution</label>
                                             <textarea id="distribution" className="textarea" placeholder="Distribution Summary" type="text" name="description" defaultValue={mush.description}></textarea>
                                         </div>
-                                        {/* <div className="col-md-12">
+                                        <div className="col-md-12">
                                             <label htmlFor="mush">Type:  </label>
                                             <select id="mush" className="select" type="select" name="mushType" >
                                                 
@@ -99,7 +99,7 @@ const EditMush = ({
                                                 <option defaultValue="poison">poison</option>
                                                 
                                             </select>
-                                        </div> */}
+                                        </div>
                                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                             <button className="send" type="submit">Edit</button>
                                         </div>

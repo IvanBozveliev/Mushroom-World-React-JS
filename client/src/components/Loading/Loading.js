@@ -1,10 +1,10 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import App from '../../App';
 
 const Loading = () => {
-    const [show, setShow] = React.useState(false)
+    const [show, setShow] = useState(false)
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timeout = setTimeout(() => {
             setShow(true)
         }, 3000)

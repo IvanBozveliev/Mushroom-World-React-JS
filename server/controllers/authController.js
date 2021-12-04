@@ -21,7 +21,7 @@ router.post('/login', isGuest, async (req, res) => {
         }
         
         if (!/^[a-zA-Z0-9]{3,}/g.test(password)) {
-            throw ({message: 'Password should be at least 5 characters long and should consist only english letters and digits!'})
+            throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits!'})
         }
 
         let {token, user} = await authService.login(username, password)
@@ -48,7 +48,7 @@ router.post('/register', isGuest, async (req, res) => {
         }
         
         if (!/[a-zA-Z0-9]{3,}/.test(password)) {
-            throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits'})
+            throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits!'})
         }
 
      

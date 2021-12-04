@@ -44,7 +44,7 @@ const AddRecipe = ({
             if(res.ok){
                 history.push('/all-recipes')
             }else{
-                setError(res)
+                setError(res.message)
                 return 
             }
              
@@ -62,7 +62,7 @@ const AddRecipe = ({
             </div>
 
         </div>
-        {error && <div className="error"><p className='errTxt'>{error}</p></div>}
+        {error && <div className="errorRecipe"><p className='errTxtRecipe'>{error}</p></div>}
         <div className="white_color">
             <div className="row">
 

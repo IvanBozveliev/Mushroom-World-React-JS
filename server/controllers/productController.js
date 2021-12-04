@@ -16,14 +16,26 @@ router.get('/:productId', async (req, res) => {
 });
 
 router.post("/" , isAuthenticated, async (req, res) =>{
-    await productService.create({...req.body, creator: req.user._id});
-    res.json({ok: true})
+
+    try{
+        await productService.create({...req.body, creator: req.user._id});
+        res.json({ok: true})
+    }catch(error){
+        res.status(400).send(error)
+    }
+    
            
 });
 
 router.put("/:productId", isAuthenticated, isMine, async (req, res) => {
-    await productService.updateOne(req.params.productId, req.body);
-    res.json({ok: true})
+    
+    try{
+        await productService.updateOne(req.params.productId, req.body);
+        res.json({ok: true})
+    }catch(error){
+        res.status(400).send(error)
+    }
+  
 });
 
 router.delete("/:productId", isAuthenticated, async (req, res) => {
