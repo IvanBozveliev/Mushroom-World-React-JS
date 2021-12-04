@@ -12,17 +12,17 @@ router.post('/login', isGuest, async (req, res) => {
 
     try {
 
-        // if (password == '' || username == '') {
-        //     throw ({message: 'Invalid inputs!'})
-        // }
+        if (password == '' || username == '') {
+            throw ({message: 'Invalid inputs!'})
+        }
 
-        // if (!/^[a-zA-Z0-9]{3,}/g.test(username)) {
-        //     throw ({message: 'Username should be at least 5 characters long and should consist only english letters and digits!'})
-        // }
+        if (!/^[a-zA-Z0-9]{3,}/g.test(username)) {
+            throw ({message: 'Username should be at least 3 characters long and should consist only english letters and digits!'})
+        }
         
-        // if (!/^[a-zA-Z0-9]{3,}/g.test(password)) {
-        //     throw ({message: 'Password should be at least 5 characters long and should consist only english letters and digits!'})
-        // }
+        if (!/^[a-zA-Z0-9]{3,}/g.test(password)) {
+            throw ({message: 'Password should be at least 5 characters long and should consist only english letters and digits!'})
+        }
 
         let {token, user} = await authService.login(username, password)
         res.cookie(COOKIE_NAME, token)
@@ -39,17 +39,19 @@ router.post('/register', isGuest, async (req, res) => {
 
     try {
 
-        // if (!/[a-zA-Z0-9]{3,}/.test(password)) {
-        //     throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits'})
-        // }
+        if (password == '' || username == '' || repeatPassword == '') {
+            throw ({message: 'Invalid inputs!'})
+        }
 
-        // if (password == '' || username == '' || repeatPassword == '') {
-        //     throw ({message: 'Invalid inputs!'})
-        // }
+        if (password !== repeatPassword) {
+            throw ({message: 'Password missmatch!'})
+        }
+        
+        if (!/[a-zA-Z0-9]{3,}/.test(password)) {
+            throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits'})
+        }
 
-        // if (password !== repeatPassword) {
-        //     throw ({message: 'Password missmatch!'})
-        // }
+     
 
         await authService.register( username, password )
 

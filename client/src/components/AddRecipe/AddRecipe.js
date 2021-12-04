@@ -1,12 +1,18 @@
 import './AddRecipe.css';
 
 import * as recipeServices from '../../services/recipeServices';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const AddRecipe = ({
     history
 }) => {
    const [error, setError] = useState('');
+   
+   useEffect(() => {
+      setTimeout(() => {
+          setError('')
+      }, 5000)
+   }, [error])
 
    const onRecipeCreate = (e) =>{
        e.preventDefault();
@@ -56,7 +62,7 @@ const AddRecipe = ({
             </div>
 
         </div>
-        {error && <div className="error">{error}</div>}
+        {error && <div className="error"><p className='errTxt'>{error}</p></div>}
         <div className="white_color">
             <div className="row">
 

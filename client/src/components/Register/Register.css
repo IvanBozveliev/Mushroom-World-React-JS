@@ -1,0 +1,15 @@
+.error{
+    font-weight: bold;
+    background: #f90303;
+    margin-top: -26px;
+    margin-bottom: 32px;
+    height: 55px;
+    text-align: center;
+    border: 2px solid #950303;
+    border-radius: 8px;
+}
+
+.errTxt {
+    color: black;
+    padding-top: 14px;
+}

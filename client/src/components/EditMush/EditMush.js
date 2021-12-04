@@ -17,6 +17,12 @@ const EditMush = ({
             .then(res => setMush(res))
     }, [])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setError('')
+        }, 5000)
+     }, [error])
+
     const onMushEdit = (e) => {
         e.preventDefault();
 
@@ -60,7 +66,7 @@ const EditMush = ({
                     </div>
 
                 </div>
-                {error && <div className="error">{error}</div>}
+                {error && <div className="error"><p className='errTxt'>{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 

@@ -1,6 +1,7 @@
+import './Login.css'
 import * as authService from '../../services/authService';
-import {useHistory} from 'react-router-dom';
-import { useState, useContext} from "react";
+import { useHistory } from 'react-router-dom';
+import { useState, useContext, useEffect } from "react";
 
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -11,7 +12,14 @@ const Login = () => {
     const [error, setError] = useState('');
 
     const history = useHistory();
-    
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError('')
+        }, 5000)
+    }, [error])
+
     const onLoginHandler = (e) => {
         e.preventDefault();
 
@@ -21,21 +29,21 @@ const Login = () => {
         let password = formData.get('password');
 
 
-        authService.login({username, password})
-           
-            .then(res => { 
-                
+        authService.login({ username, password })
+
+            .then(res => {
+
                 if (res.username) {
 
                     sessionStorage.setItem('username', res.username)
                     sessionStorage.setItem('token', res.token)
                     sessionStorage.setItem('id', res.id)
-                    
+
                     login(res)
                     history.push('/');
                     return;
                 }
-                
+
                 else {
                     setError(res.message)
                     return
@@ -45,7 +53,7 @@ const Login = () => {
             .catch(error => console.log(error))
 
     }
-    
+
     return (
         <div id="contact" className="contact">
             <div className="container">
@@ -57,7 +65,7 @@ const Login = () => {
                     </div>
 
                 </div>
-                {error && <div className="error">{error}</div>}
+                {error && <div className="error"><p className='errTxt'>{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 

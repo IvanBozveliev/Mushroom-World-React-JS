@@ -1,7 +1,8 @@
+import './Register.css';
 import * as authService from '../../services/authService';
 import { AuthContext } from '../../contexts/AuthContext';
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 
 const Register = () => {
@@ -9,6 +10,12 @@ const Register = () => {
     const { login } = useContext(AuthContext)
     const [error, setError] = useState('');
     const history = useHistory();
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError('')
+        }, 5000)
+    }, [error])
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -50,7 +57,7 @@ const Register = () => {
                     </div>
 
                 </div>
-                {error && <div className="error">{error}</div>}
+                {error && <div className="error"><p className="errTxt">{error}</p></div>}
                 <div className="white_color">
                     <div className="row">
 
