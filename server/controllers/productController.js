@@ -38,7 +38,7 @@ router.put("/:productId", isAuthenticated, isMine, async (req, res) => {
   
 });
 
-router.delete("/:productId", isAuthenticated, async (req, res) => {
+router.delete("/:productId", isAuthenticated, isMine , async (req, res) => {
     await productService.deleteOne(req.params.productId);
     res.json({ok: true})
 });

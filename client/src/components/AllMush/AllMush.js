@@ -24,7 +24,7 @@ class AllMush extends Component{
     }
 
     componentDidUpdate(prevProps) {
-
+        
         const mushType = this.props.match.params.mushType;
         
         if(prevProps.match.params.mushType === mushType){

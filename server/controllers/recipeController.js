@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 const isAuthenticated = require('../middlewares/isAuthenticated');
-const isMine = require('../middlewares/isMine');
+const isMine = require('../middlewares/isMineRecipe');
 
 const recipeService = require('../services/recipeService');
 

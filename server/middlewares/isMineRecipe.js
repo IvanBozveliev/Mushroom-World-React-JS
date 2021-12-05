@@ -1,12 +1,12 @@
-const Product = require('../models/Product');
+const Recipe = require('../models/Recipe');
 
 async function isMine(req, res, next){
    
     if(req.user){
 
-     let product = await Product.findById(req.params.productId);
-     
-     if(product.creator.toString() == req.user._id){
+     let recipe = await Recipe.findById(req.params.recipeId);
+   
+     if(recipe.creator.toString() == req.user._id){
          next()
      }else{
         return res.status(401).send({message: 'You are not authorizated'})

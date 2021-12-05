@@ -35,7 +35,7 @@ const AddMush = ({
         })
 
             .then((res) => {
-                
+                console.log(res)
                 if (res.ok) {
                     history.push('/all-mushrooms')
                 } else {

@@ -11,7 +11,7 @@ function create(data) {
    }
 
    if(data.description.length < 20){
-       throw ('The description should be at least 20 characters')
+       throw ({message:'The description should be at least 20 characters'})
    }
 
    if(!/^https?:\/\//g.test(data.imageUrlOne)){
@@ -35,11 +35,13 @@ async function getAll(query) {
    let products = await Product.find();
   
    if(query.mushType == 'edable'){
-      products = products.filter(x => x.mushType == 'edable')
+      products = products.filter(x => x.mushType == 'edable');
+     
    }
-
+   
    if(query.mushType == 'poison'){
-      products = products.filter(x => x.mushType == 'poison')
+      products = products.filter(x => x.mushType == 'poison');
+      
    }
    
    return products

@@ -51,7 +51,21 @@ export const edit = (id, recipedata) => {
         .catch(error => console.log(error))
 }
 
+// export const deleteOne = (id) => {
+//     return fetch(`${url}/${id}`, {
+//         method: "DELETE",
+//         headers: {
+//             'Authorization': 'Bearer ' + sessionStorage.token,
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify()
+//     })
+//         .then(res => res.json())
+//         .catch(error => console.log(error))
+// }
+
 export const deleteOne = (id) => {
+
     return fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {
@@ -62,4 +76,5 @@ export const deleteOne = (id) => {
     })
         .then(res => res.json())
         .catch(error => console.log(error))
+        
 }

@@ -2,7 +2,7 @@ const Recipe = require('../models/Recipe');
 
 function create(data) {
 
-   if (data.title == '' || data.description == '' || data.imageUrl == '' || data.ingredients == '' || data.cookingTime == '' || data.preparationTime == '') {
+   if (data.title == '' || data.directions == '' || data.imageUrl == '' || data.ingredients == '' || data.cookingTime == '' || data.preparationTime == '') {
       throw ({message: 'You can not have empty fields!'})
    }
 
@@ -10,7 +10,7 @@ function create(data) {
        throw ({message:'The title should be at least 4 characters!'})
    }
 
-   if(data.description.length < 20){
+   if(data.directions.length < 20){
        throw ({message:'The description should be at least 20 characters!'})
    }
 
