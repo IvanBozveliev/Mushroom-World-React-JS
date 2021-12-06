@@ -49,7 +49,8 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <Search  placeholder="Enter mushroom name.." products={mushrooms}/>
+                                            <label htmlFor='mush' className='searchName'>Mushrooms:</label>
+                                            <Search id='mush' placeholder="Enter mushroom name.." typeDetails ='mush' products={mushrooms}/>
                                             <p>Within the ecological community, there is a growing understanding of the utterly vital roles fungi play in healthy ecosystems. And yet within our society at large, there remains more fear than knowledge about these amazing organisms. </p>
                                             
                                         </div>
@@ -73,7 +74,8 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <Search  placeholder="Enter mushroom name.." products={mushrooms}/>
+                                            <label htmlFor='recipe' className='searchName'>Recipes:</label>
+                                            <Search id='recipe' placeholder="Enter recipe name.." typeDetails ='recipes' products={dish}/>
                                             <p>The goal of this website is to give wild mushroom novices a safe and immersive introduction to fungi that can serve as a solid base for future exploration, whether that be learning to forage or grow mushrooms, or incorporating fungal knowledge into other practices like gardening, herbalism, or art. </p>
 
                                         </div>
@@ -100,7 +102,6 @@ const HomePage = () => {
                                         <div className="text-bg">
                                             <span>Welcome to</span>
                                             <h1>World of Mushrooms</h1>
-                                            <Search placeholder="Enter mushroom name.." products={mushrooms}/>
                                             <p>On our site you can also choose different recipes for cooking mushrooms. Which can enrich you culinary and contribute to a unique taste experience. </p>
                                             {/* <form className="Vegetable" onSubmit={onMush}>
                                                 <input className="Vegetable_fom" placeholder="Find Mushroom..." type="text" name="productName" />

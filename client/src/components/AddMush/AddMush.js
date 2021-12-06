@@ -19,14 +19,14 @@ const AddMush = ({
 
         let formData = new FormData(e.currentTarget);
 
-        let productname = formData.get('productname');
+        let title = formData.get('title');
         let description = formData.get('description');
         let imageUrlOne = formData.get('imageUrlOne');
         let imageUrlTwo = formData.get('imageUrlTwo');
         let mushType = formData.get('mushType');
 
         mushServices.create({
-            productname,
+            title,
             description,
             imageUrlOne,
             imageUrlTwo,
@@ -68,7 +68,7 @@ const AddMush = ({
 
                                         <div className="col-md-12">
                                             <label htmlFor="mushname" className='label'>Mushroom Name</label>
-                                            <input id="mushname" className="contactus" placeholder="Mushroom Name" type="text" name="productname" />
+                                            <input id="mushname" className="contactus" placeholder="Mushroom Name" type="text" name="title" />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="firstImage" className='label'>First Image</label>

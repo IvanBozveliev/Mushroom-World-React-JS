@@ -5,6 +5,7 @@ import './Search.css';
 
 const Search = ({
     placeholder,
+    typeDetails,
     products
 }) => {
 
@@ -16,7 +17,7 @@ const Search = ({
         const searchWord = e.target.value;
         setWordEntered(searchWord);
 
-        const newFilter = products.filter(x => x.productname.toLowerCase().includes(searchWord.toLowerCase()))
+        const newFilter = products.filter(x => x.title.toLowerCase().includes(searchWord.toLowerCase()))
         
         searchWord === '' ? setFilteredData([]) : setFilteredData(newFilter)
         
@@ -48,8 +49,8 @@ const Search = ({
             {filteredData.length !== 0 && (
                 <div className="dataResult">
                     {filteredData.slice(0, 15).map(x => 
-                        <NavLink key={x._id} className="dataItem" to={`/mush/details/${x._id}`} >
-                            <h5 className='dataItemP'>{x.productname}</h5>
+                        <NavLink key={x._id} className="dataItem" to={`/${typeDetails}/details/${x._id}`} >
+                            <h5 className='dataItemP'>{x.title}</h5>
                         </NavLink>
                     )}
                 </div>

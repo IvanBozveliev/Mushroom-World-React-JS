@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import "./Mush.css";
 const Mush = ({
-    productname,
+    title,
     imageUrlOne,
     mushType,
     _id
@@ -9,7 +9,7 @@ const Mush = ({
     return (
         <>
             <li>
-                <Link to={`/mush/details/${_id}`}>{productname}</Link>
+                <Link to={`/mush/details/${_id}`}>{title}</Link>
 
                 <div className="card">
 

@@ -1,11 +1,15 @@
 .searchInputs {
-    margin-top: 105px;
+    /* margin-top: 105px;
+    display: flex; */
+    margin-top: -8px;
     display: flex;
+    margin-bottom: 40px;
+    position: relative;
   }
   
   .search input {
-    background-color: white;
-    border: 2px solid #09640d;
+    background-color:#ececf0;
+    border: 2px solid #118811;
     border-radius: 2px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -32,13 +36,14 @@
   }
   
   .dataResult {
-    margin-top: 5px;
+    margin-top: -40px;
     width: 300px;
     height: 200px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;
+    position: absolute;
   }
   
   .dataResult::-webkit-scrollbar {

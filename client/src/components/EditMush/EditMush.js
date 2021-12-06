@@ -28,14 +28,14 @@ const EditMush = ({
 
         let formData = new FormData(e.currentTarget);
 
-        let productname = formData.get('productname');
+        let title = formData.get('title');
         let description = formData.get('description');
         let imageUrlOne = formData.get('imageUrlOne');
         let imageUrlTwo = formData.get('imageUrlTwo');
         let mushType = formData.get('mushType');
         
         mushServices.editOne(match.params.mushId, {
-            productname,
+            title,
             description,
             imageUrlOne,
             imageUrlTwo,
@@ -77,7 +77,7 @@ const EditMush = ({
 
                                         <div className="col-md-12">
                                             <label htmlFor="mushname" className='label'>Mushroom Name</label>
-                                            <input id="mushname" className="contactus" placeholder="Mushroom Name" type="text" name="productname" defaultValue={mush.productname} />
+                                            <input id="mushname" className="contactus" placeholder="Mushroom Name" type="text" name="title" defaultValue={mush.title} />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="firstImage" className='label'>First Image</label>

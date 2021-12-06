@@ -57,7 +57,7 @@
 }
 
 .text-bg h1 {
-    color: #43960f;
+    color: #118811;
     padding-top: 10px;
     font-size: 71px;
     line-height: 85px;
@@ -112,28 +112,11 @@
 
 }
 
-
-/* 
-.text-bg a {
-    font-size: 16px;
-    border: #1a1b19 solid 1px;
-    background-color: #1a1b19;
-    color: #fff;
-    padding: 9px 0px;
-    max-width: 171px;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-
-    ;
-    margin-right: 10px;
+.searchName{
+    color: white;
+    margin-bottom: 15px;
+    background: rgb(63, 65, 63)
 }
-
-.text-bg a:hover {
-    background-color: #428713;
-    border: #428713 solid 1px;
-    color: #fff;
-} */
 
 .text {
     position: inherit;

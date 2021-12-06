@@ -6,7 +6,7 @@ function create(data) {
       throw ({message: 'You can not have empty fields!'})
    }
 
-   if(data.productname.length < 4){
+   if(data.title.length < 4){
        throw ({message:'The title should be at least 4 characters'})
    }
 
