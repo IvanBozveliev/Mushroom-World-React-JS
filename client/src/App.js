@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { AuthContext } from './contexts/AuthContext';
 import EditMush from './components/EditMush';
+import EditRecipe from './components/EditRecipe/EditRecipe';
 import AllRecipes from './components/AllRecipes';
 import DetailsRecipes from './components/DetailsRecipes';
 import AllMush from './components/AllMush';
@@ -19,6 +20,7 @@ import AddRecipe from './components/AddRecipe';
 import Logout from './components/Logout';
 
 import './App.css';
+
 
 const initialAuthState = {
   id: '',
@@ -57,6 +59,7 @@ function App() {
           <Route path="/recipes/details/:recipeId" component={DetailsRecipes} exact/>
           <Route path="/mush/details/:mushId" component={DetailsMush} exact/>
           <Route path="/mush/details/edit/:mushId" component={EditMush} />
+          <Route path="/recipes/details/edit/:recipeId" component={EditRecipe} />
           <Route path="/register" render={() => <Register />} />
           <Route path="/login" render={() => <Login  />} />
           <Route path="/logout" render={() => <Logout  />} />

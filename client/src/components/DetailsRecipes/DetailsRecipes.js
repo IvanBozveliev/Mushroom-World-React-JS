@@ -24,7 +24,7 @@ const DetailsRecipes = ({
     }
     const ownerButtons = (
         <div className="btnsRecipe">
-            <Link className="sortBtnEditRecipe" to={"/all-mushrooms/categories/poison"}>Edit</Link>
+            <Link className="sortBtnEditRecipe" to={`/recipes/details/edit/${recipe._id}`}>Edit</Link>
             <Link className='sortBtnDeleteRecipe' onClick={deleteRecipe}>Delete</Link>
         </div>
     )

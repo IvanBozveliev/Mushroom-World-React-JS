@@ -41,17 +41,17 @@ async function getAll(query) {
    return recipes
 }
 
-function updateOne(productId, data) {
+function updateOne(recipeId, data) {
 
-   if (data.title == '' || data.description == '' || data.imageUrl == '' || data.ingredients == '' || data.cookingTime == '' || data.preparationTime == '') {
+   if (data.title == '' || data.serves == '' || data.directions == '' || data.imageUrl == '' || data.ingredients == '' || data.cookingTime == '' || data.preparationTime == '') {
       throw ({message: 'You can not have empty fields!'})
    }
 
-   return Recipe.updateOne({ _id: productId }, data)
+   return Recipe.updateOne({ _id: recipeId }, data)
 }
 
-function deleteOne(productId) {
-   return Recipe.deleteOne({ _id: productId })
+function deleteOne(recipeId) {
+   return Recipe.deleteOne({ _id: recipeId })
 }
 
 module.exports = {

@@ -2,9 +2,6 @@ import './HomePage.css';
 import * as mushService from '../../services/mushServices';
 import * as recipeService from '../../services/recipeServices';
 
-import mushroom3 from '../images/mushroom3.png';
-import mushroom2 from '../images/mushroom2.png';
-import mushroom1 from '../images/mushroom1.png';
 import { useEffect, useState } from 'react';
 import Search from './Search';
 
@@ -57,7 +54,7 @@ const HomePage = () => {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src={mushroom3} /></figure>
+                                            <figure><img src='/images/mushroom3.png' /></figure>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +80,7 @@ const HomePage = () => {
 
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src={mushroom2} /></figure>
+                                            <figure><img src='/images/recipe1.png' /></figure>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +109,7 @@ const HomePage = () => {
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div className="images_box">
-                                            <figure><img src={mushroom1} /></figure>
+                                            <figure><img src='/images/mushroom2.png' /></figure>
                                         </div>
                                     </div>
                                 </div>

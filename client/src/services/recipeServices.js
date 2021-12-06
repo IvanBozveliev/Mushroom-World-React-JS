@@ -38,14 +38,15 @@ export const create = (recipedata) => {
         .catch(error => console.log(error))
 }
 
-export const edit = (id, recipedata) => {
-    return fetch(`${url}/${id}`, {
-        method: "POST",
+export const editOne = (recipeId, recipeData) => {
+    
+    return fetch(`${url}/${recipeId}`, {
+        method: "PUT",
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(recipedata)
+        body: JSON.stringify(recipeData)
     })
         .then(res => res.json())
         .catch(error => console.log(error))

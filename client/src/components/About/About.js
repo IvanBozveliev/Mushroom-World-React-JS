@@ -1,5 +1,5 @@
 import './About.css';
-import mushroom4 from '../images/mushroom4.png';
+// import mushroom4 from '../images/mushroom4.png';
 
 const About = () => {
 
@@ -16,7 +16,7 @@ const About = () => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
                         <div className="about-box_img">
-                            <figure><img src={mushroom4} alt="#" /></figure>
+                            <figure><img src="/images/mushroom4.png" alt="#" /></figure>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,6 @@ module.exports = function (){
                     res.clearCookie(COOKIE_NAME)
                     return res.status(400).json({message: 'Your token is not valid'})
                 }else{
-                    
                    req.user = decoded;
                    res.locals.user = decoded;
                    res.locals.isAuthenticated = true;

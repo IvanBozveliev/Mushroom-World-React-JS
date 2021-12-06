@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import mushlogo2 from '../images/mushlogo2.png';
+// import mushlogo2 from '../images/mushlogo2.png';
 
 import { AuthContext } from "../../contexts/AuthContext";
 import './Header.css';
@@ -47,7 +47,7 @@ const Header = () => {
                                 <div className="full">
                                     <div className="center-desk">
                                         <div className="logo">
-                                            <p><img src={mushlogo2} alt="#" /><Link to="/">MushWorld</Link></p>
+                                            <p><img src="/images/mushlogo2.png" alt="#" /><Link to="/">MushWorld</Link></p>
                                         </div>
                                     </div>
                                 </div>

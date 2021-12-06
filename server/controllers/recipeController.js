@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 const isAuthenticated = require('../middlewares/isAuthenticated');
-const isMine = require('../middlewares/isMineRecipe');
+const isMineRecipe = require('../middlewares/isMineRecipe');
 
 const recipeService = require('../services/recipeService');
 
@@ -29,10 +29,10 @@ router.post("/", isAuthenticated, async (req, res) => {
 
 });
 
-router.put("/:recipeId", isAuthenticated, isMine, async (req, res) => {
-
+router.put("/:recipeId", isAuthenticated, isMineRecipe, async (req, res) => {
+    
     try {
-        await recipeService.updateOne(req.params.productId, req.body);
+        await recipeService.updateOne(req.params.recipeId, req.body);
         res.json({ ok: true });
     } catch (error) {
         res.status(400).send(error)
@@ -40,7 +40,7 @@ router.put("/:recipeId", isAuthenticated, isMine, async (req, res) => {
 
 });
 
-router.delete("/:recipeId", isAuthenticated, isMine, async (req, res) => {
+router.delete("/:recipeId", isAuthenticated, isMineRecipe, async (req, res) => {
     await recipeService.deleteOne(req.params.recipeId);
     res.json({ ok: true });
 });

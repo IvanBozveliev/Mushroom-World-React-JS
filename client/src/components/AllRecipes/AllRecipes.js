@@ -1,7 +1,6 @@
 import './AllRecipes.css';
 import Recipe from './Recipe';
 import * as recipeServices from '../../services/recipeServices';
-import soup from '../images/soup1.png';
 
 import { Component } from 'react';
 import NavRecipe from './NavRecipe';
@@ -48,13 +47,13 @@ class AllRecipes extends Component {
                     <div className="spacer">
                         <ul>
 
-                            {this.state.products.length != 0 ? this.state.products.map(x => <Recipe key={x._id} {...x} />) : <h1>Still haven`t recipes...</h1>}
+                            {this.state.products?.length != 0 ? this.state.products.map(x => <Recipe key={x._id} {...x} />) : <h1>Still haven`t recipes...</h1>}
 
                         </ul>
                     </div>
                     <div className="right-element">
                         <div className="images_box">
-                            <figure><img src={soup} /></figure>
+                            <figure><img src="/images/soup1.png" /></figure>
                         </div>
                     </div>
                 </div>
