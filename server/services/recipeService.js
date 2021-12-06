@@ -11,7 +11,7 @@ function create(data) {
    }
 
    if(data.directions.length < 20){
-       throw ({message:'The description should be at least 20 characters!'})
+       throw ({message:'The directions should be at least 20 characters!'})
    }
 
    if(!/^https?:\/\//g.test(data.imageUrl)){
