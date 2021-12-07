@@ -65,7 +65,7 @@ function App() {
           <Route path="/login" render={() => <Login  />} />
           <Route path="/logout" render={() => <Logout  />} />
           <Route component={NotFound} />
-
+          
         </Switch>
 
         <Footer />

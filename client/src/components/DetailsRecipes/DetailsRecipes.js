@@ -8,7 +8,7 @@ import * as recipeServices from '../../services/recipeServices';
 const DetailsRecipes = ({
     match
 }) => {
-  
+
     const [recipe, setRecipe] = useState({});
     //const [like, setLike] = useState([]);
     const history = useHistory();
@@ -18,9 +18,14 @@ const DetailsRecipes = ({
     }, [])
 
     const deleteRecipe = (e) => {
-          e.preventDefault();
-          recipeServices.deleteOne(recipe._id)
-            .then(() => history.push('/all-recipes'))
+        e.preventDefault();
+        if (window.confirm('Do you want to delete this article?')) {
+            recipeServices.deleteOne(recipe._id)
+                .then(() => history.push('/all-recipes'))
+        } else {
+            return
+        }
+
     }
     const ownerButtons = (
         <div className="btnsRecipe">
