@@ -18,9 +18,13 @@ const DetailsMush = ({
     
     const deleteMush = (e) => {
          e.preventDefault()
-
-         mushServices.deleteOne(mush._id)
-         .then(() => history.push('/all-mushrooms'))
+         if(window.confirm('Do you want to delete this article?')){
+            mushServices.deleteOne(mush._id)
+            .then(() => history.push('/all-mushrooms'))
+         }else{
+             return
+         }
+        
     }
     const ownerButtons = (
         <div className="btnsMush">

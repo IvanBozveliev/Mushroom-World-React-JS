@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 
-
+import NotFound from './components/NotFound';
 import { AuthContext } from './contexts/AuthContext';
 import EditMush from './components/EditMush';
 import EditRecipe from './components/EditRecipe/EditRecipe';
@@ -27,6 +27,7 @@ const initialAuthState = {
   username: '',
   token: ''
 }
+
 function App() {
   
   const [user, setUser] = useState(initialAuthState)
@@ -63,6 +64,7 @@ function App() {
           <Route path="/register" render={() => <Register />} />
           <Route path="/login" render={() => <Login  />} />
           <Route path="/logout" render={() => <Logout  />} />
+          <Route component={NotFound} />
 
         </Switch>
 
