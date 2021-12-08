@@ -2,6 +2,7 @@ import './AddRecipe.css';
 
 import * as recipeServices from '../../services/recipeServices';
 import { useState, useEffect } from 'react';
+import { isAuth } from '../../HOC/isAuth';
 
 const AddRecipe = ({
     history
@@ -114,4 +115,4 @@ const AddRecipe = ({
    )
 }
 
-export default AddRecipe;
+export default isAuth(AddRecipe);

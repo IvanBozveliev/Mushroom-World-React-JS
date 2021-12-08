@@ -2,7 +2,7 @@ import {useHistory} from 'react-router';
 import { useEffect, useState } from 'react';
 
 import * as recipeService from '../../services/recipeServices';
-
+import { isAuth } from '../../HOC/isAuth';
 
 const EditRecipe = ({
     match
@@ -123,4 +123,4 @@ const EditRecipe = ({
     )
 }
 
-export default EditRecipe;
+export default isAuth(EditRecipe);

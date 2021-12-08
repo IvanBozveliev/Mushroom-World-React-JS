@@ -1,10 +1,13 @@
 import './AddMush.css';
 import * as mushServices from '../../services/mushServices';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { isAuth } from '../../HOC/isAuth';
+// import { AuthContext } from '../../contexts/AuthContext'; 
 
 const AddMush = ({
     history
 }) => {
+    // const {user} = useContext(AuthContext);
 
     const [error, setError] = useState('');
 
@@ -35,7 +38,7 @@ const AddMush = ({
         })
 
             .then((res) => {
-                console.log(res)
+               
                 if (res.ok) {
                     history.push('/all-mushrooms')
                 } else {
@@ -46,6 +49,13 @@ const AddMush = ({
             })
 
     }
+
+    // if(!user.username){
+        
+    //     history.push('/login')
+    //     return null
+    // }
+    
     return (
         <div id="contact" className="contact">
             <div className="container">
@@ -104,4 +114,4 @@ const AddMush = ({
     )
 }
 
-export default AddMush;
+export default isAuth(AddMush);
