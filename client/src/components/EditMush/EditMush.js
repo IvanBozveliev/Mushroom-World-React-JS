@@ -5,6 +5,11 @@ import {isAuth} from '../../HOC/isAuth'
 
 import * as mushServices from '../../services/mushServices';
 
+const types = [
+    {value: 'edable', text: 'edable'},
+    {value: 'poison', text: 'poison'}
+];
+
 const EditMush = ({
     match
 }) => {
@@ -94,10 +99,9 @@ const EditMush = ({
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="mush">Type:  </label>
-                                            <select id="mush" className="select" type="select" name="mushType" >
-                                                
-                                                <option defaultValue="edable">edable</option>
-                                                <option defaultValue="poison">poison</option>
+                                            <select id="mush" className="select" type="select" name="mushType" value={mush.mushType} onChange={e => setMush(prev => ({...prev, mushType: e.target.value}))}>
+                                               
+                                                {types.map((x) => <option key={x.value} value={x.value} >{x.text}</option>)}
                                                 
                                             </select>
                                         </div>
