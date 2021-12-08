@@ -13,11 +13,8 @@ You also can create delete and edit yours mushrooms.In all recipes page you can 
 
 Install the project with npm.
 Open the main folder and you will see two folders 'client' and 'server'.
+After that open two terminals and type 'cd client' and 'cd server'
 
-```bash
-  write in terminal: cd client
-  write in second terminal: cd server
-```
 ```bash
   in cd client: npm Install
   in cd server: npm Install
