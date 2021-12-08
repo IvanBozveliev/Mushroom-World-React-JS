@@ -20,7 +20,7 @@ router.get('/:recipeId', async (req, res) => {
 router.post("/", isAuthenticated, async (req, res) => {
    
     try{
-        await recipeService.create({ ...req.body, creator: req.user._id });
+        await recipeService.create({ ...req.body, likes: [] , creator: req.user._id });
         res.json({ ok: true });
     }catch(error){
         res.status(400).send(error)
@@ -45,5 +45,14 @@ router.delete("/:recipeId", isAuthenticated, isMineRecipe, async (req, res) => {
     res.json({ ok: true });
 });
 
+router.get('/likes/:recipeId', isAuthenticated, async (req, res) => {
+    try{
+        let recipe = await recipeService.likeOne(req.params.recipeId, req.user._id);
+        res.json(recipe);
+    }catch(error){
+        res.status(400).json(error);
+    }
+   
+});
 
 module.exports = router;

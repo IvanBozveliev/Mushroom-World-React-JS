@@ -52,23 +52,25 @@ export const editOne = (recipeId, recipeData) => {
         .catch(error => console.log(error))
 }
 
-// export const deleteOne = (id) => {
-//     return fetch(`${url}/${id}`, {
-//         method: "DELETE",
-//         headers: {
-//             'Authorization': 'Bearer ' + sessionStorage.token,
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify()
-//     })
-//         .then(res => res.json())
-//         .catch(error => console.log(error))
-// }
-
 export const deleteOne = (id) => {
 
     return fetch(`${url}/${id}`, {
         method: "DELETE",
+        headers: {
+            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+    })
+        .then(res => res.json())
+        .catch(error => console.log(error))
+        
+}
+
+export const likeOne = (recipeId) => {
+
+    return fetch(`${url}/likes/${recipeId}`, {
+        method: "GET",
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.token,
             'Content-Type': 'application/json'

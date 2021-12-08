@@ -54,10 +54,19 @@ function deleteOne(recipeId) {
    return Recipe.deleteOne({ _id: recipeId })
 }
 
+async function likeOne(recipeId, userId) {
+   
+   let recipe = await Recipe.findById(recipeId);
+
+   recipe.likes.push(userId);
+   return recipe.save();
+}
+
 module.exports = {
    create,
    getOne,
    getAll,
    updateOne,
    deleteOne,
+   likeOne
 }

@@ -21,7 +21,6 @@ router.post("/" , isAuthenticated, async (req, res) =>{
         await productService.create({...req.body, creator: req.user._id});
         res.json({ok: true})
     }catch(error){
-        console.log(error)
         res.status(400).send(error)
     }
     

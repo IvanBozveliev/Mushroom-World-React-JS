@@ -1,6 +1,6 @@
 import './DetailsRecipes.css';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
 
@@ -10,8 +10,9 @@ const DetailsRecipes = ({
 }) => {
 
     const [recipe, setRecipe] = useState({});
-    //const [like, setLike] = useState([]);
+   
     const history = useHistory();
+
     useEffect(() => {
         recipeServices.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
@@ -27,6 +28,18 @@ const DetailsRecipes = ({
         }
 
     }
+
+    const isLiked = (e) => {
+        e.preventDefault();
+
+        recipeServices.likeOne(match.params.recipeId)
+            .then(res => {
+                setRecipe(res)
+                history.push(`/recipes/details/${recipe._id}`)
+            })
+
+    }
+
     const ownerButtons = (
         <div className="btnsRecipe">
             <Link className="sortBtnEditRecipe" to={`/recipes/details/edit/${recipe._id}`}>Edit</Link>
@@ -35,10 +48,22 @@ const DetailsRecipes = ({
     )
 
     const userButtons = (
-        <>
-            <button className="likes">Like</button>
-            {/* {recipe.likes} */}
-            <h5 className='likedText'>You liked this recipe!</h5>
+        <> 
+        
+
+         {recipe.likes?.includes(sessionStorage.id) ?
+          (<h5 className='likedText'>You liked this recipe!</h5>)
+          :
+          (<button className="likes" onClick={isLiked}>Like</button>)
+         }
+
+            {/* {
+                recipe.likes.includes(sessionStorage.id) ?
+                    (<h5 className='likedText'>You liked this recipe!</h5>)
+                    :
+                    (<button className="likes" onClick={isLiked}>Like</button>)
+            } */}
+
         </>
     )
     return (
