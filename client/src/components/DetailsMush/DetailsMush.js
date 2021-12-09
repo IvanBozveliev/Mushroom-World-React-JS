@@ -52,7 +52,7 @@ const DetailsMush = ({
                             {sessionStorage.id && (mush.creator == sessionStorage.id ? ownerButtons : "")}
 
                             <p><b> Distribution: </b>{mush.description}</p>
-                            <p>Author: {mush.author}</p>
+                            <p><b>Author: </b>{mush.author}</p>
 
                         </div>
                     </div>
