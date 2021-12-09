@@ -9,11 +9,15 @@ function create(data) {
    if(data.title.length < 3){
        throw ({message:'The title should be at least 4 characters!'})
    }
+   
+   if(data.ingredients.length < 20){
+      throw ({message:'The ingredients should be at least 20 characters'})
+   }
 
    if(data.directions.length < 20){
        throw ({message:'The directions should be at least 20 characters!'})
    }
-
+   
    if(!/^https?:\/\//g.test(data.imageUrl)){
        throw ({message:'The image should be starts with http or https!'})
    }
@@ -45,6 +49,14 @@ function updateOne(recipeId, data) {
 
    if (data.title == '' || data.serves == '' || data.directions == '' || data.imageUrl == '' || data.ingredients == '' || data.cookingTime == '' || data.preparationTime == '') {
       throw ({message: 'You can not have empty fields!'})
+   }
+
+   if(data.directions.length < 20){
+      throw ({message:'The directions should be at least 20 characters'})
+   }
+
+   if(data.ingredients.length < 20){
+      throw ({message:'The ingredients should be at least 20 characters'})
    }
 
    return Recipe.updateOne({ _id: recipeId }, data)

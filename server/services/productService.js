@@ -53,6 +53,11 @@ function updateOne(productId, data) {
    if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
       throw ({message: 'You can not have empty fields!'})
    }
+
+   if(data.description.length < 20){
+      throw ({message:'The description should be at least 20 characters'})
+   }
+   
    return Product.updateOne({ _id: productId }, data)
 }
 

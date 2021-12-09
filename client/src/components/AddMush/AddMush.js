@@ -1,21 +1,32 @@
 import './AddMush.css';
 import * as mushServices from '../../services/mushServices';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { isAuth } from '../../HOC/isAuth';
-// import { AuthContext } from '../../contexts/AuthContext'; 
+
 
 const AddMush = ({
     history
 }) => {
-    // const {user} = useContext(AuthContext);
-
+    
     const [error, setError] = useState('');
+    const [errors, setErrors] = useState({ name: false });
 
     useEffect(() => {
         setTimeout(() => {
             setError('')
         }, 5000)
     }, [error])
+
+
+    const onHandler = (e) => {
+        const product = e.target.value;
+
+        if (product.length < 20) {
+            setErrors(state => ({ ...state, name: 'Your text should be at least 20 characters long!' }))
+        } else {
+            setErrors(state => ({ ...state, name: false }))
+        }
+    }
 
     const onMushCreate = (e) => {
         e.preventDefault();
@@ -90,7 +101,8 @@ const AddMush = ({
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="distribution">Distribution</label>
-                                            <textarea id="distribution" className="textarea" placeholder="Distribution Summary" type="text" name="description"></textarea>
+                                            <textarea id="distribution" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Distribution Summary" type="text" name="description"  onBlur={onHandler}></textarea>
+                                            {errors.name && <span className='errtxt'>{errors.name}</span>}
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="mush">Type:  </label>

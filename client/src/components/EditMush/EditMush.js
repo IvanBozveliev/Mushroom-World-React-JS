@@ -1,20 +1,21 @@
 import './EditMush.css';
 import { useHistory } from 'react-router';
 import { useEffect, useState } from 'react';
-import {isAuth} from '../../HOC/isAuth'
+import { isAuth } from '../../HOC/isAuth'
 import * as mushServices from '../../services/mushServices';
 
 const types = [
-    {value: 'edable', text: 'edable'},
-    {value: 'poison', text: 'poison'}
+    { value: 'edable', text: 'edable' },
+    { value: 'poison', text: 'poison' }
 ];
 
 const EditMush = ({
     match
 }) => {
-    
+
     const [mush, setMush] = useState({});
     const [error, setError] = useState('');
+    const [errors, setErrors] = useState({ name: false });
     const history = useHistory();
 
     useEffect(() => {
@@ -26,7 +27,20 @@ const EditMush = ({
         setTimeout(() => {
             setError('')
         }, 5000)
-     }, [error])
+    }, [error])
+
+
+    const onHandler = (e) => {
+
+        const description = e.target.value;
+
+        if (description.length < 20) {
+            setErrors(state => ({ ...state, name: 'Your text should be at least 20 characters long!' }))
+        } else {
+            setErrors(state => ({ ...state, name: false }))
+        }
+    }
+
 
     const onMushEdit = (e) => {
         e.preventDefault();
@@ -38,7 +52,7 @@ const EditMush = ({
         let imageUrlOne = formData.get('imageUrlOne');
         let imageUrlTwo = formData.get('imageUrlTwo');
         let mushType = formData.get('mushType');
-        
+
         mushServices.editOne(match.params.mushId, {
             title,
             description,
@@ -49,15 +63,15 @@ const EditMush = ({
         })
 
             .then((res) => {
-                if(res.ok){
+                if (res.ok) {
                     history.push(`/mush/details/${mush._id}`)
-                }else{
+                } else {
                     setError(res.message)
                     return;
                 }
-                
+
             })
-            
+
     }
 
     return (
@@ -94,14 +108,17 @@ const EditMush = ({
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="distribution">Distribution</label>
-                                            <textarea id="distribution" className="textarea" placeholder="Distribution Summary" type="text" name="description" defaultValue={mush.description}></textarea>
+
+                                            <textarea id="distribution" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Distribution Summary" type="text" name="description" defaultValue={mush.description} onBlur={onHandler}></textarea>
+                                            {errors.name && <span className='errtxt'>{errors.name}</span>}
+
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="mush">Type:  </label>
-                                            <select id="mush" className="select" type="select" name="mushType" value={mush.mushType} onChange={e => setMush(prev => ({...prev, mushType: e.target.value}))}>
-                                               
+                                            <select id="mush" className="select" type="select" name="mushType" value={mush.mushType} onBlur={e => setMush(prev => ({ ...prev, mushType: e.target.value }))}>
+
                                                 {types.map((x) => <option key={x.value} value={x.value} >{x.text}</option>)}
-                                                
+
                                             </select>
                                         </div>
                                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">

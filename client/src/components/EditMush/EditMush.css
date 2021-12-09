@@ -129,3 +129,9 @@
     color: rgb(252, 252, 252);
     padding-top: 14px;
 }
+
+.errtxt{
+    color:red;
+    font-size: 18px;
+    width: 500px
+}

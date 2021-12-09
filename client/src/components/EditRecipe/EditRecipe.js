@@ -1,4 +1,4 @@
-import {useHistory} from 'react-router';
+import { useHistory } from 'react-router';
 import { useEffect, useState } from 'react';
 
 import * as recipeService from '../../services/recipeServices';
@@ -10,6 +10,8 @@ const EditRecipe = ({
 
     const [recipe, setRecipe] = useState({});
     const [error, setError] = useState('');
+    const [errors, setErrors] = useState({ name: false });
+
     const history = useHistory();
 
     useEffect(() => {
@@ -22,6 +24,17 @@ const EditRecipe = ({
             setError('')
         }, 5000)
     }, [error])
+
+
+    const onHandler = (e) => {
+        const product = e.target.value;
+
+        if (product.length < 20) {
+            setErrors(state => ({ ...state, name: 'Your text should be at least 20 characters long!' }))
+        } else {
+            setErrors(state => ({ ...state, name: false }))
+        }
+    }
 
     const onEditRecipe = (e) => {
         e.preventDefault();
@@ -47,15 +60,15 @@ const EditRecipe = ({
             author: sessionStorage.username
         })
 
-         .then(res => {
-             
-             if(res.ok){
-                 history.push(`/recipes/details/${recipe._id}`)
-             }else{
-                 setError(res.message);
-                 return
-             }
-         })
+            .then(res => {
+
+                if (res.ok) {
+                    history.push(`/recipes/details/${recipe._id}`)
+                } else {
+                    setError(res.message);
+                    return
+                }
+            })
 
     }
 
@@ -86,11 +99,11 @@ const EditRecipe = ({
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="serves">Serves</label>
-                                            <input id="serves" className="contactus" placeholder="Num of serves" type="number" name="serves" defaultValue={recipe.serves}/>
+                                            <input id="serves" className="contactus" placeholder="Num of serves" type="number" name="serves" defaultValue={recipe.serves} />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="preparation">Preparation Time</label>
-                                            <input id="preparation" className="contactus" placeholder="Preparation time" type="number" name="preparationTime" defaultValue={recipe.preparationTime}/>
+                                            <input id="preparation" className="contactus" placeholder="Preparation time" type="number" name="preparationTime" defaultValue={recipe.preparationTime} />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="cooking">Cooking Time</label>
@@ -98,15 +111,17 @@ const EditRecipe = ({
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="ingredients">Ingredients</label>
-                                            <textarea id="ingredients" className="textarea" placeholder="1 tomato, 8 arugula etc." type="text"  defaultValue={recipe.ingredients} name="ingredients"></textarea>
+                                            <textarea id="ingredients" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="1 tomato, 8 arugula etc." type="text" defaultValue={recipe.ingredients} name="ingredients" onBlur={onHandler}></textarea>
+                                            {errors.name && <span className='errtxt'>{errors.name}</span>}
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="directions">Directions</label>
-                                            <textarea id="directions" className="textarea" placeholder="Directions Summary" type="text" defaultValue={recipe.directions} name="directions"></textarea>
+                                            <textarea id="directions" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Directions Summary" type="text" defaultValue={recipe.directions} name="directions" onBlur={onHandler}></textarea>
+                                            {errors.name && <span className='errtxt'>{errors.name}</span>}
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="image">Image</label>
-                                            <input id="image" className="contactus" placeholder="Add image URL..." type="text" name="imageUrl" defaultValue={recipe.imageUrl}/>
+                                            <input id="image" className="contactus" placeholder="Add image URL..." type="text" name="imageUrl" defaultValue={recipe.imageUrl} />
                                         </div>
                                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                             <button className="send">Create</button>
