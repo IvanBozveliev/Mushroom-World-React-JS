@@ -1,6 +1,6 @@
 const url = 'http://localhost:5000/products';
 
-export const getAll = (mushType = '') => {
+export const getAll = (mushType) => {
 
     let newUrl = url;
 

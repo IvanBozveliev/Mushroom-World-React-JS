@@ -1,6 +1,6 @@
 const url = 'http://localhost:5000/recipes';
 
-export const getAll = (cookingTime = '') => {
+export const getAll = (cookingTime) => {
 
     let newUrl = url;
 
