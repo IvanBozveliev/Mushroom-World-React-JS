@@ -16,12 +16,12 @@ Open the main folder and you will see two folders 'client' and 'server'.
 After that open two terminals and type 'cd client' and 'cd server'
 
 ```bash
-  in cd client: npm Install
-  in cd server: npm Install
+  cd client: npm Install
+  cd server: npm Install
 ```
 ```bash
-  in cd client: npm start
-  in cd server: npm start
+  cd client: npm start
+  cd server: npm start
 ```
 ## Tech Stack
 
