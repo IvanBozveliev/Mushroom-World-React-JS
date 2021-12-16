@@ -54,7 +54,7 @@ const Logout = () => {
           history.push('/login')
       })
 
-   },[history])
+   },[])
   
    return null;
 }

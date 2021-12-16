@@ -47,7 +47,7 @@ const DetailsMush = ({
                     <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
                         <div className="vegetable_shop">
                             <h3>{mush.title}</h3>
-                            <h4 className={mush.mushType == "edable" ? "edable" : "poison"}>{mush.mushType}</h4>
+                            <h4 className={mush.mushType}>{mush.mushType}</h4>
 
                             {sessionStorage.id && (mush.creator == sessionStorage.id ? ownerButtons : "")}
 

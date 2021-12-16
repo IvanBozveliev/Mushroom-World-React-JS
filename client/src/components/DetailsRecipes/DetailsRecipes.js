@@ -57,12 +57,6 @@ const DetailsRecipes = ({
           (<button className="likes" onClick={isLiked}>Like</button>)
          }
 
-            {/* {
-                recipe.likes.includes(sessionStorage.id) ?
-                    (<h5 className='likedText'>You liked this recipe!</h5>)
-                    :
-                    (<button className="likes" onClick={isLiked}>Like</button>)
-            } */}
 
         </>
     )
