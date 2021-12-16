@@ -61,12 +61,7 @@ const AddMush = ({
 
     }
 
-    // if(!user.username){
-        
-    //     history.push('/login')
-    //     return null
-    // }
-    
+
     return (
         <div id="contact" className="contact">
             <div className="container">
