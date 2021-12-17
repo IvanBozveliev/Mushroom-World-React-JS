@@ -61,9 +61,9 @@ function App() {
           <Route path="/mush/details/:mushId" component={DetailsMush} exact/>
           <Route path="/mush/details/edit/:mushId" component={EditMush} />
           <Route path="/recipes/details/edit/:recipeId" component={EditRecipe} />
-          <Route path="/register" render={() => <Register />} />
-          <Route path="/login" render={() => <Login  />} />
-          <Route path="/logout" render={() => <Logout  />} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path='/logout' component={Logout} />
           <Route component={NotFound} />
           
         </Switch>
