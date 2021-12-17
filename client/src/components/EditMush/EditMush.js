@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { isAuth } from '../../HOC/isAuth'
 import * as mushServices from '../../services/mushServices';
 
+import Form from '../Forms/MushroomForm';
+
 const types = [
     { value: 'edable', text: 'edable' },
     { value: 'poison', text: 'poison' }
@@ -15,7 +17,7 @@ const EditMush = ({
 
     const [mush, setMush] = useState({});
     const [error, setError] = useState('');
-    const [errors, setErrors] = useState({ name: false });
+
     const history = useHistory();
 
     useEffect(() => {
@@ -28,18 +30,6 @@ const EditMush = ({
             setError('')
         }, 5000)
     }, [error])
-
-
-    const onHandler = (e) => {
-
-        const description = e.target.value;
-
-        if (description.length < 20) {
-            setErrors(state => ({ ...state, name: 'Your text should be at least 20 characters long!' }))
-        } else {
-            setErrors(state => ({ ...state, name: false }))
-        }
-    }
 
 
     const onMushEdit = (e) => {
@@ -74,6 +64,10 @@ const EditMush = ({
 
     }
 
+    const onSelected = (data) => {
+        setMush(prev => ({ ...prev, mushType: data }))
+    }
+
     return (
         <div id="contact" className="contact">
             <div className="container">
@@ -90,43 +84,9 @@ const EditMush = ({
                     <div className="row">
 
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <form className="contact_bg" onSubmit={onMushEdit} method="POST">
-                                <div className="row">
-                                    <div className="col-md-12">
 
-                                        <div className="col-md-12">
-                                            <label htmlFor="mushname" className='label'>Mushroom Name</label>
-                                            <input id="mushname" className="contactus" placeholder="Mushroom Name" type="text" name="title" defaultValue={mush.title} />
-                                        </div>
-                                        <div className="col-md-12">
-                                            <label htmlFor="firstImage" className='label'>First Image</label>
-                                            <input id="firstImage" className="contactus" placeholder="Type Image URL" type="text" name="imageUrlOne" defaultValue={mush.imageUrlOne} />
-                                        </div>
-                                        <div className="col-md-12">
-                                            <label htmlFor='secondImage' className='label'>Second Image</label>
-                                            <input id="secondImage" className="contactus" placeholder="Type Image URL" type="text" name="imageUrlTwo" defaultValue={mush.imageUrlTwo} />
-                                        </div>
-                                        <div className="col-md-12">
-                                            <label htmlFor="distribution">Distribution</label>
+                            <Form onSubmit={onMushEdit} types={types} mush={mush} onSelected={onSelected} />
 
-                                            <textarea id="distribution" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Distribution Summary" type="text" name="description" defaultValue={mush.description} onBlur={onHandler}></textarea>
-                                            {errors.name && <span className='errtxt'>{errors.name}</span>}
-
-                                        </div>
-                                        <div className="col-md-12">
-                                            <label htmlFor="mush">Type:  </label>
-                                            <select id="mush" className="select" type="select" name="mushType" value={mush.mushType} onBlur={e => setMush(prev => ({ ...prev, mushType: e.target.value }))}>
-
-                                                {types.map((x) => <option key={x.value} value={x.value} >{x.text}</option>)}
-
-                                            </select>
-                                        </div>
-                                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                            <button className="send" type="submit">Edit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,11 @@
+.contact_bg .titlepage {
+    padding-bottom: 20px;
+    text-align: right !important;
+    padding-right: 10px;
+}
+
+.errtxt{
+    color:red;
+    font-size: 18px;
+    width: 500px
+}
