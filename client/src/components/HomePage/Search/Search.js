@@ -25,7 +25,7 @@ const Search = ({
 
     const clearInput = () => {
         setFilteredData([]);
-        setWordEntered('')
+        setWordEntered('');
     }
 
     return (
@@ -38,6 +38,7 @@ const Search = ({
                     value={wordEntered}
                     onChange={handleFilter}
                 />
+
                 <div className='searchIcon' >
                     {filteredData.length === 0 ?
                       <img className='searchIcon' src="/images/search.png"/>

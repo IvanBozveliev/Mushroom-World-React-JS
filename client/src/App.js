@@ -45,7 +45,7 @@ function App() {
     <AuthContext.Provider value={{user, login, logout}}>
       <div className="App">
 
-        <Header user={user.username}/>
+        <Header />
 
         <Switch>
 
