@@ -26,7 +26,7 @@ const AllMush = ({
                 <h2>All <strong className="llow">Mushrooms</strong></h2>
             </div>
             <div className="btns">
-                <NavMush />
+                <NavMush /> 
             </div>
             <div className="wrapper">
                 <div className="spacer-mush">

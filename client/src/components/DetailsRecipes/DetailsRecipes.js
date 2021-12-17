@@ -1,6 +1,6 @@
 import './DetailsRecipes.css';
 import { useEffect, useState } from 'react';
-import { useHistory, Redirect } from 'react-router';
+import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
 

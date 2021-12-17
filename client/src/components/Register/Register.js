@@ -7,8 +7,9 @@ import { useHistory } from 'react-router-dom';
 
 const Register = () => {
 
-    const { login } = useContext(AuthContext)
+    const { login } = useContext(AuthContext);
     const [error, setError] = useState('');
+
     const history = useHistory();
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const Register = () => {
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
+        
         let username = formData.get("username");
         let password = formData.get("password");
         let repeatPassword = formData.get("repeatPassword");
@@ -57,6 +59,7 @@ const Register = () => {
                     </div>
 
                 </div>
+
                 {error && <div className="errorRegister"><p className="errTxtRegister">{error}</p></div>}
                 <div className="white_color">
                     <div className="row">

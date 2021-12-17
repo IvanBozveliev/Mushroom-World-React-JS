@@ -6,7 +6,9 @@ const Form = ({
     types,
     onSelected
 }) => {
+    
     const [errors, setErrors] = useState({ name: false });
+
     const onHandler = (e) => {
         const product = e.target.value;
 

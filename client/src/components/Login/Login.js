@@ -71,6 +71,7 @@ const Login = () => {
                     <div className="row">
 
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
                             <form className="contact_bg" onSubmit={onLoginHandler} method="POST">
                                 <div className="row">
                                     <div className="col-md-12">
@@ -88,6 +89,7 @@ const Login = () => {
                                     </div>
                                 </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>

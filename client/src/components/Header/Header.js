@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-// import mushlogo2 from '../images/mushlogo2.png';
 
 import { AuthContext } from "../../contexts/AuthContext";
 import './Header.css';
