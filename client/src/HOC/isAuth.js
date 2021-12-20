@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 
+
+// Higher-Order Component
+
 export const isAuth = (Component) => {
 
     const WrapperComponent = (props) => {
@@ -16,4 +19,4 @@ export const isAuth = (Component) => {
         }
     }
     return WrapperComponent;
-}
+} 

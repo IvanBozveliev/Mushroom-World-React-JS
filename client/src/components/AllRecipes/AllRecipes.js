@@ -3,6 +3,7 @@ import Recipe from './Recipe';
 import * as recipeServices from '../../services/recipeServices';
 
 import { Component } from 'react';
+import { isAuth } from '../../HOC/isAuth';
 import NavRecipe from './NavRecipe';
 
 class AllRecipes extends Component {
@@ -65,4 +66,4 @@ class AllRecipes extends Component {
     }
 }
 
-export default AllRecipes;
+export default isAuth(AllRecipes);

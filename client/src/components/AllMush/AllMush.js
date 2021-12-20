@@ -4,7 +4,7 @@ import NavMush from './NavMush';
 
 import { useState, useEffect } from 'react';
 import * as mushServices from '../../services/mushServices';
-
+import {isAuth} from '../../HOC/isAuth';
 
 const AllMush = ({
     match
@@ -48,4 +48,4 @@ const AllMush = ({
     
 }
 
-export default AllMush;
+export default isAuth(AllMush);
