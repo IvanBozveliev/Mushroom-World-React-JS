@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import * as recipeService from '../../services/recipeServices';
 import { isAuth } from '../../HOC/isAuth';
-
+import { getUser } from '../../services/authService';
 import Form from '../Forms/RecipeForm';
 
 const EditRecipe = ({
@@ -48,7 +48,7 @@ const EditRecipe = ({
             ingredients,
             directions,
             imageUrl,
-            author: sessionStorage.username
+            author: getUser().username
         })
 
             .then(res => {

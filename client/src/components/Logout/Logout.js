@@ -14,9 +14,7 @@ const Logout = () => {
      authService.logout()
       .then(() => {
          
-          sessionStorage.removeItem('username');
-          sessionStorage.removeItem('token');
-          sessionStorage.removeItem('id');
+          sessionStorage.removeItem('user');
 
           logout();
           

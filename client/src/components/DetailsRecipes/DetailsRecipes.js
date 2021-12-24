@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
-
+import { getUser } from '../../services/authService';
 
 const DetailsRecipes = ({
     match
@@ -51,7 +51,7 @@ const DetailsRecipes = ({
         <> 
         
 
-         {recipe.likes?.includes(sessionStorage.id) ?
+         {recipe.likes?.includes(getUser().id) ?
           (<h5 className='likedText'>You liked this recipe!</h5>)
           :
           (<button className="likes" onClick={isLiked}>Like</button>)
@@ -83,7 +83,7 @@ const DetailsRecipes = ({
                             <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
 
 
-                            {sessionStorage.id && (recipe.creator == sessionStorage.id ? ownerButtons : userButtons)}
+                            {getUser().id && (recipe.creator == getUser().id ? ownerButtons : userButtons)}
 
                             <div className="contentText">
                                 <p>Directions: {recipe.directions}</p>

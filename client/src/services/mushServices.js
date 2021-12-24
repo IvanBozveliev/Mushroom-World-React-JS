@@ -1,3 +1,5 @@
+import {getUser} from './authService';
+
 const url = 'http://localhost:5000/products';
 
 export const getAll = (mushType) => {
@@ -10,7 +12,7 @@ export const getAll = (mushType) => {
     return fetch(newUrl, {
         method: 'GET',
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         }
     })
@@ -29,7 +31,7 @@ export const create = (mushData) => {
     return fetch(url, {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(mushData)
@@ -43,7 +45,7 @@ export const editOne = (mushId, mushdata) => {
     return fetch(`${url}/${mushId}`, {
         method: "PUT",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(mushdata)
@@ -57,7 +59,7 @@ export const deleteOne = (id) => {
     return fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify()

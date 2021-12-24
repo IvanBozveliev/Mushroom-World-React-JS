@@ -1,3 +1,5 @@
+import {getUser} from './authService';
+
 const url = 'http://localhost:5000/recipes';
 
 export const getAll = (cookingTime) => {
@@ -11,7 +13,7 @@ export const getAll = (cookingTime) => {
     return fetch(newUrl, {
         method: 'GET',
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         }
     })
@@ -29,7 +31,7 @@ export const create = (recipedata) => {
     return fetch(url, {
         method: "POST",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(recipedata)
@@ -43,7 +45,7 @@ export const editOne = (recipeId, recipeData) => {
     return fetch(`${url}/${recipeId}`, {
         method: "PUT",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(recipeData)
@@ -57,7 +59,7 @@ export const deleteOne = (id) => {
     return fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify()
@@ -72,7 +74,7 @@ export const likeOne = (recipeId) => {
     return fetch(`${url}/likes/${recipeId}`, {
         method: "GET",
         headers: {
-            'Authorization': 'Bearer ' + sessionStorage.token,
+            'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify()

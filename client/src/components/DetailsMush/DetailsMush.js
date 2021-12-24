@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router';
+import { getUser } from '../../services/authService';
 
 import './DetailsMush.css';
 import * as mushServices from '../../services/mushServices';
@@ -49,7 +50,7 @@ const DetailsMush = ({
                             <h3>{mush.title}</h3>
                             <h4 className={mush.mushType}>{mush.mushType}</h4>
 
-                            {sessionStorage.id && (mush.creator == sessionStorage.id ? ownerButtons : "")}
+                            {getUser().id && (mush.creator == getUser().id ? ownerButtons : "")}
 
                             <p><b> Distribution: </b>{mush.description}</p>
                             <p><b>Author: </b>{mush.author}</p>

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import { useEffect, useState } from 'react';
 import { isAuth } from '../../HOC/isAuth'
 import * as mushServices from '../../services/mushServices';
-
+import { getUser } from '../../services/authService';
 import Form from '../Forms/MushroomForm';
 
 const types = [
@@ -49,7 +49,7 @@ const EditMush = ({
             imageUrlOne,
             imageUrlTwo,
             mushType,
-            author: sessionStorage.username
+            author: getUser().username
         })
 
             .then((res) => {

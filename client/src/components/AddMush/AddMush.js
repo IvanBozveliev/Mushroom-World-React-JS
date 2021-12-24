@@ -2,8 +2,9 @@ import './AddMush.css';
 import * as mushServices from '../../services/mushServices';
 import { useState, useEffect } from 'react';
 import { isAuth } from '../../HOC/isAuth';
-
+import { getUser } from '../../services/authService';
 import Form from '../Forms/MushroomForm';
+
 
 const AddMush = ({
     history
@@ -34,7 +35,7 @@ const AddMush = ({
             imageUrlOne,
             imageUrlTwo,
             mushType,
-            author: sessionStorage.username
+            author: getUser().username
         })
 
             .then((res) => {

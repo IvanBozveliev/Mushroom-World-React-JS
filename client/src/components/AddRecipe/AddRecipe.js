@@ -3,6 +3,7 @@ import './AddRecipe.css';
 import * as recipeServices from '../../services/recipeServices';
 import { useState, useEffect } from 'react';
 import { isAuth } from '../../HOC/isAuth';
+import { getUser } from '../../services/authService';
 
 import Form from '../Forms/RecipeForm';
 
@@ -41,7 +42,7 @@ const AddRecipe = ({
             cookingTime,
             ingredients,
             imageUrl,
-            author: sessionStorage.username,
+            author: getUser().username,
             likes
 
         })

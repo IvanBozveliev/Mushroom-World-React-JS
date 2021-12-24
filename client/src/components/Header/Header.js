@@ -5,8 +5,9 @@ import { AuthContext } from "../../contexts/AuthContext";
 import './Header.css';
 
 const Header = () => {
+    
     const {user} = useContext(AuthContext);
-
+    
     let guestNav = (
         <>
             <li> <Link to="/">Home</Link> </li>
