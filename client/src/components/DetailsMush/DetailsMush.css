@@ -2,25 +2,26 @@
     background-color: #fff;
     margin-top: 70px;
 }
-.edable{
+
+.edable {
     color: green;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.poison{
+.poison {
     color: rgb(128, 0, 0);
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .vegetable_shop h3 {
-font-size: 31px;
-line-height: 35px;
-color: #000;
-font-weight: 500;
-padding-bottom: 17px;
-display: block;
+    font-size: 31px;
+    line-height: 35px;
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 17px;
+    display: block;
 }
 
 
@@ -30,55 +31,75 @@ display: block;
     line-height: 28px;
     color: #000;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    
+    word-break: break-word;
 }
 
 
 .vegetable_img span {
-   z-index: 999;
-   display: flex;
-   align-content: center;
-   align-items: center;
-   right: 0;
-   top: 44%;
-   background: #428713;
-   padding: 19px 27px;
-   border-radius: 88px;
-   margin-right: -20px;
-   position: absolute;
-   color: #fff;
-   font-size: 19px;
+    z-index: 999;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    right: 0;
+    top: 44%;
+    background: #428713;
+    padding: 19px 27px;
+    border-radius: 88px;
+    margin-right: -20px;
+    position: absolute;
+    color: #fff;
+    font-size: 19px;
 }
 
 .margin_top span {
-   z-index: 999;
-   display: flex;
-   align-content: center;
-   align-items: center;
-   right: 0;
-   top: 27%;
-   background: #428713;
-   padding: 19px 25px;
-   border-radius: 88px;
-   margin-right: -20px;
-   position: absolute;
-   color: #fff;
-   font-size: 19px;
+    z-index: 999;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    right: 0;
+    top: 27%;
+    background: #428713;
+    padding: 19px 25px;
+    border-radius: 88px;
+    margin-right: -20px;
+    position: absolute;
+    color: #fff;
+    font-size: 19px;
 }
-.vegetable_img figure {margin: 0; margin-bottom: 40px}
-.vegetable_img figure img {width: 100%}
+
+.vegetable_img figure {
+    margin: 0;
+    margin-bottom: 40px
+}
+
+.vegetable_img figure img {
+    width: 100%;
+    height: 600px
+}
+
 .margin_top {
-   margin-top: -90px;
+    margin-top: -90px;
 }
 
 
 
 .titlepage {
-   text-align: center;
+    text-align: center;
     padding-bottom: 60px;
 }
-.titlepage span {padding-top: 30px; display: inline-block; font-size: 17px; color: #000;}
-.llow {color: #488d1c; font-weight: bold;}
+
+.titlepage span {
+    padding-top: 30px;
+    display: inline-block;
+    font-size: 17px;
+    color: #000;
+}
+
+.llow {
+    color: #488d1c;
+    font-weight: bold;
+}
+
 .titlepage h2 {
     text-transform: uppercase;
     padding: 0;
@@ -112,7 +133,7 @@ display: block;
     margin-left: 6px;
 }
 
-.sortBtnEditMush:hover{
+.sortBtnEditMush:hover {
     font-size: 16px;
     text-decoration: none;
     cursor: pointer;
@@ -144,7 +165,7 @@ display: block;
     margin-left: 6px;
 }
 
-.sortBtnDeleteMush:hover{
+.sortBtnDeleteMush:hover {
     font-size: 16px;
     text-decoration: none;
     cursor: pointer;
@@ -159,4 +180,15 @@ display: block;
     background-color: #ff7e1d;
     border: #ff7e1d solid 1px;
     transition: all 0.3s ease-in;
+}
+
+/* .authorMush{
+    margin-bottom: 10px;
+} */
+
+.distribution {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 120px;
 }

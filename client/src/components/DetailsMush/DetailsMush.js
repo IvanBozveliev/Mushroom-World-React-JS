@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { getUser } from '../../services/authService';
 
@@ -16,16 +16,16 @@ const DetailsMush = ({
         mushServices.getOne(match.params.mushId)
             .then(res => setMush(res))
     }, []);
-    
+
     const deleteMush = (e) => {
-         e.preventDefault()
-         if(window.confirm('Do you want to delete this article?')){
+        e.preventDefault()
+        if (window.confirm('Do you want to delete this article?')) {
             mushServices.deleteOne(mush._id)
-            .then(() => history.push('/all-mushrooms'))
-         }else{
-             return
-         }
-        
+                .then(() => history.push('/all-mushrooms'))
+        } else {
+            return
+        }
+
     }
     const ownerButtons = (
         <div className="btnsMush">
@@ -52,21 +52,25 @@ const DetailsMush = ({
 
                             {getUser()?.id && (mush.creator == getUser()?.id ? ownerButtons : "")}
 
-                            <p><b> Distribution: </b>{mush.description}</p>
-                            <p><b>Author: </b>{mush.author}</p>
+                            <div className='distribution'>
+                                <p><b> Distribution: </b>{mush.description}</p>
+                                <p className='authorMush'><b>Author: </b>{mush.author}</p>
+                                
+                            </div>
+
 
                         </div>
                     </div>
                     <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
                         <div className="vegetable_img">
                             <figure><img src={mush.imageUrlOne} alt="#" /></figure>
-                            <span>01</span>
+                            {/* <span>01</span> */}
                         </div>
                     </div>
                     <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
                         <div className="vegetable_img margin_top">
                             <figure><img src={mush.imageUrlTwo} alt="#" /></figure>
-                            <span>02</span>
+                            {/* <span>02</span> */}
                         </div>
                     </div>
                 </div>

@@ -35,7 +35,6 @@
     width: 400px;
     word-wrap:break-word;
     margin-left: 40px;
-    /* position: absolute; */
 }
 
 
@@ -283,9 +282,10 @@ span {
 }
 
 .likes {
-    position: absolute;
-    margin-left: 108px;
-    margin-top: -32px;
+    position: relative;
+    /* margin-left: 108px; */
+    margin-left: 25px;
+    margin-top: 20px;
     width: 53px;
     height: 30px;
     border-radius: 10px;
@@ -308,4 +308,8 @@ span {
 
 .contentText{
     background-color: red
+}
+
+.likesTwo {
+    display: inline;
 }

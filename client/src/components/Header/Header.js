@@ -27,7 +27,7 @@ const Header = () => {
         <li> <Link to="/add-recipe">Add Recipe</Link> </li>
         
         <div className='divName'>
-        <li><p className='txt'>[ Welcome, <strong className='llow'>{user.username} </strong> ] </p></li>
+        <li><p className='txt'><Link to="#">[ Welcome, <strong className='llow'>{user.username} </strong> ]</Link> </p></li>
         </div>
         <li> <Link to="/logout" className='logoutClass'>Logout</Link> </li>
       

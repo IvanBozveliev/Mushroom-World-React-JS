@@ -54,7 +54,7 @@ const DetailsRecipes = ({
             {recipe.likes?.includes(getUser()?.id) ?
                 (<h5 className='likedText'>You liked this recipe!</h5>)
                 :
-                (<button className="likes" onClick={isLiked}>Like</button>)
+                (<button  className='likesTwo' className="likes" onClick={isLiked}>Like</button>)
             }
 
 
@@ -82,7 +82,7 @@ const DetailsRecipes = ({
                         <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
                         <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
                         <h4><b>Ingredients:</b><br /><br />{recipe.ingredients}</h4>
-                        <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
+                        <h4 className='likesTwo'><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
 
 
                         {getUser()?.id && (recipe.creator == getUser()?.id ? ownerButtons : userButtons)}
