@@ -50,7 +50,7 @@ const DetailsMush = ({
                             <h3>{mush.title}</h3>
                             <h4 className={mush.mushType}>{mush.mushType}</h4>
 
-                            {getUser().id && (mush.creator == getUser().id ? ownerButtons : "")}
+                            {getUser()?.id && (mush.creator == getUser()?.id ? ownerButtons : "")}
 
                             <p><b> Distribution: </b>{mush.description}</p>
                             <p><b>Author: </b>{mush.author}</p>

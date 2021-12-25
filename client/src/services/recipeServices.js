@@ -13,7 +13,7 @@ export const getAll = (cookingTime) => {
     return fetch(newUrl, {
         method: 'GET',
         headers: {
-            'Authorization': 'Bearer ' + getUser().token,
+            // 'Authorization': 'Bearer ' + getUser().token,
             'Content-Type': 'application/json'
         }
     })
