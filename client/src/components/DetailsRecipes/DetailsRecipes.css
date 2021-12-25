@@ -5,6 +5,8 @@
     margin: 140px auto;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0px 0px 3px 10px rgb(67 150 15);
+    overflow: auto;
+
 }
 
 .product-img {
@@ -22,16 +24,21 @@
 
 .product-info {
     float: left;
-    height: 680px;
-    width: 530px;
+    /* height: 680px;
+    width: 530px; */
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
 }
 
 .product-text {
     height: 300px;
-    width: 327px;
+    width: 400px;
+    word-wrap:break-word;
+    margin-left: 40px;
+    /* position: absolute; */
 }
+
+
 
 .product-text h1 {
     margin: 0 0 0 17px;
@@ -74,6 +81,21 @@
     color: black
 }
 
+.titlepageRecipe {
+    text-align: center;
+  
+ }
+ .titlepageRecipe span {padding-top: 30px; display: inline-block; font-size: 17px; color: #000;}
+ .llow {color: #488d1c; font-weight: bold;}
+ .titlepageRecipe h2 {
+     text-transform: uppercase;
+     padding: 0;
+     font-weight: bold;
+     color: #000;
+     line-height: 55px;
+     font-size: 50px;
+ }
+
 .product-text h5 {
     margin: -29px 0 0px 118px;
     font-size: 15px;
@@ -85,7 +107,7 @@
 .product-text p {
     height: auto;
     margin: 10px 0 0 18px;
-    width: 100%;
+    /* width: 100%; */
     font-family: 'Playfair Display', serif;
     color: #000000;
     font-weight: bold;
@@ -282,4 +304,8 @@ span {
     color: #000000;
     font-weight: bold;
     font-size: 18px;
+}
+
+.contentText{
+    background-color: red
 }

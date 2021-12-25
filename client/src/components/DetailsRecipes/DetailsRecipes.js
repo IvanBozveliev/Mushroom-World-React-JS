@@ -10,7 +10,7 @@ const DetailsRecipes = ({
 }) => {
 
     const [recipe, setRecipe] = useState({});
-   
+
     const history = useHistory();
 
     useEffect(() => {
@@ -48,21 +48,21 @@ const DetailsRecipes = ({
     )
 
     const userButtons = (
-        <> 
-        
+        <>
 
-         {recipe.likes?.includes(getUser()?.id) ?
-          (<h5 className='likedText'>You liked this recipe!</h5>)
-          :
-          (<button className="likes" onClick={isLiked}>Like</button>)
-         }
+
+            {recipe.likes?.includes(getUser()?.id) ?
+                (<h5 className='likedText'>You liked this recipe!</h5>)
+                :
+                (<button className="likes" onClick={isLiked}>Like</button>)
+            }
 
 
         </>
     )
     return (
         <section id="deatils-page">
-            <div className="titlepage">
+            <div className="titlepageRecipe">
                 <h2>Best <strong className="llow">Recipes</strong></h2>
             </div>
             <div className="wrapper-recipe">
@@ -71,25 +71,30 @@ const DetailsRecipes = ({
                 </div>
                 <div className="product-info">
                     <div className="product-text">
-                        <div className="product-text">
-                            <div className='title'>
-                                <h1>{recipe.title}</h1>
-                                <h4><b className='author'>Author: {recipe.author}</b></h4>
-                            </div>
-                            <h4><b>Serves:</b> 5</h4>
-                            <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
-                            <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
-                            <h4><b>Ingredients:</b><br /><br />{recipe.ingredients}</h4>
-                            <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
 
 
-                            {getUser()?.id && (recipe.creator == getUser()?.id ? ownerButtons : userButtons)}
 
-                            <div className="contentText">
-                                <p>Directions: {recipe.directions}</p>
-                            </div>
-
+                        <div className='title'>
+                            <h1>{recipe.title}</h1>
+                            <h4><b className='author'>Author: {recipe.author}</b></h4>
                         </div>
+                        <h4><b>Serves:</b> 5</h4>
+                        <h4><b>Preparation time:</b> {recipe.preparationTime} min</h4>
+                        <h4><b>Cooking time:</b> {recipe.cookingTime} min</h4>
+                        <h4><b>Ingredients:</b><br /><br />{recipe.ingredients}</h4>
+                        <h4><b>Likes:</b> {recipe.likes ? recipe.likes.length : 0}</h4>
+
+
+                        {getUser()?.id && (recipe.creator == getUser()?.id ? ownerButtons : userButtons)}
+
+
+
+                        <p>Directions: {recipe.directions}</p>
+
+
+
+
+
                     </div>
 
                 </div>
