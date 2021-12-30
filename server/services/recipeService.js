@@ -74,11 +74,20 @@ async function likeOne(recipeId, userId) {
    return recipe.save();
 }
 
+async function commentOne(content, recipeId){
+
+   let recipe = await Recipe.findById(recipeId);
+   
+   recipe.comments.push(content);
+   return recipe.save();
+}
+
 module.exports = {
    create,
    getOne,
    getAll,
    updateOne,
    deleteOne,
-   likeOne
+   likeOne,
+   commentOne
 }

@@ -40,7 +40,8 @@ const recipeSchema = new mongoose.Schema({
     likes: [{
         type: mongoose.Types.ObjectId,
         ref: 'User'
-    }]
+    }],
+    comments: []
 });
 
 

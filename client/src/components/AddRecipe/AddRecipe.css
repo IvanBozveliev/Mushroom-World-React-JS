@@ -90,6 +90,7 @@
     border: #e8e8e8 solid 1px;
     border-radius: 1px;
     padding-top: 50px;
+    resize: none;
 }
 
 .contact .contact_bg .send {

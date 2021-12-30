@@ -4,11 +4,13 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
 import { getUser } from '../../services/authService';
+import InputEmoji from 'react-input-emoji';
 
 const DetailsRecipes = ({
     match
 }) => {
 
+    const [text, setText] = useState('');
     const [recipe, setRecipe] = useState({});
 
     const history = useHistory();
@@ -17,7 +19,8 @@ const DetailsRecipes = ({
         recipeServices.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
     }, [])
-
+    
+    
     const deleteRecipe = (e) => {
         e.preventDefault();
         if (window.confirm('Do you want to delete this article?')) {
@@ -27,6 +30,20 @@ const DetailsRecipes = ({
             return
         }
 
+    }
+
+    const handleOnEnter = (text) => {
+
+        let username = getUser().username;
+        let userId = getUser().id;
+        let content = text;
+
+        recipeServices.commentOne({ username, content, userId }, match.params.recipeId)
+            .then(res => {
+                
+                setRecipe(res)
+                history.push(`/recipes/details/${recipe._id}`)
+            })
     }
 
     const isLiked = (e) => {
@@ -54,7 +71,7 @@ const DetailsRecipes = ({
             {recipe.likes?.includes(getUser()?.id) ?
                 (<h5 className='likedText'>You liked this recipe!</h5>)
                 :
-                (<button  className='likesTwo' className="likes" onClick={isLiked}>Like</button>)
+                (<button className='likesTwo' className="likes" onClick={isLiked}>Like</button>)
             }
 
 
@@ -91,13 +108,50 @@ const DetailsRecipes = ({
 
                         <p>Directions: {recipe.directions}</p>
 
-
-
-
-
                     </div>
 
                 </div>
+            </div>
+            <div className='comments'>
+
+                <h3>Comments:</h3>
+
+                {getUser().username ?
+
+                    (<div id='commentsContext'>
+
+                        <InputEmoji
+                            value={text}
+                            onChange={setText}
+                            cleanOnEnter
+                            onEnter={handleOnEnter}
+                            placeholder='Type a message'
+                        />
+
+                    </div>) : null
+
+                }
+              
+                {recipe.comments?.length > 0 ? (
+
+                    <div className='allComments'>
+
+                        {recipe.comments.map(x =>
+                            <>  
+                                <hr/>
+                                <h5>{x.username}</h5>
+                                <p>{x.content}</p>
+                                <hr/>
+                            </>
+
+
+                        )}
+
+                    </div>
+
+                ) : <p id='commentP'>Add first comment!</p>}
+
+
             </div>
         </section>
     )

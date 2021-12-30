@@ -1,4 +1,4 @@
-import {getUser} from './authService';
+import { getUser } from './authService';
 
 const url = 'http://localhost:5000/recipes';
 
@@ -41,7 +41,7 @@ export const create = (recipedata) => {
 }
 
 export const editOne = (recipeId, recipeData) => {
-    
+
     return fetch(`${url}/${recipeId}`, {
         method: "PUT",
         headers: {
@@ -66,7 +66,7 @@ export const deleteOne = (id) => {
     })
         .then(res => res.json())
         .catch(error => console.log(error))
-        
+
 }
 
 export const likeOne = (recipeId) => {
@@ -81,5 +81,19 @@ export const likeOne = (recipeId) => {
     })
         .then(res => res.json())
         .catch(error => console.log(error))
-        
+
+}
+
+export const commentOne = (content, recipeId) => {
+    
+    return fetch(`${url}/comment/${recipeId}`, {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ' + getUser().token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+    })
+        .then(res => res.json())
+        .catch(error => console.log(error))
 }
