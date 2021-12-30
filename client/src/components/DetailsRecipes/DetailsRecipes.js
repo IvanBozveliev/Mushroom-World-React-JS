@@ -138,18 +138,14 @@ const DetailsRecipes = ({
 
                         {recipe.comments.map(x =>
                             <>  
-                                <hr/>
-                                <h5>{x.username}</h5>
-                                <p>{x.content}</p>
-                                <hr/>
+                                <h5>[{x.username}]</h5>
+                                <p className='commentsP'>{x.content}</p>
                             </>
-
-
                         )}
 
                     </div>
 
-                ) : <p id='commentP'>Add first comment!</p>}
+                ) : <p id='emptyParagraph'>Add first comment!</p>}
 
 
             </div>
