@@ -19,8 +19,8 @@ const DetailsRecipes = ({
         recipeServices.getOne(match.params.recipeId)
             .then(res => setRecipe(res))
     }, [])
-    
-    
+
+
     const deleteRecipe = (e) => {
         e.preventDefault();
         if (window.confirm('Do you want to delete this article?')) {
@@ -40,7 +40,7 @@ const DetailsRecipes = ({
 
         recipeServices.commentOne({ username, content, userId }, match.params.recipeId)
             .then(res => {
-                
+
                 setRecipe(res)
                 history.push(`/recipes/details/${recipe._id}`)
             })
@@ -114,7 +114,7 @@ const DetailsRecipes = ({
             </div>
             <div className='comments'>
 
-                <h3>Comments:</h3>
+                <h3 className='titleComments'>Comments:</h3>
 
                 {getUser().username ?
 
@@ -125,20 +125,25 @@ const DetailsRecipes = ({
                             onChange={setText}
                             cleanOnEnter
                             onEnter={handleOnEnter}
-                            placeholder='Type a message'
+                            placeholder='Type a comment and enter...'
                         />
 
                     </div>) : null
 
                 }
-              
+
                 {recipe.comments?.length > 0 ? (
 
                     <div className='allComments'>
 
                         {recipe.comments.map(x =>
-                            <>  
-                                <h5>[{x.username}]</h5>
+                            <>
+                              
+                                <h5 className='titleComment'>[{x.username}]</h5>
+                                <div className='commentBtns'>
+                                    <Link id='editCommentBtn' to='#'>Edit</Link>
+                                    <button>Delete</button>
+                                </div>
                                 <p className='commentsP'>{x.content}</p>
                             </>
                         )}

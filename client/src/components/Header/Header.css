@@ -2,20 +2,20 @@
     text-align: center;
 }
 
-.txt {
+.usernameStyle {
     color: rgb(3, 3, 3);
     font-size: 20px;
     font-weight: bold;
     margin-top: 11px;
     text-decoration: none;
+    padding-left: 40px;
+    padding-right: 20px;
 }
 .divName{
     display: inline-block;
     margin-left: 60px;
 }
-.logoutClass {
-    margin-top: -4px
-}
+
 
 .user {
     color: rgb(8, 167, 2);
@@ -51,6 +51,8 @@ nav.main-menu {
     float: left;
     margin-left: 0;
     margin-left: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(138, 137, 137);
 }
 
 .right_cart_section {
@@ -613,6 +615,7 @@ nav.main-menu {
 
 .menu-area-main li.active a {
     color: #538d2e;
+    border-bottom: 1px solid black;
 }
 
 .main-menu {
@@ -622,6 +625,7 @@ nav.main-menu {
 .main-menu ul {
     margin: 0;
     list-style-type: none;
+    /* white-space: nowrap; */
 }
 
 .main-menu ul>li {
@@ -637,6 +641,7 @@ nav.main-menu {
     display: block;
     font-weight: 600;
     color: #000;
+    
 }
 
 .main-menu ul>li a:hover {
@@ -749,4 +754,41 @@ nav.main-menu {
     margin: 0 auto;
     right: 0;
     padding: 15px 0px;
+}
+
+.navBootstrap{
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+#logoTitle{
+    margin-left: 15px;
+    margin-bottom: 22px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #050505;
+    /* -webkit-text-stroke: 1px rgb(34, 32, 32); */
+    font-family:  'Droid Sans', 'Helvetica Neue';
+    
+}
+
+#logoTitle:hover{
+    /* text-decoration: underline; */
+    margin-left: 15px;
+    margin-bottom: 22px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #488d1c;
+    /* -webkit-text-stroke: 1px rgb(71, 128, 57); */
+    font-family:  'Droid Sans', 'Helvetica Neue';
+    
+}
+
+.titleDiv{
+    white-space: nowrap;
+    margin-top: -10px;
+}
+
+.titleDiv>img{
+    margin-bottom: 6px
 }

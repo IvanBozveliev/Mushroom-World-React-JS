@@ -154,6 +154,7 @@ sup {
 
 a {
     color: #050505;
+    margin-bottom: 6px;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -161,7 +162,8 @@ a {
 
 a:hover {
     color: #43960f;
-    text-decoration: none
+    text-decoration: none;
+    cursor: pointer;
 }
 
 a:not([href]):not([tabindex]) {
@@ -3020,7 +3022,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    color: #16181b;
+    color: #488d1c;
     text-decoration: none;
     background-color: #f8f9fa
 }
@@ -3028,7 +3030,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #007bff
+    background-color: #488d1c
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -3630,12 +3632,18 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .nav {
     display: -ms-flexbox;
-    display: flex;
+    display: inherit;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
+    /* padding: 11px 15px; */
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
 }
 
 .nav-link {

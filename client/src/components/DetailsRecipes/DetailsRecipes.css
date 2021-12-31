@@ -336,6 +336,7 @@ span {
 .allComments{
     margin-top: 54px;
     margin-left: 12px;
+    display: block;
     /* text-align: center; */
 }
 
@@ -343,5 +344,39 @@ span {
     border-bottom: 1px solid green;
     padding-bottom: 12px;
     padding-top: 22px;
+    margin-bottom: 34px;
 }
 
+.titleComments{
+    margin-bottom: 45px;
+}
+
+.commentBtns{
+    /* display: inline-block; */
+    /* background-color: red; */
+    width: 100px;
+    margin-left: 400px;
+    margin-bottom: 31px;
+    margin-top: -31px;
+
+}
+
+.commentBtns>button{
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(170, 2, 2)
+}
+
+#editCommentBtn{
+    margin-right: 10px;
+    color: green
+}
+
+.titleComment{
+   margin-top: -11px;
+   width: 200px;
+   /* background-color: rgb(236, 234, 234); */
+   /* padding-left: 6px;
+   padding-bottom: 6px; */
+}
