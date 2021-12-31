@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
 import { getUser } from '../../services/authService';
 import InputEmoji from 'react-input-emoji';
+import { Modal, Button } from 'react-bootstrap';
 
 const DetailsRecipes = ({
     match
@@ -12,6 +13,11 @@ const DetailsRecipes = ({
 
     const [text, setText] = useState('');
     const [recipe, setRecipe] = useState({});
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const history = useHistory();
 
@@ -21,14 +27,11 @@ const DetailsRecipes = ({
     }, [])
 
 
-    const deleteRecipe = (e) => {
-        e.preventDefault();
-        if (window.confirm('Do you want to delete this article?')) {
-            recipeServices.deleteOne(recipe._id)
-                .then(() => history.push('/all-recipes'))
-        } else {
-            return
-        }
+    const deleteRecipe = () => {
+
+        recipeServices.deleteOne(recipe._id)
+            .then(() => history.push('/all-recipes'))
+
 
     }
 
@@ -60,7 +63,7 @@ const DetailsRecipes = ({
     const ownerButtons = (
         <div className="btnsRecipe">
             <Link className="sortBtnEditRecipe" to={`/recipes/details/edit/${recipe._id}`}>Edit</Link>
-            <Link className='sortBtnDeleteRecipe' onClick={deleteRecipe}>Delete</Link>
+            <button className='sortBtnDeleteRecipe' onClick={handleShow}>Delete</button>
         </div>
     )
 
@@ -138,7 +141,7 @@ const DetailsRecipes = ({
 
                         {recipe.comments.map(x =>
                             <>
-                              
+
                                 <h5 className='titleComment'>[{x.username}]</h5>
                                 <div className='commentBtns'>
                                     <Link id='editCommentBtn' to='#'>Edit</Link>
@@ -154,6 +157,20 @@ const DetailsRecipes = ({
 
 
             </div>
+
+            <Modal show={show} onHide={handleClose}>
+
+                <Modal.Body>Do you want to delete this article?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={deleteRecipe}>
+                        Delete
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
         </section>
     )
 
