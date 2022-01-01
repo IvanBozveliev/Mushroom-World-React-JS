@@ -341,7 +341,7 @@ span {
 }
 
 .commentsP{
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #b9c1b9;
     padding-bottom: 12px;
     padding-top: 22px;
     margin-bottom: 34px;
@@ -351,13 +351,12 @@ span {
     margin-bottom: 45px;
 }
 
-.commentBtns{
-    /* display: inline-block; */
-    /* background-color: red; */
-    width: 100px;
-    margin-left: 400px;
+.Time{
+
+    width: 300px;
+    margin-left: 308px;
     margin-bottom: 31px;
-    margin-top: -31px;
+    margin-top: -35px;
 
 }
 
@@ -368,12 +367,19 @@ span {
     color: rgb(170, 2, 2)
 }
 
-#editCommentBtn{
-    margin-right: 10px;
-    color: green
-}
 
 .titleComment{
-   margin-top: -11px;
-   width: 200px;
+   margin-top: -16px;
+   /* width: 200px; */
 }
+
+.timeP{
+    margin-top: 14px;
+    color: #43960f;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.currentComment{
+    margin-top: 70px;
+}
+

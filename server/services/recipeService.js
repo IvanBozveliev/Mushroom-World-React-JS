@@ -79,6 +79,9 @@ async function commentOne(content, recipeId){
    let recipe = await Recipe.findById(recipeId);
    
    recipe.comments.push(content);
+   recipe.comments.sort((a,b) => new Date(b.commentDate) - new Date(a.commentDate));
+   
+ 
    return recipe.save();
 }
 

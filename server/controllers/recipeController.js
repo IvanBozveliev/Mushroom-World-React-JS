@@ -57,7 +57,7 @@ router.get('/likes/:recipeId', isAuthenticated, async (req, res) => {
 
 router.post('/comment/:recipeId', isAuthenticated, async (req, res) => {
     try{
-        let comment = await recipeService.commentOne(req.body, req.params.recipeId)
+        let comment = await recipeService.commentOne(req.body, req.params.recipeId);
         res.json(comment)
     }catch(error){
         res.status(400).json(error)

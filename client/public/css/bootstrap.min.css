@@ -478,7 +478,11 @@ hr {
 
 .figure-caption {
     font-size: 90%;
-    color: #6c757d
+    color: #0a0a0a;
+    font-size: 22px;
+    text-align: left;
+    margin-top: 22px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 code, kbd, pre, samp {
@@ -2265,8 +2269,11 @@ a.btn.disabled, fieldset:disabled a.btn {
 .btn-primary {
     color: #fff;
     background-color: #a50606;
-    border-color: #050505
+    border-color: #050505;
+    /* margin-top: -7px; */
+    width: 66px;
 }
+
 
 .btn-primary:hover {
     color: #fff;
@@ -2294,13 +2301,31 @@ a.btn.disabled, fieldset:disabled a.btn {
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
 }
 
-.btn-secondary {
+.editAndDeleteBtnsInfo > .btn-secondary {
     color: #fff;
     background-color: #259901;
-    border-color: #6c757d
+    border-color: #6c757d;
+    width: 66px;
+    height: 38px;
+    margin-right: 22px;
+    margin-top: 6px;
 }
 
 .btn-secondary:hover {
+    color: #fff;
+    background-color: #30a801;
+    border-color: #545b62
+}
+
+.modal-footer >.btn-secondary {
+    color: #fff;
+    background-color: #259901;
+    border-color: #6c757d;
+    width: 66px;
+    height: 38px;
+}
+
+.modal-footer > .btn-secondary:hover {
     color: #fff;
     background-color: #30a801;
     border-color: #545b62
@@ -5151,6 +5176,23 @@ button.close {
 
 .modal-content {
     position: relative;
+    /* text-align: center; */
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0
+}
+
+.modal-content >  .newModalBody {
+    position: relative;
+    text-align: center;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -5220,7 +5262,20 @@ button.close {
     -ms-flex-pack: end;
     justify-content: flex-end;
     padding: 1rem;
-    border-top: 1px solid #e9ecef
+    border-top: 1px solid #e9ecef;
+    /* margin: auto; */
+}
+
+.modal-footer > div{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+    margin: auto;
 }
 
 .modal-footer>:not(:first-child) {

@@ -11,6 +11,7 @@
     padding-left: 40px;
     padding-right: 20px;
 }
+
 .divName{
     display: inline-block;
     margin-left: 60px;
@@ -300,7 +301,8 @@ nav.main-menu {
 
 .modal-title {
     padding: 0px;
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #070707;
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -791,4 +793,8 @@ nav.main-menu {
 
 .titleDiv>img{
     margin-bottom: 6px
+}
+
+.btn-close{
+   display: none;
 }

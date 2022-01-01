@@ -2,12 +2,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { NavDropdown, Nav } from 'react-bootstrap';
 import { AuthContext } from "../../contexts/AuthContext";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react";
+import MyVerticallyCenteredModal from './Modal'
+
 import './Header.css';
 
 const Header = () => {
 
     const { user } = useContext(AuthContext);
+    const [modalShow, setModalShow] = useState(false);
 
     let guestNav = (
         <>
@@ -22,7 +25,7 @@ const Header = () => {
         <>
 
             <li> <Link to="/">Home</Link> </li>
-            
+
             <div className='navBootstrap'>
                 <Nav>
                     <NavDropdown
@@ -31,7 +34,7 @@ const Header = () => {
                     >
                         <NavDropdown.Item to="/all-mushrooms" as={Link}>All Mushrooms</NavDropdown.Item>
                         <NavDropdown.Item to="/add-mushroom" as={Link}>Add Mushroom</NavDropdown.Item>
-                        
+
                     </NavDropdown>
                 </Nav>
 
@@ -42,21 +45,15 @@ const Header = () => {
                     >
                         <NavDropdown.Item to="/all-recipes" as={Link}>All Recipes</NavDropdown.Item>
                         <NavDropdown.Item to="/add-recipe" as={Link}>Add Recipe</NavDropdown.Item>
-                       
+
                     </NavDropdown>
                 </Nav>
 
             </div>
             <li> <Link to="/about">About</Link> </li>
-            {/* 
-            <li> <Link to="/all-mushrooms">All Mushrooms</Link> </li>
-            <li> <Link to="/add-mushroom">Add Mushroom</Link> </li> */}
-
-            {/* <li> <Link to="/all-recipes">All Recipes</Link> </li>
-            <li> <Link to="/add-recipe">Add Recipe</Link> </li> */}
-
+    
             <div className='divName'>
-                <li><p className='usernameStyle'><Link to="#">[ Welcome, <strong className='llow'>{user.username} </strong> ]</Link> </p></li>
+                <li><p className='usernameStyle'><Link to="#" variant="primary" onClick={() => setModalShow(true)}>[ Welcome, <strong className='llow'>{user.username} </strong> ]</Link> </p></li>
             </div>
             <li> <Link to="/logout">Logout</Link> </li>
 
@@ -100,6 +97,12 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+
         </header>
     )
 }

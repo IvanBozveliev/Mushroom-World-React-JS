@@ -36,14 +36,15 @@ const DetailsRecipes = ({
     }
 
     const handleOnEnter = (text) => {
+        console.log(text.target)
 
         let username = getUser().username;
         let userId = getUser().id;
         let content = text;
+        let commentDate = new Date().toString().slice(3, 24);
 
-        recipeServices.commentOne({ username, content, userId }, match.params.recipeId)
+        recipeServices.commentOne({ username, content, userId, commentDate }, match.params.recipeId)
             .then(res => {
-
                 setRecipe(res)
                 history.push(`/recipes/details/${recipe._id}`)
             })
@@ -119,7 +120,7 @@ const DetailsRecipes = ({
 
                 <h3 className='titleComments'>Comments:</h3>
 
-                {getUser().username ?
+                {getUser().id != recipe.creator ?
 
                     (<div id='commentsContext'>
 
@@ -131,29 +132,33 @@ const DetailsRecipes = ({
                             placeholder='Type a comment and enter...'
                         />
 
+
+
                     </div>) : null
 
                 }
 
-                {recipe.comments?.length > 0 ? (
+                {
+                    recipe.comments?.length > 0 ? (
 
-                    <div className='allComments'>
+                        <div className='allComments'>
 
-                        {recipe.comments.map(x =>
-                            <>
+                            {recipe.comments.map(x =>
 
-                                <h5 className='titleComment'>[{x.username}]</h5>
-                                <div className='commentBtns'>
-                                    <Link id='editCommentBtn' to='#'>Edit</Link>
-                                    <button>Delete</button>
+                                <div className='currentComment' key={x.userId}>
+
+                                    <h5 className='titleComment'>[{x.username}]</h5>
+
+                                    <div className='Time'>
+                                        <p className='timeP'>- {x.commentDate} -</p>
+                                    </div>
+                                    <p className='commentsP'>{x.content}</p>
                                 </div>
-                                <p className='commentsP'>{x.content}</p>
-                            </>
-                        )}
+                            )}
 
-                    </div>
+                        </div>
 
-                ) : <p id='emptyParagraph'>Add first comment!</p>}
+                    ) : <p id='emptyParagraph'>Add first comment!</p>}
 
 
             </div>
