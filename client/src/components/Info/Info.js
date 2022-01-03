@@ -28,7 +28,7 @@ const Info = () => {
                         </div>
                         
                         <div className="col-md-12">
-                            <input  className="uploadFile" type="file" ref={fileInputRef}/>
+                            <input  className="uploadFile" type="file" />
                         </div>
 
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
