@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
+import Info from './components/Info';
 import NotFound from './components/NotFound';
 import { AuthProvider } from './contexts/AuthContext';
 import EditMush from './components/EditMush';
@@ -35,6 +36,7 @@ function App() {
 
             <Route path='/' component={HomePage} exact />
             <Route path="/about" component={About} />
+            <Route path="/info" component={Info} />
             <Route path="/all-mushrooms" component={AllMush} exact />
             <Route path="/all-mushrooms/categories/:mushType" component={AllMush} exact />
             <Route path="/add-mushroom" component={AddMush} />

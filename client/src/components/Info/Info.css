@@ -1,0 +1,57 @@
+.infoForm {
+    text-align: center;
+}
+
+.infoForm>form {
+    background-color: rgb(138, 137, 137);
+    /* border: 1px solid black; */
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 7px  rgb(49, 49, 49);
+}
+.infoForm>label{
+    margin-right: 22px;
+}
+
+#userName{
+    border: 1px solid black;
+}
+
+#age{
+    border: 1px solid black;
+} 
+
+#email{
+    border: 1px solid black;
+} 
+
+.send{
+    margin-top: 20px;
+    color: white;
+    background-color: #4a4141;
+    border-color: #212529;
+    cursor: pointer;
+}
+
+.labelInfo{
+    display: block;
+    width: 80px;
+    margin-left: 176px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+
+}
+
+.uploadFile{
+    color:rgb(0, 0, 0);
+    margin-left: 123px;
+    padding-top: 22px;
+}
+
+.uploadFile > button {
+    border: 1px solid black;
+}

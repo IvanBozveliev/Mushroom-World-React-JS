@@ -36,6 +36,7 @@ const DetailsRecipes = ({
     }
 
     const handleOnEnter = (text) => {
+        
         console.log(text.target)
 
         let username = getUser().username;
@@ -120,9 +121,9 @@ const DetailsRecipes = ({
 
                 <h3 className='titleComments'>Comments:</h3>
 
-                {getUser().id != recipe.creator ?
+                
 
-                    (<div id='commentsContext'>
+                    <div id='commentsContext'>
 
                         <InputEmoji
                             value={text}
@@ -132,11 +133,9 @@ const DetailsRecipes = ({
                             placeholder='Type a comment and enter...'
                         />
 
+                    </div>
 
-
-                    </div>) : null
-
-                }
+              
 
                 {
                     recipe.comments?.length > 0 ? (
@@ -145,7 +144,7 @@ const DetailsRecipes = ({
 
                             {recipe.comments.map(x =>
 
-                                <div className='currentComment' key={x.userId}>
+                                <div className='currentComment' key={x.content}>
 
                                     <h5 className='titleComment'>[{x.username}]</h5>
 
