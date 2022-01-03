@@ -1,8 +1,9 @@
 import './Info.css';
 import {isAuth} from '../../HOC/isAuth';
+import { useRef } from 'react';
 
-const info = () => {
-
+const Info = () => {
+    
     const onInfo = (e) => {
         e.preventDefault()
     }
@@ -27,7 +28,7 @@ const info = () => {
                         </div>
                         
                         <div className="col-md-12">
-                            <input  className="uploadFile" type="file" />
+                            <input  className="uploadFile" type="file" ref={fileInputRef}/>
                         </div>
 
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -42,4 +43,4 @@ const info = () => {
     )
 }
 
-export default isAuth(info);
+export default isAuth(Info);
