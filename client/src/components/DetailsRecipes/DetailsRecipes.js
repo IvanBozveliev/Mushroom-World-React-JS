@@ -111,7 +111,7 @@ const DetailsRecipes = ({
 
 
 
-                        <p>Directions: {recipe.directions}</p>
+                        <p><b>Directions:</b> {recipe.directions}</p>
 
                     </div>
 

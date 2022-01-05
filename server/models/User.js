@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
 
-    id: mongoose.Types.ObjectId,
+    // _id: mongoose.Types.ObjectId,
     username: {
         type: String,
         required: true,
@@ -21,6 +21,15 @@ const userSchema = new mongoose.Schema({
         required: true,
         // min: 4
     },
+    image: {
+        type: String
+    },
+    age: {
+        type: Number
+    },
+    email: {
+        type: String
+    }
     // createdArticles: [{
     //     type: mongoose.Types.ObjectId,
     //     ref: 'Product'

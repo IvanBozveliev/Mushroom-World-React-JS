@@ -4,11 +4,12 @@ import { NavDropdown, Nav } from 'react-bootstrap';
 import { AuthContext } from "../../contexts/AuthContext";
 import { useState } from "react";
 import MyVerticallyCenteredModal from './Modal'
+import {getUser} from '../../services/authService';
 
 import './Header.css';
 
 const Header = () => {
-
+   
     const { user } = useContext(AuthContext);
     const [modalShow, setModalShow] = useState(false);
 

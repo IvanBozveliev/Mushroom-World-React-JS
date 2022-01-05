@@ -7,7 +7,7 @@ const useSessionStorage = (key, initialValue) => {
         try {
 
             let item = sessionStorage.getItem(key);
-            console.log(item)
+           
             return item ? JSON.parse(item) : initialValue
         }catch(error){
             return initialValue

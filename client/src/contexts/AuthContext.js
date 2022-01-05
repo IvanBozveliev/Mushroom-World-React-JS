@@ -3,7 +3,7 @@ import { createContext } from "react";
 import useSessionStorage from "../hooks/useSessionStorage";
 
 const initialAuthState = {
-    id: '',
+    _id: '',
     username: '',
     token: ''
 }
@@ -11,6 +11,7 @@ const initialAuthState = {
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
+
     const [user, setUser] = useSessionStorage('user', initialAuthState);
 
     const login = (authData) => {

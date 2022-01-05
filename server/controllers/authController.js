@@ -26,7 +26,7 @@ router.post('/login', isGuest, async (req, res) => {
 
         let {token, user} = await authService.login(username, password)
         res.cookie(COOKIE_NAME, token)
-        res.status(200).json({username, token, id: user._id}) 
+        res.status(200).json({username, token, id: user._id, email: user.email, age: user.age, image: user.image}) 
     } catch (error) {
         res.status(400).send(error)
 
@@ -35,9 +35,13 @@ router.post('/login', isGuest, async (req, res) => {
 
 router.post('/register', isGuest, async (req, res) => {
 
-    const { username, password, repeatPassword } = req.body;
+    const { username, password, repeatPassword, email, age, image } = req.body;
 
     try {
+        
+        if(age > 120){
+            throw ({message: 'Invalid age input!'})
+        }
 
         if (password == '' || username == '' || repeatPassword == '') {
             throw ({message: 'Invalid inputs!'})
@@ -50,15 +54,14 @@ router.post('/register', isGuest, async (req, res) => {
         if (!/[a-zA-Z0-9]{3,}/.test(password)) {
             throw ({message: 'Password must be at least 3 characters long and consist only latin letters and digits!'})
         }
+  
 
-     
-
-        await authService.register( username, password )
+        await authService.register( username, password, email, age, image)
 
         let {token, user} = await authService.login( username, password )
 
         res.cookie(COOKIE_NAME, token)
-        res.status(200).json({username, token, id: user._id})
+        res.status(200).json({username, token, id: user._id, email, age, image})
 
     } catch (error) {
         res.status(400).send(error);

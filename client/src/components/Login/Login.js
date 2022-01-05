@@ -37,8 +37,7 @@ const Login = () => {
                 if (res.username) {
 
                     sessionStorage.setItem('user', res)
-                    // sessionStorage.setItem('token', res.token)
-                    // sessionStorage.setItem('id', res.id)
+
                     login(res)
                     history.push('/');
                     return;

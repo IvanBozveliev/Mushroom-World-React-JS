@@ -3,12 +3,12 @@ const {SALT_ROUNDS, SECRET} = require('../config/config')
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-const register = async(username, password) =>{
+const register = async(username, password, email, age, image) =>{
 
      let salt = await bcrypt.genSalt(SALT_ROUNDS);
      let hash = await bcrypt.hash(password, salt);
 
-     let user = new User({username, password: hash});
+     let user = new User({username, password: hash, email, age, image});
      return user.save();
 }
 

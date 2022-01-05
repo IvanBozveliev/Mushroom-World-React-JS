@@ -473,7 +473,9 @@ hr {
 
 .figure-img {
     margin-bottom: .5rem;
-    line-height: 1
+    line-height: 1;
+    border-radius: 50%;
+    border: 3px solid rgb(204 204 204);
 }
 
 .figure-caption {

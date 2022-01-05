@@ -13,3 +13,20 @@
     color: rgb(252, 252, 252);
     padding-top: 14px;
 }
+
+/* #userName{
+    border: 1px solid black;
+}
+
+#age{
+    border: 1px solid black;
+} 
+
+#email{
+    border: 1px solid black;
+}  */
+
+
+.inputRegister{
+    border: 1px solid black;
+}

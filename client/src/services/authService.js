@@ -35,8 +35,12 @@ export const logout = () => {
     })
         .then(res => res.json())
 }
-// ++++++=
+
 export const getUser = () => {
     const user = sessionStorage.getItem('user');
     return JSON.parse(user)
 }
+
+// export const setUser = (data) => {
+//     return sessionStorage.setItem('user', JSON.stringify(data));
+// }
