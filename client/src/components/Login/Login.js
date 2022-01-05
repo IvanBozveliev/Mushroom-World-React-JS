@@ -75,9 +75,11 @@ const Login = () => {
                                     <div className="col-md-12">
 
                                         <div className="col-md-12">
+                                            <label htmlFor="age" >username:</label>
                                             <input className="contactus" placeholder="Your Name" type="text" name="username" />
                                         </div>
                                         <div className="col-md-12">
+                                        <label htmlFor="age" >password:</label>
                                             <input className="contactus" placeholder="Your Password" type="password" name="password" />
                                         </div>
 
