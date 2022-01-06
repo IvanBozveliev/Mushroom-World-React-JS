@@ -4,9 +4,10 @@
 }
 
 .edable {
-    color: green;
+    color: #488d1c;
     font-weight: bold;
     text-transform: uppercase;
+    /* margin-bottom: -36px; */
 }
 
 .poison {
@@ -22,6 +23,7 @@
     font-weight: 500;
     padding-bottom: 17px;
     display: block;
+    margin-top: -15px;
 }
 
 
@@ -183,13 +185,20 @@
     transition: all 0.3s ease-in;
 }
 
-/* .authorMush{
-    margin-bottom: 10px;
-} */
+.detailsImg{
+    margin-left: 113px;
+    margin-bottom: 40px;
+    margin-top: -41px;
+}
 
 .distribution {
     display: block;
     position: relative;
     z-index: 1;
     margin-bottom: 120px;
+}
+
+.typeAndImgDetails{
+    margin-bottom: 22px;
+    display: inline-block;
 }

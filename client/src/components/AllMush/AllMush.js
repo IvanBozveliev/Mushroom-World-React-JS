@@ -30,6 +30,7 @@ const AllMush = ({
             </div>
             <div className="wrapper">
                 <div className="spacer-mush">
+                    <p className='listOfMushroomsP'>List of <b>mushrooms</b>:</p>
                     <ul>
                        {products?.length !== 0 ? products.map(x => <Mush key={x._id} {...x} />) : <h1>Still haven`t mushrooms...</h1>}
                     </ul>

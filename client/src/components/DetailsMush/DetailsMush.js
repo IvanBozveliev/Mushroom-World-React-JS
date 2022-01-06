@@ -44,7 +44,7 @@ const DetailsMush = ({
                 <div className="row">
                     <div className="col-md-12">
                         <div className="titlepage">
-                            <h2> Best Mushroom <strong className="llow">Encyclopedia</strong> </h2>
+                            <h2> Encyclopedia of  <strong className="llow">mushrooms</strong> </h2>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,11 @@ const DetailsMush = ({
                     <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
                         <div className="vegetable_shop">
                             <h3>{mush.title}</h3>
-                            <h4 className={mush.mushType}>{mush.mushType}</h4>
+                            <div className='typeAndImgDetails'>
+                               <h4 className={mush.mushType}>{mush.mushType}</h4>
+                               <img className='detailsImg' src={`/images/${mush.mushType}.png`}/>
+                            </div>
+                           
 
                             {getUser()?.id && (mush.creator == getUser()?.id ? ownerButtons : "")}
 

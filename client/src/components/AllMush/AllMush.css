@@ -2,8 +2,8 @@
     /* margin-left: 450px;
     margin-top:-44px; */
     margin: 0 auto;
-    margin-bottom: 42px;
-    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-left: 30px;
 
 }
 
@@ -31,4 +31,12 @@ section h2 {
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.listOfMushroomsP{
+   font-weight: bold;
+   margin-left: 20px;
+   font-size: 30px;
+   margin-bottom: 30px;
+   color: black;
 }
