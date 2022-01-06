@@ -7,7 +7,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const Info = () => {
-
+    
+    const [textError, setTextError] = useState({error: false});
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState('');
     const [error, setError] = useState('');
@@ -19,16 +20,26 @@ const Info = () => {
 
     useEffect(() => {
 
-       
-
         if (image) {
-            setImageSize(image.size)
-            if(image.size > 64000){
-                return
-            }
+            setImageSize(image.size);
+
+       
             const reader = new FileReader();
             
+            if(image.size > 64000){
+
+                if(!reader.result){
+                    setPreview('/images/avatar.png')
+                }
+
+                setTextError(state => ({...state, error: 'Your image should be maximum 65KB!'}))
+                return
+            }else{
+                setTextError(state => ({...state, error: false}))
+            }
+
             reader.onloadend = () => {
+               
                 setPreview(reader.result)
             }
             reader.readAsDataURL(image);
@@ -43,7 +54,7 @@ const Info = () => {
     useEffect(() => {
         userServices.getUserInfo(getUser().id)
           .then(res => {
-            
+              setPreview(res.image)
               setUser(res)
               
           })
@@ -59,7 +70,7 @@ const Info = () => {
         let email = formData.get('email');
         let image = preview;
         
-        userServices.editUserInfo({username, age, email, image, token: getUser().token}, getUser().id)
+        userServices.editUserInfo({username, age, email, image}, getUser().id)
          .then(res => {
         
              if(res){
@@ -102,21 +113,23 @@ const Info = () => {
                                 type="file"
                                 name='file'
                                 accept='image/*'
+                               
                                 onChange={e => {
                                     let file = e.target.files[0];
                                     if (file && file.type.substring(0, 5) === 'image') setImage(file)
                                 }
                                 } />
+                                
                         </div>
-
-                        <div className='photoView'>
+                    
+                        <div className='photoView' >
                             {preview ? 
                                 <img src={preview} width='100px' height='100px' /> 
                                  :
                                 <img src='/images/avatar.png' width='100px' height='100px' />
                             }
                         </div>
-
+                        {textError.error && <span id='imageSizeError'>{textError.error}</span>}
                         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                             <button className="send">Send</button>
                         </div>

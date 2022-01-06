@@ -9,7 +9,7 @@ async function editUserInfo(userId, userData){
       let token = jwt.sign({_id: userId, username}, SECRET, {expiresIn: '1d'});
       
       let user = await User.findByIdAndUpdate(userId, {$set: userData}, {new: true})
-      console.log(user)
+  
       return {user , token};
 }
 

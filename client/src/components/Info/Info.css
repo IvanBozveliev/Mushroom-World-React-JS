@@ -99,3 +99,12 @@
     color: rgb(252, 252, 252);
     padding-top: 14px;
 }
+#imageSizeError{
+    color: red;
+    font-size: 19px;
+    margin-top: 22px;
+    margin-bottom: -32px;
+    margin-left: 22px;
+    font-style: italic;
+    font-weight: bold;
+}

@@ -4,7 +4,7 @@ const router = Router();
 const userService = require('../services/userService');
 const isAuthenticated = require('../middlewares/isAuthenticated');
 
-router.put('/:userId', async (req, res) => {
+router.put('/:userId', isAuthenticated, async (req, res) => {
     
     try {
         let {token, user} = await userService.editUserInfo(req.params.userId, req.body);
