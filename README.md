@@ -7,8 +7,8 @@ Also contextAPI, hooks, hoc and etc.
 
 The site is for anyone who is interested in mushrooms.
 In my site you can lerm more about them and you can find variety of dishes.
-In page All mushrooms you can see all mushrooms that we have at the moment.When you click on the title you will open the description for this mushroom.
-You also can create delete and edit yours mushrooms.In all recipes page you can see all dishesh.Cliking on the title you can open the description page.If your product isn`t your you have option like this product.Also you have options to create,delete and edit product if you have a registration. 
+In page All mushrooms you can see all list of mushrooms that we have at the moment.When you click on the title you will open the description for this mushroom.
+You also can create delete and edit yours mushrooms.In all recipes page you can see all list of dishesh.Cliking on the title you can open the description page.If your article isn`t your you have option like this product.Also you have options to create,delete and edit product if you have a registration. All logged in users can comment under recipe article.In the page my profile you can change your personal information.
 ## Installation
 
 Install the project with npm.
