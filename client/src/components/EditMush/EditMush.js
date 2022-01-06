@@ -7,7 +7,7 @@ import { getUser } from '../../services/authService';
 import Form from '../Forms/MushroomForm';
 
 const types = [
-    { value: 'edable', text: 'edable' },
+    { value: 'edible', text: 'edible' },
     { value: 'poison', text: 'poison' }
 ];
 
@@ -39,6 +39,8 @@ const EditMush = ({
 
         let title = formData.get('title');
         let description = formData.get('description');
+        let identification = formData.get('identification');
+        let culinary = formData.get('culinary');
         let imageUrlOne = formData.get('imageUrlOne');
         let imageUrlTwo = formData.get('imageUrlTwo');
         let mushType = formData.get('mushType');
@@ -46,6 +48,8 @@ const EditMush = ({
         mushServices.editOne(match.params.mushId, {
             title,
             description,
+            identification,
+            culinary,
             imageUrlOne,
             imageUrlTwo,
             mushType,

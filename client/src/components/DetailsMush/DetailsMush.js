@@ -62,6 +62,8 @@ const DetailsMush = ({
 
                             <div className='distribution'>
                                 <p><b> Distribution: </b>{mush.description}</p>
+                                <p><b> Identification guide: </b>{mush.identification}</p>
+                                <p><b> Culinary notes: </b>{mush.culinary}</p>
                                 <p className='authorMush'><b>Author: </b>{mush.author}</p>
 
                             </div>

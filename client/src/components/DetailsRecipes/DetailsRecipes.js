@@ -1,5 +1,5 @@
 import './DetailsRecipes.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as recipeServices from '../../services/recipeServices';
@@ -10,6 +10,7 @@ import { Modal, Button } from 'react-bootstrap';
 const DetailsRecipes = ({
     match
 }) => {
+    
 
     const [text, setText] = useState('');
     const [recipe, setRecipe] = useState({});
@@ -124,7 +125,7 @@ const DetailsRecipes = ({
                 <h3 className='titleComments'>Comments:</h3>
 
 
-
+                <h1 className='userTitle'>[{getUser().username}]:</h1>
                 <div id='commentsContext'>
 
                     <InputEmoji
@@ -132,9 +133,9 @@ const DetailsRecipes = ({
                         onChange={setText}
                         cleanOnEnter
                         onEnter={handleOnEnter}
-                        placeholder='Type a comment and enter...'
+                        placeholder='Type a comment and press enter...'
                     />
-
+                 
                 </div>
 
 

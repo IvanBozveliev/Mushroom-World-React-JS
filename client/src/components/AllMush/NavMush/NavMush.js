@@ -6,7 +6,7 @@ const NavMush = () => {
         <>
             <Link className="sortBtn" to={"/all-mushrooms/categories/poison"}>Poison</Link>
             <Link className='sortBtn' to={"/all-mushrooms/categories/all"}>All</Link>
-            <Link className="sortBtn" to={"/all-mushrooms/categories/edable"}>Edable</Link>
+            <Link className="sortBtn" to={"/all-mushrooms/categories/edible"}>Edible</Link>
         </>
     )
 }

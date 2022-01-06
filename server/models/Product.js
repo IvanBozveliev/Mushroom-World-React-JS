@@ -14,6 +14,18 @@ const productSchema = new mongoose.Schema({
         // minlength: [1, 'Description should consist minimum 5 characters']
 
     },
+    identification:{
+        type: String,
+        required: true,
+        // minlength: [1, 'Description should consist minimum 5 characters']
+
+    },
+    culinary:{
+        type: String,
+        required: true,
+        // minlength: [1, 'Description should consist minimum 5 characters']
+
+    },
     imageUrlOne: {
         type: String,
         required: true,
@@ -26,7 +38,7 @@ const productSchema = new mongoose.Schema({
     },
     mushType: {
         type: String,
-        enum: ['poison', 'edable'],
+        enum: ['poison', 'edible'],
         required: true
     },
     creator: {

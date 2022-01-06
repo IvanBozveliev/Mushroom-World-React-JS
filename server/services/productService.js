@@ -1,8 +1,8 @@
 const Product = require('../models/Product');
 
 function create(data) {
-   
-   if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
+ 
+   if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '' || data.culinary == '' || data.identification == '') {
       throw ({message: 'You can not have empty fields!'})
    }
 
@@ -34,8 +34,8 @@ async function getAll(query) {
    
    let products = await Product.find();
   
-   if(query.mushType == 'edable'){
-      products = products.filter(x => x.mushType == 'edable');
+   if(query.mushType == 'edible'){
+      products = products.filter(x => x.mushType == 'edible');
      
    }
    
@@ -50,7 +50,7 @@ async function getAll(query) {
 
 
 function updateOne(productId, data) {
-   if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '') {
+   if (data.title == '' || data.description == '' || data.imageUrlOne == '' || data.imageUrlTwo == '' || data.culinary == '' || data.identification == '') {
       throw ({message: 'You can not have empty fields!'})
    }
 

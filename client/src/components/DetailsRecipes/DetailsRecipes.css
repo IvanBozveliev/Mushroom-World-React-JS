@@ -377,3 +377,8 @@ span {
     border-radius: 60%;
 }
 
+.userTitle{
+    font-size: 22px;
+    margin-left: 18px;
+    margin-bottom: 22px;
+}

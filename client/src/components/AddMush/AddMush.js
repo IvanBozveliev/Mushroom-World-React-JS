@@ -25,6 +25,8 @@ const AddMush = ({
 
         let title = formData.get('title');
         let description = formData.get('description');
+        let identification = formData.get('identification');
+        let culinary = formData.get('culinary');
         let imageUrlOne = formData.get('imageUrlOne');
         let imageUrlTwo = formData.get('imageUrlTwo');
         let mushType = formData.get('mushType');
@@ -32,6 +34,8 @@ const AddMush = ({
         mushServices.create({
             title,
             description,
+            identification,
+            culinary,
             imageUrlOne,
             imageUrlTwo,
             mushType,
@@ -39,7 +43,7 @@ const AddMush = ({
         })
 
             .then((res) => {
-               
+            
                 if (res.ok) {
                     history.push('/all-mushrooms')
                 } else {

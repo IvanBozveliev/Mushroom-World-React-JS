@@ -8,6 +8,7 @@ const Form = ({
 }) => {
     
     const [errors, setErrors] = useState({ name: false });
+    const [errorCulinary, setErrorCulinary] = useState({culinaryName: false})
 
     const onHandler = (e) => {
         const product = e.target.value;
@@ -16,6 +17,12 @@ const Form = ({
             setErrors(state => ({ ...state, name: 'Your text should be at least 20 characters long!' }))
         } else {
             setErrors(state => ({ ...state, name: false }))
+        }
+
+        if (product.length < 5) {
+            setErrorCulinary(state => ({ ...state, name: 'Your text should be at least 5 characters long!' }))
+        } else {
+            setErrorCulinary(state => ({ ...state, name: false }))
         }
     }
 
@@ -39,8 +46,22 @@ const Form = ({
                     <div className="col-md-12">
                         <label htmlFor="distribution">Distribution</label>
 
-                        <textarea id="distribution" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Distribution Summary" type="text" name="description" defaultValue={mush?.description} onBlur={onHandler}></textarea>
+                        <textarea id="distribution" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Distribution summary" type="text" name="description" defaultValue={mush?.description} onBlur={onHandler}></textarea>
                         {errors.name && <span className='errtxt'>{errors.name}</span>}
+
+                    </div>
+                    <div className="col-md-12">
+                        <label htmlFor="identification">Identification guide</label>
+
+                        <textarea id="identification" style={{ borderColor: errors.name ? 'red' : 'inherit' }} className="textarea" placeholder="Identification guide summary" type="text" name="identification" defaultValue={mush?.identification} onBlur={onHandler}></textarea>
+                        {errors.name && <span className='errtxt'>{errors.name}</span>}
+
+                    </div>
+                    <div className="col-md-12">
+                        <label htmlFor="culinary">Culinary notes</label>
+
+                        <textarea id="culinary" style={{ borderColor: errorCulinary.name ? 'red' : 'inherit' }} className="textarea" placeholder="Culinary Summary" type="text" name="culinary" defaultValue={mush?.culinary} onBlur={onHandler}></textarea>
+                        {errorCulinary.name && <span className='errtxt'>{errorCulinary.name}</span>}
 
                     </div>
                     <div className="col-md-12">
@@ -54,7 +75,7 @@ const Form = ({
                             </select>
                         ) : (
                             <select id="mush" className="select" type="select" name="mushType">
-                              <option value="edable">edable</option>
+                              <option value="edible">edible</option>
                                <option value="poison">poison</option>
                             </select>
                         )}
