@@ -792,7 +792,9 @@ nav.main-menu {
 }
 
 .titleDiv>img{
-    margin-bottom: 6px
+    margin-bottom: 6px;
+    width: 32px;
+    height: 45px;
 }
 
 .btn-close{

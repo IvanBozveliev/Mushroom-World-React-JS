@@ -74,7 +74,7 @@ const Header = () => {
                                 <div className="full">
                                     <div className="center-desk">
                                         <div className="logo">
-                                            <div className="titleDiv"><img src="/images/mushlogo2.png" alt="#" /><Link id="logoTitle" to="/">MushWorld</Link></div>
+                                            <div className="titleDiv"><img src="/images/logo.png" alt="#" /><Link id="logoTitle" to="/">MushWorld</Link></div>
                                         </div>
                                     </div>
                                 </div>
