@@ -189,19 +189,9 @@ span {
 }
 
 .btnsRecipe {
-    /* margin-left: 450px;
-    margin-top:-44px; */
-    /* margin: 0 auto;
-    margin-bottom: 42px;
-    margin-left: 50px; */
-    /* ================ */
-    /* position: absolute;
-    width: 380px;
-    height: auto; */
-
-    margin-left: 5px;
-    /* display: inline; */
+    margin-left: 35px;
     margin-top: 22px;
+    margin-bottom: 22px;
 }
 
 
@@ -212,8 +202,6 @@ span {
     background-color: #43960f;
     color: #fff;
     padding: 9px 0px;
-    /* max-width: 100px;
-    width: 100%; */
     max-width: 70px;
     width: 70%;
     display: inline-block;
@@ -228,8 +216,6 @@ span {
     cursor: pointer;
     color: rgb(5, 5, 5);
     padding: 9px 0px;
-    /* max-width: 100px;
-    width: 100%; */
     max-width: 70px;
     width: 70%;
     display: inline-block;
@@ -391,6 +377,3 @@ span {
     border-radius: 60%;
 }
 
-/* .divCommentTitle{
-    display: inline;
-} */

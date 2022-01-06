@@ -69,6 +69,8 @@ border-radius: 30px;
     margin: 0;
 }
 .about .about-box_img figure img {
-   width: 100%;
+   width: 500px;
+   margin-left: 92px;
+   margin-top: 120px;
 }
 .padding_rl {padding: 0;}

@@ -87,7 +87,7 @@ const DetailsRecipes = ({
     return (
         <section id="deatils-page">
             <div className="titlepageRecipe">
-                <h2>Best <strong className="llow">Recipes</strong></h2>
+                <h2>Culinary <strong className="llow">Recipes</strong></h2>
             </div>
             <div className="wrapper-recipe">
                 <div className="product-img">

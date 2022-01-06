@@ -87,7 +87,7 @@ const Info = () => {
     }
     return (
         <div className='infoForm'>
-            <h2>Account Info</h2>
+            <h2>Account <b>Info</b></h2>
             {error && <div className="errorInfo"><p className='errTxtInfo'>{error}</p></div>}
             <form className="contact_bg" onSubmit={onInfo} method="POST">
                 <div className="row">

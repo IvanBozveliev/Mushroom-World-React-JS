@@ -40,3 +40,11 @@ section h2 {
 .images_box figure img {
     width: 100%;
 }
+
+.listOfRecipesP{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: black;
+}

@@ -88,7 +88,9 @@
 
 .titlepage {
     text-align: center;
+    /* margin-top: -34px; */
     padding-bottom: 60px;
+    /* margin-bottom: 32px; */
 }
 
 .titlepage span {
@@ -188,7 +190,7 @@
 .detailsImg{
     margin-left: 113px;
     margin-bottom: 40px;
-    margin-top: -41px;
+    margin-top: -46px;
 }
 
 .distribution {

@@ -91,11 +91,10 @@
 }
 
 .card_circle>img {
-    /* width: 81%;
-    height: 96%; */
+  
     width: 70%;
-    /* height: 87%; */
     height: 123%;
+    object-fit: cover;
 }
 
 .spacer-mush {

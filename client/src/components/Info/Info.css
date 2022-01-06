@@ -8,13 +8,8 @@
 }
 
 .infoForm>form {
-    background-color: rgb(138, 137, 137);
-    /* border: 1px solid black; */
-    /* margin-left: 400px;
-    margin-right: 400px;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    padding-top: 30px; */
+    /* background-color: rgb(138, 137, 137); */
+    background: radial-gradient(rgb(138, 137, 137), transparent);
     margin: auto;
     width: 560px;
     margin-bottom: 50px;
@@ -66,7 +61,7 @@
 
 .photoView{
     border: 1px solid rgb(255, 255, 255);
-    box-shadow: 1px 1px 7px white;
+    box-shadow: 1px 1px 7px rgb(2, 2, 2);
     width: 130px;
     height: 130px;
     margin: auto;
