@@ -13,7 +13,7 @@ const Mush = ({
 
                 <div className="card">
 
-                    <h3 className={mushType}>{mushType}<img src={`./images/${mushType}.png`} /></h3>
+                    <h3 className={mushType}>{mushType}<img src={`/images/${mushType}.png`} /></h3>
                     <div className="card_circle"><img src={imageUrlOne} /></div>
 
                 </div>
