@@ -84,7 +84,7 @@ export const likeOne = (recipeId) => {
 
 }
 
-export const commentOne = (content, recipeId) => {
+export const commentOnce = (content, recipeId) => {
     
     return fetch(`${url}/comment/${recipeId}`, {
         method: 'POST',

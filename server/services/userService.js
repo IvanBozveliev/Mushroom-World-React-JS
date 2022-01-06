@@ -1,9 +1,16 @@
+const {SECRET} = require('../config/config');
+const jwt = require('jsonwebtoken');
+
 const User = require('../models/User');
 
 async function editUserInfo(userId, userData){
-      
-      return await User.findByIdAndUpdate(userId, {$set: userData}, {new: true})
+      let {username} = userData;
     
+      let token = jwt.sign({_id: userId, username}, SECRET, {expiresIn: '1d'});
+      
+      let user = await User.findByIdAndUpdate(userId, {$set: userData}, {new: true})
+      console.log(user)
+      return {user , token};
 }
 
 function getUserInfo(userId){

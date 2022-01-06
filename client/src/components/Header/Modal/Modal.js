@@ -1,26 +1,12 @@
 import { Modal, Button, Figure } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {useState, useEffect, useContext} from 'react';
 import {getUser} from '../../../services/authService';
-import * as userServices from '../../../services/userServices';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-// import { AuthContext } from "../../../contexts/AuthContext";
+
 
 import './Modal.css';
 
 function MyVerticallyCenteredModal(props) {
 
-    // const { user } = useContext(AuthContext);
-    const [user, setUser] = useState({})
-    const history = useHistory();
-    
-    useEffect(() => {
-        userServices.getUserInfo(getUser()?.id)
-         .then(res => {
-             setUser(res)
-             history.push('/')
-         })
-    },[])
 
     return (
         <Modal

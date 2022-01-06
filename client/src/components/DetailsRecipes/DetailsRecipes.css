@@ -343,7 +343,7 @@ span {
 .commentsP{
     border-bottom: 1px solid #b9c1b9;
     padding-bottom: 12px;
-    padding-top: 22px;
+    padding-top: 36px;
     margin-bottom: 34px;
 }
 
@@ -369,8 +369,9 @@ span {
 
 
 .titleComment{
-   margin-top: -16px;
-   /* width: 200px; */
+    margin-top: -28px;
+    /* width: 200px; */
+    margin-left: 50px;
 }
 
 .timeP{
@@ -383,3 +384,13 @@ span {
     margin-top: 70px;
 }
 
+.commentsImg{
+    width: 34px;
+    height: 34px;
+    margin-right: 12px;
+    border-radius: 60%;
+}
+
+/* .divCommentTitle{
+    display: inline;
+} */

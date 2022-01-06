@@ -11,6 +11,7 @@ router.use('/recipes', recipeController);
 router.use('/auth', authController);
 router.use('/user', userController);
 
+
 // router.get("*" ,(req, res) =>{
 //     res.render('404', {title: 'Error Page'})
 // });

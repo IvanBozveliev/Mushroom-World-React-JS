@@ -36,16 +36,18 @@ const DetailsRecipes = ({
     }
 
     const handleOnEnter = (text) => {
-        
-        console.log(text.target)
 
+        let image = getUser().image;
         let username = getUser().username;
         let userId = getUser().id;
         let content = text;
         let commentDate = new Date().toString().slice(3, 24);
+      
+        if(!image) image = '/images/avatar.png';
 
-        recipeServices.commentOne({ username, content, userId, commentDate }, match.params.recipeId)
+        recipeServices.commentOnce({image, username, content, userId, commentDate }, match.params.recipeId)
             .then(res => {
+                console.log(res)
                 setRecipe(res)
                 history.push(`/recipes/details/${recipe._id}`)
             })
@@ -121,21 +123,21 @@ const DetailsRecipes = ({
 
                 <h3 className='titleComments'>Comments:</h3>
 
-                
 
-                    <div id='commentsContext'>
 
-                        <InputEmoji
-                            value={text}
-                            onChange={setText}
-                            cleanOnEnter
-                            onEnter={handleOnEnter}
-                            placeholder='Type a comment and enter...'
-                        />
+                <div id='commentsContext'>
 
-                    </div>
+                    <InputEmoji
+                        value={text}
+                        onChange={setText}
+                        cleanOnEnter
+                        onEnter={handleOnEnter}
+                        placeholder='Type a comment and enter...'
+                    />
 
-              
+                </div>
+
+
 
                 {
                     recipe.comments?.length > 0 ? (
@@ -146,7 +148,11 @@ const DetailsRecipes = ({
 
                                 <div className='currentComment' key={x.content}>
 
-                                    <h5 className='titleComment'>[{x.username}]</h5>
+                                    {/* <div className='divCommentTitle'> */}
+                                        <img className='commentsImg' src={x.image} />
+                                        <h5 className='titleComment'>[{x.username}]</h5>
+
+                                    {/* </div> */}
 
                                     <div className='Time'>
                                         <p className='timeP'>- {x.commentDate} -</p>

@@ -11,25 +11,35 @@ const Info = () => {
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState('');
     const [error, setError] = useState('');
-    const [user, setUser] = useState({})
-    
+    const [user, setUser] = useState({});
+    const [imageSize, setImageSize] = useState(null);
+
     const history = useHistory();
     const {login} = useContext(AuthContext);
 
     useEffect(() => {
 
+       
+
         if (image) {
+            setImageSize(image.size)
+            if(image.size > 64000){
+                return
+            }
             const reader = new FileReader();
+            
             reader.onloadend = () => {
                 setPreview(reader.result)
             }
-            reader.readAsDataURL(image)
+            reader.readAsDataURL(image);
+           
 
         } else {
             setPreview(null)
         }
     }, [image]);
 
+    
     useEffect(() => {
         userServices.getUserInfo(getUser().id)
           .then(res => {
@@ -49,14 +59,11 @@ const Info = () => {
         let email = formData.get('email');
         let image = preview;
         
-        userServices.editUserInfo({username, age, email, image}, getUser().id)
+        userServices.editUserInfo({username, age, email, image, token: getUser().token}, getUser().id)
          .then(res => {
         
              if(res){
-                 
-                res.id = res._id;
-                delete res._id;
-                
+  
                 login(res)
                 sessionStorage.setItem('user', JSON.stringify(res))
               
@@ -90,12 +97,13 @@ const Info = () => {
 
                         <div className="col-md-12">
                             <input
+                                style={{color: imageSize > 64000 ? 'red' : 'green'}}
                                 className="uploadFile"
                                 type="file"
                                 name='file'
                                 accept='image/*'
                                 onChange={e => {
-                                    let file = e.target.files[0]
+                                    let file = e.target.files[0];
                                     if (file && file.type.substring(0, 5) === 'image') setImage(file)
                                 }
                                 } />
