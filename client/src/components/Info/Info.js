@@ -32,7 +32,7 @@ const Info = () => {
                     setPreview('/images/avatar.png')
                 }
 
-                setTextError(state => ({...state, error: 'Your image should be maximum 65KB!'}))
+                setTextError(state => ({...state, error: 'Your image should be maximum 64KB!'}))
                 return
             }else{
                 setTextError(state => ({...state, error: false}))
