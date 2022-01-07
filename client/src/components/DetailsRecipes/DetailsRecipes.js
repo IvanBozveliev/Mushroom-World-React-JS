@@ -10,7 +10,7 @@ import { Modal, Button } from 'react-bootstrap';
 const DetailsRecipes = ({
     match
 }) => {
-    
+
 
     const [text, setText] = useState('');
     const [recipe, setRecipe] = useState({});
@@ -43,10 +43,10 @@ const DetailsRecipes = ({
         let userId = getUser().id;
         let content = text;
         let commentDate = new Date().toString().slice(3, 24);
-      
-        if(!image) image = '/images/avatar.png';
 
-        recipeServices.commentOnce({image, username, content, userId, commentDate }, match.params.recipeId)
+        if (!image) image = '/images/avatar.png';
+
+        recipeServices.commentOnce({ image, username, content, userId, commentDate }, match.params.recipeId)
             .then(res => {
                 console.log(res)
                 setRecipe(res)
@@ -124,19 +124,27 @@ const DetailsRecipes = ({
 
                 <h3 className='titleComments'>Comments:</h3>
 
+                {getUser()?.username ? 
+                    (
+                        <>
+                            <h1 className='userTitle'>[{getUser()?.username}]:</h1>
 
-                <h1 className='userTitle'>[{getUser().username}]:</h1>
-                <div id='commentsContext'>
+                            <div id='commentsContext'>
 
-                    <InputEmoji
-                        value={text}
-                        onChange={setText}
-                        cleanOnEnter
-                        onEnter={handleOnEnter}
-                        placeholder='Type a comment and press enter...'
-                    />
-                 
-                </div>
+                                <InputEmoji
+                                    value={text}
+                                    onChange={setText}
+                                    cleanOnEnter
+                                    onEnter={handleOnEnter}
+                                    placeholder='Type a comment and press enter...'
+                                />
+
+                            </div>
+                        </>
+                    ) : null
+                }
+
+
 
 
 
@@ -149,11 +157,10 @@ const DetailsRecipes = ({
 
                                 <div className='currentComment' key={x.content}>
 
-                                    {/* <div className='divCommentTitle'> */}
-                                        <img className='commentsImg' src={x.image} />
-                                        <h5 className='titleComment'>[{x.username}]</h5>
+                                    <img className='commentsImg' src={x.image} />
+                                    <h5 className='titleComment'>[{x.username}]</h5>
 
-                                    {/* </div> */}
+
 
                                     <div className='Time'>
                                         <p className='timeP'>- {x.commentDate} -</p>
