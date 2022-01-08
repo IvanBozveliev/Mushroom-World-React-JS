@@ -1,6 +1,6 @@
 import { getUser } from './authService';
 
-const url = 'http://localhost:5000/recipes';
+const url = '/api/recipes';
 
 export const getAll = (cookingTime) => {
 

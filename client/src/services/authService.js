@@ -1,4 +1,4 @@
-const url = 'http://localhost:5000/auth';
+const url = '/api/auth';
 
 export const login = async (data) => {
     

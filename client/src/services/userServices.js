@@ -1,6 +1,6 @@
 import { getUser } from './authService';
 
-const url = 'http://localhost:5000/user';
+const url = '/api/user';
 
 
 export const editUserInfo = (userData, userId) => {

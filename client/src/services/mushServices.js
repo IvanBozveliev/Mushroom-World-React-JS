@@ -1,6 +1,6 @@
 import {getUser} from './authService';
 
-const url = 'http://localhost:5000/products';
+const url = '/api/products';
 
 export const getAll = (mushType) => {
 
