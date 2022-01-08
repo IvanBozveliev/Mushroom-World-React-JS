@@ -47,6 +47,14 @@ jobs:
            uses: JesseTG/rm@v1.0.2
            with:
               path: ./.vscode
+         - name: Remove .vscode folder
+           uses: JesseTG/rm@v1.0.2
+           with:
+              path: ./server/.vscode
+         - name: Remove .vscode folder
+           uses: JesseTG/rm@v1.0.2
+           with:
+              path: ./server/node_modules
          - name: Remove .gitignore
            uses: JesseTG/rm@v1.0.2
            with:
