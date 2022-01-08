@@ -19,4 +19,5 @@ app.use((req, res, next) => {
     next();
 });
 
+
 app.listen(config.PORT, () => console.log(`Server is loading on port ${config.PORT}...`))

@@ -15,7 +15,7 @@ router.use('/user', userController);
 
 router.get("*" ,(req, res) =>{
     // res.render('404', {title: 'Error Page'})
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+    res.sendFile(path.join(__dirname, './public', 'index.html'))
 });
 
 module.exports = router;

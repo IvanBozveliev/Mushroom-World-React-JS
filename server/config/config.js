@@ -1,4 +1,3 @@
-// const connectionString = process.env.DB_CONNECTION;
 const config = {
 
     PORT: process.env.PORT || 5000,
