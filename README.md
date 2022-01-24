@@ -1,6 +1,8 @@
 
 # Mushroom World
  
+You can see the project here: https://mush-world.herokuapp.com/
+
 This is my first M.E.R.N. project with React.
 In this project i use class and functional components.
 Also contextAPI, hooks, hoc and etc.
